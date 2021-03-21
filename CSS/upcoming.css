@@ -180,7 +180,7 @@ body {
 .division:nth-of-type(2) {
   background: #00ffff60
     url("https://kys-cdn.s3.ap-southeast-1.amazonaws.com/kysadmn/wp-content/uploads/2017/03/10104056/13692835_1157222877652071_2761578980738042355_o-1024x859.jpg");
-    background-position: top;
+  background-position: top;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -199,8 +199,12 @@ body {
   background-attachment: fixed;
 }
 
-
 .division-title {
   background-color: transparent;
   text-align: center;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar {
+  display: none;
 }

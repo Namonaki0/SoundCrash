@@ -1,0 +1,42 @@
+body {
+    color: #fff;
+    font-family: var(--montserrat);
+}
+
+header {
+    display: grid;
+    place-content: center;
+    height: 60vh;
+    border-bottom: 1px solid var(--mediumBlue);
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+form,
+h1 {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+#mc_embed_signup {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    position: relative;
+    height: 40vh;
+}
+
+form {
+    width: 100%;
+    margin-top: -40px;
+    position: absolute;
+    color: grey;
+    display: block;
+    padding: 2rem;
+    background: #233768;
+    border-radius: 2px;
+}
+
