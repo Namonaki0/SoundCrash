@@ -1,6 +1,7 @@
 body {
     color: #fff;
     font-family: var(--montserrat);
+    min-height: 100vh;
 }
 
 header {
@@ -11,7 +12,7 @@ header {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
 }
 
 form,
@@ -30,13 +31,56 @@ h1 {
 }
 
 form {
+    text-align: left;
     width: 100%;
-    margin-top: -40px;
+    margin-top: -60px;
     position: absolute;
     color: grey;
     display: block;
     padding: 2rem;
     background: #233768;
     border-radius: 2px;
+    border: 1px solid var(--mediumBlue);
 }
 
+form #mc_embed_signup_scroll {
+    color: #fff;
+    margin: 2rem 0 1rem;
+    padding: 1rem 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+}
+
+.indicates-required {
+    font-size: .8rem;
+    text-align: right;
+    margin-top: 0;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.button {
+    all: unset;
+    margin-left: auto;
+    display: block;
+    cursor: pointer;
+    background: #fff;
+    padding: .5rem 1rem;
+    color: #1c1c1c;
+    border-radius: 2px;
+}
+
+.mc-field-group {
+    margin-bottom: 1rem;
+}
+
+.mc-field-group label {
+    margin-right: 1rem;
+}
+
+.mc-field-group input {
+    /* padding: .3rem; */
+}
