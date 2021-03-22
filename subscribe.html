@@ -21,11 +21,9 @@
   <body>
 
     <header>
-        <h1>subscribe for <span>latest news</span></h1>
+        <h1>Subscribe <span>for the latest news</span></h1>
 
     </header>
-
-<!-- <section class="form-wrapper"> -->
 
     <div id="mc_embed_signup">
       <form
@@ -38,7 +36,6 @@
         novalidate
       >
         <div id="mc_embed_signup_scroll">
-          <!-- <h2>Subscribe</h2> -->
           <div class="indicates-required">
             <span class="asterisk">*</span> required
           </div>
@@ -56,7 +53,7 @@
           </div>
           <div class="mc-field-group">
             <label for="mce-NAME">Name </label>
-            <input type="text" value="" name="FNAME" class="" id="mce-FNAME" />
+            <input type="text" value="" name="FNAME" class="" id="mce-NAME" />
           </div>
           
           </div>
@@ -94,7 +91,23 @@
       </form>
     </div>
 
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+    
+       const errorMessage = document.querySelector(".mce_inline_error");
+errorMessage.innerContent = "OMG";
+    // if(errorMessage){
+      
+    // }
+    
+    </script>
+    <script type='text/javascript'>
+    (function($) {
+      window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+    
+
+    </script>
 
     <script src="app.js"></script>
   </body>

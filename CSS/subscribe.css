@@ -1,34 +1,60 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   color: #fff;
   font-family: var(--montserrat);
   min-height: 100vh;
-  /* height: 100vh; */
+  background: #fff;
 }
 
 header {
-  /* display: grid;
-  place-content: center; */
   text-align: center;
-  height: 40vh;
+  height: 50vh;
   border-bottom: 1px solid var(--mediumBlue);
+  background: linear-gradient(91deg, #2d2d5d 0%, #011332 100%), 
+  url("https://images.unsplash.com/photo-1526554850534-7c78330d5f90?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80");
+  background-blend-mode: multiply;
 }
 
 h1 {
-padding-top: 2rem;
-  font-size: 6vw;
+  padding-top: 2rem;
+  font-size: 2.5rem;
   display: block;
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 0;
 }
 
-form{
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
+header span {
+  display: block;
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+@media (min-width: 800px){
+
+  h1,
+  header span {
+    font-size: 8vh;
+  }
+
+  h1 {
+    width: 100%;
+    max-width: 500px;
+    font-size: 8vh;
+    text-align: left;
+  }
+
+  header span {
+    display: block;
+    text-align: right;
+    
+  }
 }
 
 #mc_embed_signup {
@@ -37,24 +63,26 @@ form{
   background: #fff;
   position: relative;
   height: 50vh;
-
+  padding: 2rem;
+  margin-bottom: 5rem;
 }
 
 form {
   text-align: left;
   width: 100%;
-  margin-top: -60px;
+  margin: -100px auto 0;
   position: absolute;
   color: grey;
   display: block;
   padding: 2rem;
-  background: #1c2d57;
+  background: #192f55;
   border-radius: 2px;
   border: 1px solid var(--mediumBlue);
   max-width: 700px;
+  box-shadow: 0 1px 20px 5px rgba(0,0,0,.5);
 }
 
-form #mc_embed_signup_scroll {
+#mc_embed_signup_scroll {
   color: #fff;
   margin: 2rem 0 1rem;
   padding: 1rem 0 0;
@@ -86,18 +114,25 @@ form #mc_embed_signup_scroll {
   text-align: center;
   margin-top: 1.5rem;
   font-weight: 700;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
+  transition: all 150ms ease-in-out;
+  border: 1px solid #29417e;
+}
+
+.button:hover {
+  color: white;
+  background: #29417e;
+  border: 1px solid white;
 }
 
 .mc-field-group {
   margin-bottom: 1rem;
-  /* margin: auto; */
 }
 
 .mc-field-group label {
   margin-right: 1rem;
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mc-field-group input {
@@ -105,4 +140,62 @@ form #mc_embed_signup_scroll {
   padding: 0.5rem;
   background: #8997b9;
   border: none;
+  color: #fff;
 }
+
+#mce-EMAIL {
+  text-align: left;
+}
+
+#mce-EMAIL,
+#mce-NAME {
+  transition: all 100ms ease-in;
+  border-radius: 2px;
+}
+
+#mce-EMAIL:focus,
+#mce-NAME:focus {
+  background: white;
+}
+
+.mce_inline_error {
+  font-size: 1rem;
+  margin-top: 0;
+  text-align: left;
+  color: white;
+  display: block;
+}
+
+form label .asterisk {
+  font-size: .8rem;
+  vertical-align: super;
+}
+
+#mce-error-response,
+#mce-success-response {
+  color: white;
+  padding: .5rem 1rem;
+  border-radius: 2px;
+  text-align: center;
+  transition: 1s;
+  animation: responseMessage 1s forwards;
+}
+
+#mce-error-response {
+  background: #891818;
+}
+
+#mce-success-response {
+  background: var(--mediumBlue);
+}
+
+@keyframes responseMessage {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
