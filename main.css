@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --background: #0d1321;
   --darkGrey: #323243;
   --silentGrey: #fafafa33;
@@ -10,9 +10,9 @@
   --mediumBlue: #114e84;
   --montserrat: "Montserrat", sans-serif;
   --teko: "Teko", sans-serif;
-}
+} */
 
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -21,16 +21,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--montserrat);
-  /* overflow-x: hidden; */
 }
 
 html {
   scroll-behavior: smooth;
-}
+} */
 
 /*? VIEWPORT SCALE */
 
-.width-container {
+/* .width-container {
   display: none;
 }
 .display-width {
@@ -41,11 +40,11 @@ html {
   background-color: #e6e6e6;
   padding: 0.3em;
   font-size: 0.85em;
-}
+} */
 
 /*? //-------------------// */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -60,11 +59,11 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
   width: 20px;
-}
+} */
 
 /*? ---- NAVIGATION ----*/
 
-nav {
+/* nav {
   background: var(--gold);
   display: flex;
   align-items: center;
@@ -81,7 +80,6 @@ nav {
   font-size: 3rem;
   font-family: var(--teko);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  /* -webkit-text-stroke: 1px rgba(0, 0, 0, 0.123); */
 }
 
 nav ul {
@@ -196,11 +194,11 @@ nav ul a:hover,
   z-index: 1000;
   bottom: 3rem;
   right: 3rem;
-}
+} */
 
 /*? --- HERO - MAIN SECTION ---- */
 
-.hero-content {
+/* .hero-content {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -246,7 +244,7 @@ nav ul a:hover,
 .hero-description {
   width: 90%;
   color: var(--white);
-  /* justify-content: space-around; */
+  justify-content: space-around;
   border-top: 1px solid var(--gold);
   margin: auto;
   font-size: 1rem;
@@ -260,41 +258,13 @@ nav ul a:hover,
 
 .hero-description span {
   color: var(--gold);
-}
+} */
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   .hero-content-featured {
     padding: 0 1rem;
     position: relative;
   }
-
-  /* .hero-content-featured::before {
-    content: "";
-    height: 800px;
-    width: 800px;
-    background: var(--mediumBlue);
-    opacity: 0.2;
-    display: block;
-    position: absolute;
-    transform: rotate(45deg);
-    top: -25%;
-    left: -25%;
-    z-index: -1;
-  } */
-
-  /* .hero-content-featured::after {
-    content: "";
-    height: 1300px;
-    width: 800px;
-    background: var(--mediumBlue);
-    opacity: 0.1;
-    display: block;
-    position: absolute;
-    transform: rotate(45deg);
-    bottom: -150%;
-    right: -35%;
-    z-index: -1;
-  } */
 
   .hero-description {
     display: flex;
@@ -317,12 +287,11 @@ nav ul a:hover,
   .hero-description {
     font-size: 1.2rem;
   }
-}
+} */
 
 /*? ---- SECONDARY SECTION ---- */
 
-.releases-section {
-  /* width: 90%; */
+/* .releases-section {
   margin: auto;
   margin-bottom: 2.5em;
   background: #f9f9f9;
@@ -331,22 +300,7 @@ nav ul a:hover,
   position: relative;
 }
 
-/* .fa-compact-disc {
-  visibility: hidden;
-  position: absolute;
-} */
-
 @media (min-width: 800px) {
-  /* .fa-compact-disc {
-    visibility: unset;
-    width: 50%;
-    font-size: 60rem;
-    top: -40%;
-    left: -35%;
-    opacity: 0.05;
-    color: var(--darkGrey);
-    z-index: -1;
-  } */
 
   .releases-section {
     clip-path: inset(0);
@@ -355,8 +309,6 @@ nav ul a:hover,
 
 .latest-releases {
   color: var(--gold);
-  /* text-orientation: sideways;
-  writing-mode: vertical-lr; */
   font-size: 4.5rem;
   font-weight: 100;
   padding: 0;
@@ -379,21 +331,7 @@ nav ul a:hover,
   position: relative;
   clip-path: inset(-100px 0px 0px 0px);
   z-index: 1;
-  /* overflow: hidden; */
 }
-
-/* .item-wrapper::after {
-  content: "";
-  display: block;
-  background: var(--darkGrey);
-  opacity: 0.5;
-  height: 600px;
-  width: 600px;
-  transform: rotate(45deg);
-  position: absolute;
-  bottom: -50px;
-  right: -300px;
-} */
 
 .item-wrapper img {
   width: 100%;
@@ -456,10 +394,6 @@ nav ul a:hover,
   background: var(--darkRed);
 }
 
-/* .sub-wrapper a:hover::after {
-  visibility: hidden;
-} */
-
 .sub-wrapper h4 {
   margin: 0;
   margin-top: 0;
@@ -512,7 +446,7 @@ nav ul a:hover,
     min-width: 300px;
     max-width: 350px;
   }
-}
+} */
 
 /*? ---- BOTTOM SECTION ---- */
 
