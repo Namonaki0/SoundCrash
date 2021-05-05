@@ -58,27 +58,12 @@ iframe {
   min-height: 100vh;
 }
 
-/* .square {
-  height: 250px;
-  width: 250px;
-  background: darkgray;
-  display: block;
-  z-index: 100;
-  position: absolute;
-  transform: rotate(45deg);
-  opacity: 0.05;
-  top: -35px;
-  left: -45px;
-} */
-
 .inner-wrap {
-  /* min-height: 100vh; */
   background: #1e1e29;
   color: var(--mediumBlue);
   text-align: center;
   display: grid;
   grid-template-columns: 1fr repeat(4, 1fr) 1fr;
-  /* padding: 0.2rem; */
   padding-bottom: 2rem;
 }
 
@@ -141,7 +126,6 @@ iframe {
 /*? INJECTED MARKUP */
 
 .artist-info-inner-wrap {
-  /* margin-bottom: 5rem; */
   background: rgba(150, 150, 150, 0.05);
   background: cyan;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
@@ -182,9 +166,6 @@ iframe {
 
 .release-info,
 .record-info {
-  /* display: flex; */
-  /* text-align: center; */
-  /* align-self: baseline; */
   margin: 0;
   font-size: 0.8rem;
 }
@@ -220,7 +201,6 @@ iframe {
   color: grey;
   z-index: 1000;
 }
-
 /*? ///////////////////// */
 
 .special {
@@ -266,20 +246,6 @@ iframe {
     position: relative;
     padding-top: 5rem;
   }
-
-  /* main::before {
-    content: "";
-    height: 1000px;
-    width: 1000px;
-    background: var(--mediumBlue);
-    opacity: 0.1;
-    display: block;
-    position: absolute;
-    transform: rotate(45deg);
-    top: 12%;
-    left: -60%;
-    z-index: -1;
-  } */
 
   main h1 {
     font-family: var(--teko);
