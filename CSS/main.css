@@ -21,7 +21,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--montserrat);
-  /* overflow-x: hidden; */
 }
 
 html {
@@ -68,8 +67,8 @@ nav {
   background: var(--gold);
   display: flex;
   align-items: center;
-  border-top: 3px solid var(--mediumBlue);
-  border-bottom: 3px solid var(--mediumBlue);
+  border-top: 1px solid var(--mediumBlue);
+  border-bottom: 2px solid var(--mediumBlue);
   justify-content: space-between;
 }
 
@@ -81,7 +80,6 @@ nav {
   font-size: 3rem;
   font-family: var(--teko);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-  /* -webkit-text-stroke: 1px rgba(0, 0, 0, 0.123); */
 }
 
 nav ul {
@@ -102,7 +100,7 @@ nav ul {
   background: var(--white);
   visibility: hidden;
   transition: all 150ms ease-in;
-  transform: translateY(-100%);
+  transform: translateX(-100%);
 }
 
 .menu-active {
@@ -246,7 +244,6 @@ nav ul a:hover,
 .hero-description {
   width: 90%;
   color: var(--white);
-  /* justify-content: space-around; */
   border-top: 1px solid var(--gold);
   margin: auto;
   font-size: 1rem;
@@ -267,34 +264,6 @@ nav ul a:hover,
     padding: 0 1rem;
     position: relative;
   }
-
-  /* .hero-content-featured::before {
-    content: "";
-    height: 800px;
-    width: 800px;
-    background: var(--mediumBlue);
-    opacity: 0.2;
-    display: block;
-    position: absolute;
-    transform: rotate(45deg);
-    top: -25%;
-    left: -25%;
-    z-index: -1;
-  } */
-
-  /* .hero-content-featured::after {
-    content: "";
-    height: 1300px;
-    width: 800px;
-    background: var(--mediumBlue);
-    opacity: 0.1;
-    display: block;
-    position: absolute;
-    transform: rotate(45deg);
-    bottom: -150%;
-    right: -35%;
-    z-index: -1;
-  } */
 
   .hero-description {
     display: flex;
@@ -322,7 +291,6 @@ nav ul a:hover,
 /*? ---- SECONDARY SECTION ---- */
 
 .releases-section {
-  /* width: 90%; */
   margin: auto;
   margin-bottom: 2.5em;
   background: #f9f9f9;
@@ -331,23 +299,7 @@ nav ul a:hover,
   position: relative;
 }
 
-/* .fa-compact-disc {
-  visibility: hidden;
-  position: absolute;
-} */
-
 @media (min-width: 800px) {
-  /* .fa-compact-disc {
-    visibility: unset;
-    width: 50%;
-    font-size: 60rem;
-    top: -40%;
-    left: -35%;
-    opacity: 0.05;
-    color: var(--darkGrey);
-    z-index: -1;
-  } */
-
   .releases-section {
     clip-path: inset(0);
   }
@@ -379,21 +331,7 @@ nav ul a:hover,
   position: relative;
   clip-path: inset(-100px 0px 0px 0px);
   z-index: 1;
-  /* overflow: hidden; */
 }
-
-/* .item-wrapper::after {
-  content: "";
-  display: block;
-  background: var(--darkGrey);
-  opacity: 0.5;
-  height: 600px;
-  width: 600px;
-  transform: rotate(45deg);
-  position: absolute;
-  bottom: -50px;
-  right: -300px;
-} */
 
 .item-wrapper img {
   width: 100%;
@@ -455,10 +393,6 @@ nav ul a:hover,
 .sub-wrapper a:focus {
   background: var(--darkRed);
 }
-
-/* .sub-wrapper a:hover::after {
-  visibility: hidden;
-} */
 
 .sub-wrapper h4 {
   margin: 0;
@@ -557,36 +491,6 @@ nav ul a:hover,
   clip-path: inset(0);
 }
 
-/* .reviews::after {
-  content: "";
-  display: block;
-  height: 200px;
-  width: 200px;
-  background: darkgrey;
-  top: -30px;
-  left: -30px;
-  transform: rotate(40deg);
-  opacity: 0.1;
-  z-index: 1000;
-  position: absolute;
-  pointer-events: none;
-} */
-
-/* .reviews::before {
-  content: "";
-  display: block;
-  height: 250px;
-  width: 200px;
-  background: grey;
-  bottom: -100px;
-  right: -120px;
-  transform: rotate(40deg);
-  opacity: 0.1;
-  z-index: 1000;
-  position: absolute;
-  pointer-events: none;
-} */
-
 .reviews-title {
   margin: auto;
   padding: 0;
@@ -658,8 +562,6 @@ nav ul a:hover,
 }
 
 .post-details p {
-  /* padding-left: 1rem;
-  padding-right: 1rem; */
   font-size: 0.8em;
   text-align: center;
 }
@@ -692,10 +594,6 @@ nav ul a:hover,
   background: rgba(211, 211, 211, 0.2);
 }
 
-/* .read-more-wrap:hover .read-more {
-  color: var(--gold);
-} */
-
 .read-more-wrap .read-more {
   margin: 0;
   padding: 0;
@@ -726,10 +624,6 @@ nav ul a:hover,
   align-self: center;
   transition: rotate 2s ease-in-out;
 }
-
-/* .fas {
-  transition: rotate 1s ease;
-} */
 
 .read-more-icon-effect {
   transform: rotate(180deg);
@@ -794,20 +688,6 @@ nav ul a:hover,
     margin-bottom: 2rem;
     flex-direction: row;
   }
-
-  /* .reviews::after {
-    height: 300px;
-    width: 300px;
-    top: -50px;
-    left: -50px;
-  } */
-
-  /* .reviews::before {
-    height: 400px;
-    width: 300px;
-    bottom: -150px;
-    right: -120px;
-  } */
 
   .reviews:nth-of-type(3) {
     margin-bottom: 3rem;
