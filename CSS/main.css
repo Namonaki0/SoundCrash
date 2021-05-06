@@ -196,6 +196,12 @@ nav ul a:hover,
   right: 3rem;
 }
 
+@media (min-width: 800px) {
+  nav ul {
+    align-items: center;
+  }
+}
+
 /*? --- HERO - MAIN SECTION ---- */
 
 .hero-content {
