@@ -1,5 +1,4 @@
 //? INTERSECTION OBSERVERS
-
 const honorableMentions = document.querySelector("aside");
 const artistNum = honorableMentions.querySelectorAll(".artist-num");
 const main = document.querySelector("main");
@@ -63,7 +62,6 @@ observer1 = new IntersectionObserver(entries, options);
 
 function entries(numSystem) {
   numSystem.forEach((num) => {
-    console.log(num);
     if (num.isIntersecting && num.intersectionRatio > 0) {
       num.target.classList.add("special");
     } else {
@@ -80,7 +78,6 @@ observer2 = new IntersectionObserver(entries, options);
 
 function entries(artistNum) {
   artistNum.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting && entry.intersectionRatio > 0) {
       entry.target.classList.add("special");
     } else {

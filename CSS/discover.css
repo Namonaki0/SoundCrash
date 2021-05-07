@@ -129,16 +129,17 @@ iframe {
 
 .side-view-img-wrap {
   width: 50%;
-  transition: outline 100ms ease;
+  transition: outline 150ms ease;
   cursor: pointer;
 }
 
 .side-view-img-wrap img {
   display: block;
+  padding: 0.2rem;
 }
 
 .side-view-img-wrap:hover {
-  outline: 1px solid #114e84ad;
+  outline: 2px solid #114e84ad;
 }
 
 .img-wrap {
@@ -353,5 +354,10 @@ iframe {
   .inner-wrap {
     flex-grow: 1;
     border: 1px solid rgba(221, 221, 221, 0.11);
+  }
+
+  .artist-slot {
+    display: flex;
+    flex-direction: column;
   }
 }
