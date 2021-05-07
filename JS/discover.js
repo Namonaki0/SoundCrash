@@ -6,15 +6,27 @@ const numSystem = main.querySelectorAll(".num-system");
 const innerWrap = document.querySelector(".inner-wrap");
 const artistSlot = document.querySelectorAll(".artist-slot");
 const artistInfoWrap = honorableMentions.querySelectorAll(".artist-info-wrap");
+const recordInfo = honorableMentions.querySelector(".record-info");
 
 const artistInfo = {
   artist: ["jinjer", "mushroomhead", "love and death"],
   record: ["macro", "a wonderful life", "perfectly preserved"],
+  tracklist: [
+    "On The Top",
+    "Pit Of Consciousness",
+    "Judgement (& Punishment)",
+    "Retrospection",
+    "Pausing Death",
+    "Noah",
+    "Home Back",
+    "The Prophecy",
+    "lainnereP",
+  ],
   releaseDate: ["25 October 2019", "19 June 2020", "12 February 2021"],
   recordLabel: ["Napalm Records", "Earache Records Ltd"],
 };
 
-const { artist, record, releaseDate, recordLabel } = artistInfo;
+const { artist, record, tracklist, releaseDate, recordLabel } = artistInfo;
 
 artistInfoWrap.forEach((info) => {
   if (info.classList.contains("one")) {
@@ -28,6 +40,9 @@ artistInfoWrap.forEach((info) => {
       </div>
     </div>
     `;
+    recordInfo.innerHTML = `<div class="record-info-styling">
+      <p>HELLO</p>
+    </div>`;
   } else if (info.classList.contains("two")) {
     info.innerHTML = `
     <div class="artist-info-inner-wrap">
@@ -52,6 +67,12 @@ artistInfoWrap.forEach((info) => {
     `;
   }
 });
+
+const recordInfoStyling = document.querySelector(".record-info-styling p");
+for (i = 1; i < tracklist.length; i++) {
+  console.log(`${i} - ${tracklist[i]}`);
+  recordInfoStyling.innerHTML = `${i} - ${tracklist[i]}`;
+}
 
 let options = {
   threshold: 1,

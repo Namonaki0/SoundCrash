@@ -156,11 +156,9 @@ iframe {
 
 .artist-info-inner-wrap {
   background: rgba(150, 150, 150, 0.05);
-  background: cyan;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   height: auto;
   margin-bottom: 1rem;
-  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -169,7 +167,6 @@ iframe {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  visibility: hidden;
 }
 
 .record-name {
@@ -230,6 +227,19 @@ iframe {
   color: grey;
   z-index: 1000;
 }
+
+.record-info {
+  padding: 2rem;
+}
+
+.artist-record-container {
+  display: flex;
+}
+
+.record-info-styling {
+  padding: 5rem;
+}
+
 /*? ///////////////////// */
 
 .special {
@@ -359,5 +369,10 @@ iframe {
   .artist-slot {
     display: flex;
     flex-direction: column;
+  }
+
+  .artist-info-wrap {
+    border: 1px solid cyan;
+    padding: 1rem;
   }
 }
