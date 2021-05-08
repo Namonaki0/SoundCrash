@@ -6,7 +6,7 @@ const numSystem = main.querySelectorAll(".num-system");
 const innerWrap = document.querySelector(".inner-wrap");
 const artistSlot = document.querySelectorAll(".artist-slot");
 const artistInfoWrap = honorableMentions.querySelectorAll(".artist-info-wrap");
-const recordInfo = honorableMentions.querySelector(".record-info");
+const recordTracklist = honorableMentions.querySelector(".record-tracklist");
 
 const artistInfo = {
   artist: ["jinjer", "mushroomhead", "love and death"],
@@ -32,16 +32,16 @@ artistInfoWrap.forEach((info) => {
   if (info.classList.contains("one")) {
     info.innerHTML = `
     <div class="artist-info-inner-wrap">
-      <h3 class="record-name">${record[0]}</h3>
-      <h4 class="artist-name">by <span class="artist-span">${artist[0]}</span></h4>
+      <h3 class="record-artist-name">${record[0]} by <span class="artist-span">${artist[0]}</span></h3>
       <div class="extra-info">
-        <p class="release-info">released: <br /> <span class="release-span">${releaseDate[0]}</span></p>
-        <p class="record-info">label: <br /> <span class="record-span">${recordLabel[0]}</span></p>
+        <p class="release-info"><i class="fas fa-hand-holding-usd"></i><span class="release-span">${releaseDate[0]}</span></p>
+        <p class="record-info"><i class="fas fa-record-vinyl"></i><span class="record-span">${recordLabel[0]}</span></p>
       </div>
     </div>
     `;
-
-    recordInfo.innerHTML = `<div class="record-info-styling"></div>`;
+    //? TRACKLIST
+    recordTracklist.innerHTML = `<div class="record-tracklist-styling"></div>`;
+    ////////////?
   } else if (info.classList.contains("two")) {
     info.innerHTML = `
     <div class="artist-info-inner-wrap">
@@ -68,8 +68,10 @@ artistInfoWrap.forEach((info) => {
 });
 
 for (i = 1; i < tracklist.length; i++) {
-  const recordInfoStyling = document.querySelector(".record-info-styling");
-  recordInfoStyling.innerHTML += `<div>${i} - ${tracklist[i]}</div>`;
+  const recordTracklistInfo = document.querySelector(
+    ".record-tracklist-styling"
+  );
+  recordTracklistInfo.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${tracklist[i]}</div>`;
 }
 
 let options = {

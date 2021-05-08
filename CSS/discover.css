@@ -158,29 +158,10 @@ iframe {
   background: rgba(150, 150, 150, 0.05);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   height: auto;
-  padding: 1rem;
-  /* margin-bottom: 1rem; */
-  /* bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0; */
-  /* display: flex; */
-  /* flex-direction: column;
-  align-items: center;
-  justify-content: center; */
 }
 
 .artist-info-inner-wrap * {
   margin: 0;
-}
-
-.record-name {
-  margin-top: 0;
-  text-transform: uppercase;
-}
-
-.artist-name {
-  margin-top: 0;
 }
 
 .artist-span {
@@ -191,36 +172,34 @@ iframe {
 }
 
 .extra-info {
+  display: flex;
+  justify-content: center;
   color: var(--mediumBlue);
-  font-weight: 500;
+  align-items: center;
+  background: #2a2a35;
 }
 
 .release-info,
 .record-info {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
-/* .release-info {
-  margin-right: 0.5rem;
-} */
-
-.record-name,
-.artist-name {
-  font-size: 0.9rem;
-}
-
-.artist-name {
-  margin-bottom: 1.5rem;
+.record-artist-name {
+  margin-top: .5rem;
+  padding: 1rem;
+  background: var(--mediumBlue);
 }
 
 .record-span,
 .release-span {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: white;
   font-weight: 100;
   margin-top: 0;
   margin-left: 0.5rem;
+  text-transform: initial;
 }
 
 .artist-num {
@@ -234,9 +213,8 @@ iframe {
 }
 
 .record-info {
-  /* display: flex;
-  flex-grow: 1; */
   padding: 2rem;
+  color: grey;
 }
 
 .artist-record-container {
@@ -244,9 +222,23 @@ iframe {
   flex-direction: column;
 }
 
-.record-info-styling {
-  text-align: left;
-  /* padding: 5rem; */
+.record-tracklist-styling {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.record-tracklist {
+  background: #24242F;
+  padding: 1.5rem 1rem;
+}
+
+.record-tracklist-styling div{
+  margin: .5rem;
+  font-size: .9rem;
+}
+
+.tracklist-num {
+  color: #1f5585;
 }
 
 /*? ///////////////////// */
