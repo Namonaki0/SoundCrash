@@ -158,15 +158,20 @@ iframe {
   background: rgba(150, 150, 150, 0.05);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   height: auto;
-  margin-bottom: 1rem;
-  bottom: 0;
+  padding: 1rem;
+  /* margin-bottom: 1rem; */
+  /* bottom: 0;
   left: 0;
   right: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
+  top: 0; */
+  /* display: flex; */
+  /* flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+}
+
+.artist-info-inner-wrap * {
+  margin: 0;
 }
 
 .record-name {
@@ -196,9 +201,9 @@ iframe {
   font-size: 0.8rem;
 }
 
-.release-info {
+/* .release-info {
   margin-right: 0.5rem;
-}
+} */
 
 .record-name,
 .artist-name {
@@ -229,15 +234,19 @@ iframe {
 }
 
 .record-info {
+  /* display: flex;
+  flex-grow: 1; */
   padding: 2rem;
 }
 
 .artist-record-container {
   display: flex;
+  flex-direction: column;
 }
 
 .record-info-styling {
-  padding: 5rem;
+  text-align: left;
+  /* padding: 5rem; */
 }
 
 /*? ///////////////////// */

@@ -40,9 +40,8 @@ artistInfoWrap.forEach((info) => {
       </div>
     </div>
     `;
-    recordInfo.innerHTML = `<div class="record-info-styling">
-      <p>HELLO</p>
-    </div>`;
+
+    recordInfo.innerHTML = `<div class="record-info-styling"></div>`;
   } else if (info.classList.contains("two")) {
     info.innerHTML = `
     <div class="artist-info-inner-wrap">
@@ -68,10 +67,9 @@ artistInfoWrap.forEach((info) => {
   }
 });
 
-const recordInfoStyling = document.querySelector(".record-info-styling p");
 for (i = 1; i < tracklist.length; i++) {
-  console.log(`${i} - ${tracklist[i]}`);
-  recordInfoStyling.innerHTML = `${i} - ${tracklist[i]}`;
+  const recordInfoStyling = document.querySelector(".record-info-styling");
+  recordInfoStyling.innerHTML += `<div>${i} - ${tracklist[i]}</div>`;
 }
 
 let options = {
