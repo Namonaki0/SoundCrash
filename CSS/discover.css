@@ -182,11 +182,20 @@ iframe {
 .release-info,
 .record-info {
   margin: 0;
+  padding: 0;
   font-size: 1rem;
   text-transform: uppercase;
+  color: grey;
+  padding: 1rem;
+  width: 100%;
+}
+
+.release-info {
+  border-right: 1px solid rgba(128, 128, 128, 0.137);
 }
 
 .record-artist-name {
+  font-size: 1.4rem;
   margin-top: .5rem;
   padding: 1rem;
   background: var(--mediumBlue);
@@ -194,7 +203,7 @@ iframe {
 
 .record-span,
 .release-span {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: white;
   font-weight: 100;
   margin-top: 0;
@@ -212,14 +221,10 @@ iframe {
   z-index: 1000;
 }
 
-.record-info {
-  padding: 2rem;
-  color: grey;
-}
-
 .artist-record-container {
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
 
 .record-tracklist-styling {
