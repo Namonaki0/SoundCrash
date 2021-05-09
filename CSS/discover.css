@@ -141,19 +141,34 @@ iframe {
   background: rgba(128, 128, 128, 0.103);
 }
 
+
+
 .side-view {
   display: none;
   padding: 0.2rem;
-  opacity: 0;
-  transition: transform 150ms ease;
-  transform: translateY(100%);
+  /* animation: recordMenuSlider 1s ease; */
 }
 
 .show {
   display: flex;
   opacity: 1;
-  transform: translateY(0);
+  animation: recordMenuSlider 200ms ease-in-out;
 }
+
+  @keyframes recordMenuSlider {
+    0% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 1;
+    }
+
+  }
 
 .side-view h3 {
   display: none;
@@ -388,6 +403,8 @@ iframe {
     justify-content: space-evenly;
     gap: 1rem 0;
   }
+
+
 
   .side-view-img-wrap {
     width: 100%;

@@ -32,7 +32,7 @@ artistInfoWrap.forEach((info) => {
   if (info.classList.contains("one")) {
     info.innerHTML = `
     <div class="artist-info-inner-wrap">
-      <h3 class="record-artist-name">${record[0]} by <span class="artist-span">${artist[0]}</span></h3>
+      
       <div class="extra-info">
         <p class="release-info"><i class="fas fa-hand-holding-usd"></i><span class="release-span">${releaseDate[0]}</span></p>
         <p class="record-info"><i class="fas fa-record-vinyl"></i><span class="record-span">${recordLabel[0]}</span></p>
@@ -123,3 +123,7 @@ recordMenu.addEventListener("click", () => {
     recordAsideChoices.classList.add("show");
   }
 });
+
+/* <h3 class="record-artist-name">
+  ${record[0]} by <span class="artist-span">${artist[0]}</span>
+</h3>; */
