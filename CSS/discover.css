@@ -97,7 +97,7 @@ iframe {
   height: auto;
   padding: 0 0.2rem;
   transition: all 150ms ease-in-out;
-  cursor: pointer;
+  /* cursor: pointer; */
   position: relative;
 }
 
@@ -114,17 +114,21 @@ iframe {
 }
 
 .side-view {
-  display: none;
-  width: 20%;
+  /* display: none; */
+  display: flex;
+  padding: .2rem;
+  /* position: relative; */
+  /* width: 20%; */
 }
 
 .side-view h3 {
-  color: var(--mediumBlue);
+  display: none;
+  /* color: var(--mediumBlue);
   text-transform: uppercase;
   font-size: 5rem;
   font-weight: 100;
   text-align: center;
-  margin: 0;
+  margin: 0; */
 }
 
 .side-view-img-wrap {
@@ -136,6 +140,7 @@ iframe {
 .side-view-img-wrap img {
   display: block;
   padding: 0.2rem;
+  width: 100%;
 }
 
 .side-view-img-wrap:hover {
@@ -158,6 +163,7 @@ iframe {
   background: rgba(150, 150, 150, 0.05);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   height: auto;
+  /* position: relative; */
 }
 
 .artist-info-inner-wrap * {
