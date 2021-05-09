@@ -110,3 +110,16 @@ function entries(artistNum) {
 artistNum.forEach((entry) => {
   observer2.observe(entry);
 });
+
+const recordMenu = document.querySelector(".record-menu-open");
+const recordAsideChoices = document.querySelector(".side-view");
+
+recordMenu.addEventListener("click", () => {
+  if (recordAsideChoices.classList.contains("show")) {
+    recordAsideChoices.classList.remove("show");
+    recordMenu.innerHTML = `<i class="fas fa-chevron-up"></i>`;
+  } else {
+    recordMenu.innerHTML = `<i class="fas fa-chevron-down"></i>`;
+    recordAsideChoices.classList.add("show");
+  }
+});

@@ -58,6 +58,16 @@ iframe {
   min-height: 100vh;
 }
 
+.honorable-mentions::before {
+  content: "Honorable mentions";
+  display: block;
+  color: var(--mediumBlue);
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
 .inner-wrap {
   background: #1e1e29;
   color: var(--mediumBlue);
@@ -97,7 +107,6 @@ iframe {
   height: auto;
   padding: 0 0.2rem;
   transition: all 150ms ease-in-out;
-  /* cursor: pointer; */
   position: relative;
 }
 
@@ -113,22 +122,41 @@ iframe {
   grid-column: 4 / 6;
 }
 
+.record-menu {
+  position: relative;
+}
+
+.record-menu-open {
+  color: grey;
+  padding: 0.2rem 0;
+  text-align: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-top: 1px solid rgba(128, 128, 128, 0.158);
+  transition: all 150ms ease;
+  width: 100%;
+}
+
+.record-menu-open:hover {
+  background: rgba(128, 128, 128, 0.103);
+}
+
 .side-view {
-  /* display: none; */
+  display: none;
+  padding: 0.2rem;
+  opacity: 0;
+  transition: transform 150ms ease;
+  transform: translateY(100%);
+}
+
+.show {
   display: flex;
-  padding: .2rem;
-  /* position: relative; */
-  /* width: 20%; */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .side-view h3 {
   display: none;
-  /* color: var(--mediumBlue);
-  text-transform: uppercase;
-  font-size: 5rem;
-  font-weight: 100;
-  text-align: center;
-  margin: 0; */
 }
 
 .side-view-img-wrap {
@@ -163,7 +191,6 @@ iframe {
   background: rgba(150, 150, 150, 0.05);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   height: auto;
-  /* position: relative; */
 }
 
 .artist-info-inner-wrap * {
@@ -202,7 +229,7 @@ iframe {
 
 .record-artist-name {
   font-size: 1.4rem;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   padding: 1rem;
   background: var(--mediumBlue);
 }
@@ -230,7 +257,7 @@ iframe {
 .artist-record-container {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .record-tracklist-styling {
@@ -239,13 +266,13 @@ iframe {
 }
 
 .record-tracklist {
-  background: #24242F;
+  background: #24242f;
   padding: 1.5rem 1rem;
 }
 
-.record-tracklist-styling div{
-  margin: .5rem;
-  font-size: .9rem;
+.record-tracklist-styling div {
+  margin: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .tracklist-num {
@@ -355,11 +382,9 @@ iframe {
     width: 50%;
     padding: 1.2rem 0.5rem;
     border: 1px solid rgba(221, 221, 221, 0.11);
-    /* flex-grow: 2; */
     background: #1e1e29;
     display: flex;
     flex-direction: column;
-    /* align-items: stretch; */
     justify-content: space-evenly;
     gap: 1rem 0;
   }
