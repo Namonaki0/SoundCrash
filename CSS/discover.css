@@ -208,7 +208,7 @@ iframe {
   height: auto;
 }
 
-.artist-info-inner-wrap * {
+.artist-info-inner-wrap * { 
   margin: 0;
 }
 
@@ -224,7 +224,7 @@ iframe {
   justify-content: center;
   color: var(--mediumBlue);
   align-items: center;
-  background: #2a2a35;
+  background: var(--mediumBlue);
 }
 
 .release-info,
@@ -239,8 +239,12 @@ iframe {
 }
 
 .release-info {
-  border-right: 1px solid rgba(128, 128, 128, 0.137);
+  border-right: 1px solid rgba(128, 128, 128, 0.301);
 }
+
+/* .fas {
+  color: rgba(255, 255, 255, 0.678);
+} */
 
 .record-artist-name {
   font-size: 1.4rem;

@@ -11,22 +11,28 @@ const recordTracklist = honorableMentions.querySelector(".record-tracklist");
 const artistInfo = {
   artist: ["jinjer", "mushroomhead", "love and death"],
   record: ["macro", "a wonderful life", "perfectly preserved"],
-  tracklist: [
-    "On The Top",
-    "Pit Of Consciousness",
-    "Judgement (& Punishment)",
-    "Retrospection",
-    "Pausing Death",
-    "Noah",
-    "Home Back",
-    "The Prophecy",
-    "lainnereP",
-  ],
+  recordTracks: {
+    macro: [
+      "On The Top",
+      "Pit Of Consciousness",
+      "Judgement (& Punishment)",
+      "Retrospection",
+      "Pausing Death",
+      "Noah",
+      "Home Back",
+      "The Prophecy",
+      "lainnereP",
+    ],
+  },
   releaseDate: ["25 October 2019", "19 June 2020", "12 February 2021"],
   recordLabel: ["Napalm Records", "Earache Records Ltd"],
 };
 
-const { artist, record, tracklist, releaseDate, recordLabel } = artistInfo;
+// const recordTracks = {
+
+// };
+
+const { artist, record, recordTracks, releaseDate, recordLabel } = artistInfo;
 
 artistInfoWrap.forEach((info) => {
   if (info.classList.contains("one")) {
@@ -67,11 +73,11 @@ artistInfoWrap.forEach((info) => {
   }
 });
 
-for (i = 1; i < tracklist.length; i++) {
+for (i = 1; i < recordTracks.macro.length; i++) {
   const recordTracklistInfo = document.querySelector(
     ".record-tracklist-styling"
   );
-  recordTracklistInfo.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${tracklist[i]}</div>`;
+  recordTracklistInfo.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${recordTracks.macro[i]}</div>`;
 }
 
 let options = {
