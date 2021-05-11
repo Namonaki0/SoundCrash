@@ -5,7 +5,7 @@ const main = document.querySelector("main");
 const numSystem = main.querySelectorAll(".num-system");
 const innerWrap = document.querySelector(".inner-wrap");
 const artistSlot = document.querySelectorAll(".artist-slot");
-const artistInfoWrap = honorableMentions.querySelectorAll(".artist-info-wrap");
+const artistInfoWrap = honorableMentions.querySelector(".artist-info-wrap");
 const recordTracklist = honorableMentions.querySelector(".record-tracklist");
 const recordMenu = document.querySelector(".record-menu-open");
 const recordAsideChoices = document.querySelector(".side-view");
@@ -13,12 +13,12 @@ const records = document.querySelectorAll(".side-view-img-wrap");
 
 //? ARTIST / RECORD INFO
 const artistInfo = {
-  artist: ["jinjer", "mushroomhead", "love and death"],
+  artist: ["alice in chains", "jinjer", "mushroomhead", "love and death"],
   albumCovers: [
-    "/Pics/aic.jpg",
-    "jinjer.jpg",
-    "mushroomhead.jpg",
-    "love-and-death.PNG",
+    "./Pics/aic.jpg",
+    "./Pics/jinjer.jpg",
+    "./Pics/mushroomhead.jpg",
+    "./Pics/love-and-death.PNG",
   ],
   record: ["macro", "a wonderful life", "perfectly preserved"],
   recordTracks: {
@@ -83,13 +83,63 @@ const artistInfo = {
   recordLabel: ["Virgin/EMI", "Napalm Records", "Earache Records Ltd"],
 };
 
-records.forEach((cd) => {
-  cd.addEventListener("click", (e) => {
+//? OBJECT DESTRUCT
+const { artist, record, albumCovers, recordTracks, releaseDate, recordLabel } =
+  artistInfo;
+
+//? INDIVIDUAL RECORD INFORMATION
+records.forEach((each_record) => {
+  each_record.addEventListener("click", (e) => {
     const dataSet = e.target.dataset.value;
-    console.dir(e.target.src);
+    const albumCover = document.querySelector(".img-wrap img");
     switch (dataSet) {
       case "one":
         e.target.src = albumCovers[0];
+        albumCover.src = e.target.src;
+        artistInfoWrap.innerHTML = `
+          <div class="artist-info-inner-wrap">
+            <div class="extra-info">
+              <p class="release-info"><i class="fas fa-hand-holding-usd"></i><span class="release-span">${releaseDate[0]}</span></p>
+              <p class="record-info"><i class="fas fa-record-vinyl"></i><span class="record-span">${recordLabel[0]}</span></p>
+            </div>
+          </div>
+        `;
+        break;
+      case "two":
+        e.target.src = albumCovers[1];
+        albumCover.src = e.target.src;
+        artistInfoWrap.innerHTML = `
+          <div class="artist-info-inner-wrap">
+            <div class="extra-info">
+              <p class="release-info"><i class="fas fa-hand-holding-usd"></i><span class="release-span">${releaseDate[1]}</span></p>
+              <p class="record-info"><i class="fas fa-record-vinyl"></i><span class="record-span">${recordLabel[1]}</span></p>
+            </div>
+          </div>
+        `;
+        break;
+      case "three":
+        e.target.src = albumCovers[2];
+        albumCover.src = e.target.src;
+        artistInfoWrap.innerHTML = `
+          <div class="artist-info-inner-wrap">
+            <div class="extra-info">
+              <p class="release-info"><i class="fas fa-hand-holding-usd"></i><span class="release-span">${releaseDate[2]}</span></p>
+              <p class="record-info"><i class="fas fa-record-vinyl"></i><span class="record-span">${recordLabel[1]}</span></p>
+            </div>
+          </div>
+        `;
+        break;
+      case "four":
+        e.target.src = albumCovers[3];
+        albumCover.src = e.target.src;
+        artistInfoWrap.innerHTML = `
+          <div class="artist-info-inner-wrap">
+            <div class="extra-info">
+              <p class="release-info"><i class="fas fa-hand-holding-usd"></i><span class="release-span">${releaseDate[3]}</span></p>
+              <p class="record-info"><i class="fas fa-record-vinyl"></i><span class="record-span">${recordLabel[2]}</span></p>
+            </div>
+          </div>
+        `;
         break;
       default:
         return;
@@ -97,27 +147,23 @@ records.forEach((cd) => {
   });
 });
 
-//? OBJECT DESTRUCT
-const { artist, record, albumCovers, recordTracks, releaseDate, recordLabel } =
-  artistInfo;
-
 //? ARTIST PAGE DISPLAY
-artistInfoWrap.forEach((info) => {
-  if (info.classList.contains("one")) {
-    info.innerHTML = `
+// artistInfoWrap.forEach((info) => {
+if (artistInfoWrap.classList.contains("one")) {
+  this.innerHTML = `
     <div class="artist-info-inner-wrap">
-      
-      <div class="extra-info">
+         <div class="extra-info">
         <p class="release-info"><i class="fas fa-hand-holding-usd"></i><span class="release-span">${releaseDate[1]}</span></p>
         <p class="record-info"><i class="fas fa-record-vinyl"></i><span class="record-span">${recordLabel[1]}</span></p>
       </div>
+   
     </div>
     `;
-    //? TRACKLIST
-    recordTracklist.innerHTML = `<div class="record-tracklist-styling"></div>`;
-    ////////////?
-  } else if (info.classList.contains("two")) {
-    info.innerHTML = `
+  //? TRACKLIST
+  recordTracklist.innerHTML = `<div class="record-tracklist-styling"></div>`;
+  ////////////?
+} else if (info.classList.contains("two")) {
+  info.innerHTML = `
     <div class="artist-info-inner-wrap">
       <h3 class="record-name">${record[1]}</h3>
       <h4 class="artist-name">by <span class="artist-span">${artist[1]}</span></h4>
@@ -127,8 +173,8 @@ artistInfoWrap.forEach((info) => {
       </div>
     </div>
     `;
-  } else {
-    info.innerHTML = `
+} else {
+  info.innerHTML = `
     <div class="artist-info-inner-wrap">
       <h3 class="record-name">${record[2]}</h3>
       <h4 class="artist-name">by <span class="artist-span">${artist[2]}</span></h4>
@@ -138,8 +184,8 @@ artistInfoWrap.forEach((info) => {
       </div>
     </div>
     `;
-  }
-});
+}
+// });
 
 //? TRACKLIST INJECTED IN PAGE
 for (i = 1; i < recordTracks.macro.length; i++) {
