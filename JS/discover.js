@@ -9,10 +9,17 @@ const artistInfoWrap = honorableMentions.querySelectorAll(".artist-info-wrap");
 const recordTracklist = honorableMentions.querySelector(".record-tracklist");
 const recordMenu = document.querySelector(".record-menu-open");
 const recordAsideChoices = document.querySelector(".side-view");
+const records = document.querySelectorAll(".side-view-img-wrap");
 
 //? ARTIST / RECORD INFO
 const artistInfo = {
   artist: ["jinjer", "mushroomhead", "love and death"],
+  albumCovers: [
+    "/Pics/aic.jpg",
+    "jinjer.jpg",
+    "mushroomhead.jpg",
+    "love-and-death.PNG",
+  ],
   record: ["macro", "a wonderful life", "perfectly preserved"],
   recordTracks: {
     black_gives_way_to_blue: [
@@ -76,8 +83,23 @@ const artistInfo = {
   recordLabel: ["Virgin/EMI", "Napalm Records", "Earache Records Ltd"],
 };
 
+records.forEach((cd) => {
+  cd.addEventListener("click", (e) => {
+    const dataSet = e.target.dataset.value;
+    console.dir(e.target.src);
+    switch (dataSet) {
+      case "one":
+        e.target.src = albumCovers[0];
+        break;
+      default:
+        return;
+    }
+  });
+});
+
 //? OBJECT DESTRUCT
-const { artist, record, recordTracks, releaseDate, recordLabel } = artistInfo;
+const { artist, record, albumCovers, recordTracks, releaseDate, recordLabel } =
+  artistInfo;
 
 //? ARTIST PAGE DISPLAY
 artistInfoWrap.forEach((info) => {
@@ -174,7 +196,3 @@ recordMenu.addEventListener("click", () => {
     recordAsideChoices.classList.add("show");
   }
 });
-
-/* <h3 class="record-artist-name">
-  ${record[0]} by <span class="artist-span">${artist[0]}</span>
-</h3>; */

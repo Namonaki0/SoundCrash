@@ -110,16 +110,8 @@ iframe {
   position: relative;
 }
 
-#one {
+#record-output {
   grid-column: 2 / -2;
-}
-
-#two {
-  grid-column: 2 / 4;
-}
-
-#three {
-  grid-column: 4 / 6;
 }
 
 .record-menu {
@@ -127,21 +119,22 @@ iframe {
 }
 
 .record-menu-open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: grey;
-  padding: 0.2rem 0;
-  text-align: center;
+  /* padding: 0.1rem 0; */
   font-size: 1.8rem;
   cursor: pointer;
   border-top: 1px solid rgba(128, 128, 128, 0.158);
-  transition: all 150ms ease;
-  width: 100%;
+  border-bottom: 1px solid #0D1321;
+  transition: background 150ms ease;
+  background: #1E1E29;
 }
 
 .record-menu-open:hover {
-  background: rgba(128, 128, 128, 0.103);
+  background: #2c2c36;
 }
-
-
 
 .side-view {
   display: none;
@@ -187,7 +180,7 @@ iframe {
 .side-view-img-wrap img {
   display: block;
   transition: opacity 180ms ease;
-  margin: 0 0.2rem;
+  margin: 0.2rem;
   opacity: .8;
   width: 100%;
 }
