@@ -201,7 +201,21 @@ iframe {
   width: 100%;
   object-fit: cover;
   display: block;
+  /* animation: recordDisplay 150ms ease; */
 }
+
+@keyframes recordDisplay {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 /*? INJECTED MARKUP */
 
@@ -286,6 +300,7 @@ iframe {
   text-align: center;
   text-transform: uppercase;
 }
+
 
 .record-tracklist {
   background: #24242f;

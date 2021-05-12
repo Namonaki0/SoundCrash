@@ -20,7 +20,12 @@ const artistInfo = {
     "./Pics/mushroomhead.jpg",
     "./Pics/love-and-death.PNG",
   ],
-  record: ["macro", "a wonderful life", "perfectly preserved"],
+  record: [
+    "black gives way to blue",
+    "macro",
+    "a wonderful life",
+    "perfectly preserved",
+  ],
   recordTracks: {
     black_gives_way_to_blue: [
       "All Secrets Known",
@@ -127,10 +132,17 @@ recordMenu.addEventListener("click", (e) => {
 records.forEach((each_record) => {
   each_record.addEventListener("click", (e) => {
     const dataSet = e.target.dataset.value;
+    const title = document.querySelector(".inner-wrap h2");
     const albumCover = document.querySelector(".img-wrap img");
+    const imgWrap = document.querySelector(".img-wrap");
     const recordTracklistInfo = document.querySelector(
       ".record-tracklist-styling"
     );
+
+    albumCover.addEventListener("load", () => {
+      imgWrap.style.animation = "recordDisplay 1s ease";
+    });
+
     //? EMPTY TRACKLIST FOR NEXT CHOICE
     if (e.target != dataSet) {
       recordTracklistInfo.innerHTML = "";
@@ -139,6 +151,7 @@ records.forEach((each_record) => {
       case "one":
         e.target.src = albumCovers[0];
         albumCover.src = e.target.src;
+        title.innerHTML = `${record[0]} by ${artist[0]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -157,6 +170,7 @@ records.forEach((each_record) => {
       case "two":
         e.target.src = albumCovers[1];
         albumCover.src = e.target.src;
+        title.innerHTML = `${record[1]} by ${artist[1]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -175,6 +189,7 @@ records.forEach((each_record) => {
       case "three":
         e.target.src = albumCovers[2];
         albumCover.src = e.target.src;
+        title.innerHTML = `${record[2]} by ${artist[2]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -193,6 +208,7 @@ records.forEach((each_record) => {
       case "four":
         e.target.src = albumCovers[3];
         albumCover.src = e.target.src;
+        title.innerHTML = `${record[3]} by ${artist[3]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
