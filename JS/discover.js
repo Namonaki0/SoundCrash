@@ -87,6 +87,39 @@ const artistInfo = {
 const { artist, record, albumCovers, recordTracks, releaseDate, recordLabel } =
   artistInfo;
 
+document.addEventListener("DOMContentLoaded", () => {
+  const albumCover = document.querySelector(".img-wrap img");
+
+  albumCover.src = albumCovers[0];
+  artistInfoWrap.innerHTML = `
+          <div class="artist-info-inner-wrap">
+            <div class="extra-info">
+              <p class="release-info"><i class="fas fa-hand-holding-usd"></i><span class="release-span">${releaseDate[0]}</span></p>
+              <p class="record-info"><i class="fas fa-record-vinyl"></i><span class="record-span">${recordLabel[0]}</span></p>
+            </div>
+          </div>
+        `;
+
+  for (i = 1; i < recordTracks.black_gives_way_to_blue.length; i++) {
+    const recordTracklistInfo = document.querySelector(
+      ".record-tracklist-styling"
+    );
+    recordTracklistInfo.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${recordTracks.black_gives_way_to_blue[i]}</div>`;
+  }
+});
+
+//? RECORD OPTIONS MENU
+recordMenu.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (recordAsideChoices.classList.contains("show")) {
+    recordAsideChoices.classList.remove("show");
+    recordMenu.innerHTML = `<i class="fas fa-chevron-up"></i>`;
+  } else {
+    recordMenu.innerHTML = `<i class="fas fa-chevron-down"></i>`;
+    recordAsideChoices.classList.add("show");
+  }
+});
+
 //? INDIVIDUAL RECORD INFORMATION
 records.forEach((each_record) => {
   each_record.addEventListener("click", (e) => {
@@ -104,6 +137,12 @@ records.forEach((each_record) => {
             </div>
           </div>
         `;
+        for (i = 1; i < recordTracks.black_gives_way_to_blue.length; i++) {
+          const recordTracklistInfo = document.querySelector(
+            ".record-tracklist-styling"
+          );
+          recordTracklistInfo.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${recordTracks.black_gives_way_to_blue[i]}</div>`;
+        }
         break;
       case "two":
         e.target.src = albumCovers[1];
@@ -116,6 +155,13 @@ records.forEach((each_record) => {
             </div>
           </div>
         `;
+        for (i = 1; i < recordTracks.macro.length; i++) {
+          const recordTracklistStyling = document.querySelector(
+            ".record-tracklist-styling"
+          );
+
+          recordTracklistStyling.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${recordTracks.macro[i]}</div>`;
+        }
         break;
       case "three":
         e.target.src = albumCovers[2];
@@ -148,7 +194,6 @@ records.forEach((each_record) => {
 });
 
 //? ARTIST PAGE DISPLAY
-// artistInfoWrap.forEach((info) => {
 if (artistInfoWrap.classList.contains("one")) {
   this.innerHTML = `
     <div class="artist-info-inner-wrap">
@@ -184,15 +229,6 @@ if (artistInfoWrap.classList.contains("one")) {
       </div>
     </div>
     `;
-}
-// });
-
-//? TRACKLIST INJECTED IN PAGE
-for (i = 1; i < recordTracks.macro.length; i++) {
-  const recordTracklistInfo = document.querySelector(
-    ".record-tracklist-styling"
-  );
-  recordTracklistInfo.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${recordTracks.macro[i]}</div>`;
 }
 
 //? INTERSECTION OBSERVERS
@@ -231,14 +267,4 @@ function entries(artistNum) {
 
 artistNum.forEach((entry) => {
   observer2.observe(entry);
-});
-
-recordMenu.addEventListener("click", () => {
-  if (recordAsideChoices.classList.contains("show")) {
-    recordAsideChoices.classList.remove("show");
-    recordMenu.innerHTML = `<i class="fas fa-chevron-up"></i>`;
-  } else {
-    recordMenu.innerHTML = `<i class="fas fa-chevron-down"></i>`;
-    recordAsideChoices.classList.add("show");
-  }
 });
