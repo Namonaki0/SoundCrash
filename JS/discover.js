@@ -87,9 +87,10 @@ const artistInfo = {
 const { artist, record, albumCovers, recordTracks, releaseDate, recordLabel } =
   artistInfo;
 
+//? ON PAGE LOAD
 document.addEventListener("DOMContentLoaded", () => {
   const albumCover = document.querySelector(".img-wrap img");
-
+  //? RECORD STANDARD VIEW
   albumCover.src = albumCovers[0];
   artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
@@ -99,7 +100,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
         `;
-
+  //? TRACKLIST
+  recordTracklist.innerHTML = `<div class="record-tracklist-styling"></div>`;
+  //? -BLACK GIVES WAY TO BLUE- RECORD DISPLAY
   for (i = 1; i < recordTracks.black_gives_way_to_blue.length; i++) {
     const recordTracklistInfo = document.querySelector(
       ".record-tracklist-styling"
@@ -125,6 +128,13 @@ records.forEach((each_record) => {
   each_record.addEventListener("click", (e) => {
     const dataSet = e.target.dataset.value;
     const albumCover = document.querySelector(".img-wrap img");
+    const recordTracklistInfo = document.querySelector(
+      ".record-tracklist-styling"
+    );
+    //? EMPTY TRACKLIST FOR NEXT CHOICE
+    if (e.target != dataSet) {
+      recordTracklistInfo.innerHTML = "";
+    }
     switch (dataSet) {
       case "one":
         e.target.src = albumCovers[0];
@@ -159,7 +169,6 @@ records.forEach((each_record) => {
           const recordTracklistStyling = document.querySelector(
             ".record-tracklist-styling"
           );
-
           recordTracklistStyling.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${recordTracks.macro[i]}</div>`;
         }
         break;
@@ -174,6 +183,12 @@ records.forEach((each_record) => {
             </div>
           </div>
         `;
+        for (i = 1; i < recordTracks.a_wonderful_life.length; i++) {
+          const recordTracklistInfo = document.querySelector(
+            ".record-tracklist-styling"
+          );
+          recordTracklistInfo.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${recordTracks.a_wonderful_life[i]}</div>`;
+        }
         break;
       case "four":
         e.target.src = albumCovers[3];
@@ -186,50 +201,18 @@ records.forEach((each_record) => {
             </div>
           </div>
         `;
+        for (i = 1; i < recordTracks.perfectly_preserved.length; i++) {
+          const recordTracklistInfo = document.querySelector(
+            ".record-tracklist-styling"
+          );
+          recordTracklistInfo.innerHTML += `<div><span class="tracklist-num">${i}</span> - ${recordTracks.perfectly_preserved[i]}</div>`;
+        }
         break;
       default:
         return;
     }
   });
 });
-
-//? ARTIST PAGE DISPLAY
-if (artistInfoWrap.classList.contains("one")) {
-  this.innerHTML = `
-    <div class="artist-info-inner-wrap">
-         <div class="extra-info">
-        <p class="release-info"><i class="fas fa-hand-holding-usd"></i><span class="release-span">${releaseDate[1]}</span></p>
-        <p class="record-info"><i class="fas fa-record-vinyl"></i><span class="record-span">${recordLabel[1]}</span></p>
-      </div>
-   
-    </div>
-    `;
-  //? TRACKLIST
-  recordTracklist.innerHTML = `<div class="record-tracklist-styling"></div>`;
-  ////////////?
-} else if (info.classList.contains("two")) {
-  info.innerHTML = `
-    <div class="artist-info-inner-wrap">
-      <h3 class="record-name">${record[1]}</h3>
-      <h4 class="artist-name">by <span class="artist-span">${artist[1]}</span></h4>
-      <div class="extra-info">
-        <p class="release-info">released: <br /> <span class="release-span">${releaseDate[1]}</span></p>
-        <p class="record-info">label: <br /> <span class="record-span">${recordLabel[0]}</span></p>
-      </div>
-    </div>
-    `;
-} else {
-  info.innerHTML = `
-    <div class="artist-info-inner-wrap">
-      <h3 class="record-name">${record[2]}</h3>
-      <h4 class="artist-name">by <span class="artist-span">${artist[2]}</span></h4>
-      <div class="extra-info">
-        <p class="release-info">released: <br /> <span class="release-span">${releaseDate[2]}</span></p>
-        <p class="record-info">label: <br /> <span class="record-span">${recordLabel[1]}</span></p>
-      </div>
-    </div>
-    `;
-}
 
 //? INTERSECTION OBSERVERS
 let options = {
