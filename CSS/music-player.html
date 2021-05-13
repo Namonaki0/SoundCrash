@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--? STYLES -->
+    <link rel="stylesheet" href="music-player.css" />
+    <!--? ICONS -->
+    <script
+      src="https://kit.fontawesome.com/c0594c7b16.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--? FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Teko:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <!--? OUTER WRAP -->
+    <div class="player-overall-wrapper">
+      <!--? IMG WRAPPER -->
+      <div class="img-wrapper">
+        <img src="/Pics/mp_jinjer.jpg" alt="artist-pic" />
+      </div>
+      <!--? SONG TITLE -->
+      <div class="song-title">
+        <span>SONG TITLE</span>
+      </div>
+      <!--? PROGRESS BAR -->
+      <input class="progress-bar" type="range" min="0" max="100" value="50" />
+      <!--? CONTROLS -->
+      <div class="controls">
+        <!--? prev button -->
+        <i class="fas fa-backward"></i>
+        <!--? play button -->
+        <i class="fas fa-play"></i>
+        <!--? forward button -->
+        <i class="fas fa-forward"></i>
+      </div>
+    </div>
+  </body>
+</html>

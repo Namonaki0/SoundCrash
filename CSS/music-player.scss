@@ -1,0 +1,74 @@
+$background: #0d1321;
+$highlight-blue: #114e84;
+$text-font: "Montserrat", sans-serif;
+$title-font: "Teko", sans-serif;
+
+body {
+    background: $background;
+}
+
+.player-overall-wrapper {
+    background: $highlight-blue;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    .img-wrapper {
+        width: 100%;
+        height: 40vh;
+        object-fit: contain;
+        overflow: hidden;
+        img {
+            width: 100%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.295), white);
+            opacity: .8;
+        }
+    }
+
+    .song-title {
+        font-family: $title-font;
+        background: #0d132173;
+        color: rgba(255, 255, 255, 0.801);
+        padding: .5rem;
+        font-size: 2rem;
+    }
+
+    .progress-bar {
+        all: unset;
+        background: white;
+        width: 80%;
+        height: 8px;
+        border-radius: 5px;
+        margin: .5rem 0;
+        cursor: pointer;
+        background: #0d132142;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: whitesmoke;
+            cursor: pointer;
+        }
+    }
+
+    .controls {
+        color: white;
+        padding: 1rem;
+        width: 20%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+
+        .fas {
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+
