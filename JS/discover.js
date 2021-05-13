@@ -92,11 +92,18 @@ const artistInfo = {
 const { artist, record, albumCovers, recordTracks, releaseDate, recordLabel } =
   artistInfo;
 
+const artistCover = document.querySelector(".img-wrap img");
+const recordTitle = document.querySelector(".record-title");
+const artistTitle = document.querySelector(".artist-title");
+
 //? ON PAGE LOAD
 document.addEventListener("DOMContentLoaded", () => {
-  const albumCover = document.querySelector(".img-wrap img");
+  // const albumCover = document.querySelector(".img-wrap img");
+
+  recordTitle.innerHTML = `${record[0]}`;
+  artistTitle.innerHTML = `${artist[0]}`;
   //? RECORD STANDARD VIEW
-  albumCover.src = albumCovers[0];
+  artistCover.src = albumCovers[0];
   artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -151,7 +158,8 @@ records.forEach((each_record) => {
       case "one":
         e.target.src = albumCovers[0];
         albumCover.src = e.target.src;
-        title.innerHTML = `${record[0]} by ${artist[0]}`;
+        recordTitle.innerHTML = `${record[0]}`;
+        artistTitle.innerHTML = `${artist[0]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -170,7 +178,8 @@ records.forEach((each_record) => {
       case "two":
         e.target.src = albumCovers[1];
         albumCover.src = e.target.src;
-        title.innerHTML = `${record[1]} by ${artist[1]}`;
+        recordTitle.innerHTML = `${record[1]}`;
+        artistTitle.innerHTML = `${artist[1]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -189,7 +198,8 @@ records.forEach((each_record) => {
       case "three":
         e.target.src = albumCovers[2];
         albumCover.src = e.target.src;
-        title.innerHTML = `${record[2]} by ${artist[2]}`;
+        recordTitle.innerHTML = `${record[2]}`;
+        artistTitle.innerHTML = `${artist[2]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -208,7 +218,8 @@ records.forEach((each_record) => {
       case "four":
         e.target.src = albumCovers[3];
         albumCover.src = e.target.src;
-        title.innerHTML = `${record[3]} by ${artist[3]}`;
+        recordTitle.innerHTML = `${record[3]}`;
+        artistTitle.innerHTML = `${artist[3]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -252,18 +263,18 @@ numSystem.forEach((num) => {
   observer1.observe(num);
 });
 
-observer2 = new IntersectionObserver(entries, options);
+// observer2 = new IntersectionObserver(entries, options);
 
-function entries(artistNum) {
-  artistNum.forEach((entry) => {
-    if (entry.isIntersecting && entry.intersectionRatio > 0) {
-      entry.target.classList.add("special");
-    } else {
-      entry.target.classList.remove("special");
-    }
-  });
-}
+// function entries(artistNum) {
+//   artistNum.forEach((entry) => {
+//     if (entry.isIntersecting && entry.intersectionRatio > 0) {
+//       entry.target.classList.add("special");
+//     } else {
+//       entry.target.classList.remove("special");
+//     }
+//   });
+// }
 
-artistNum.forEach((entry) => {
-  observer2.observe(entry);
-});
+// artistNum.forEach((entry) => {
+//   observer2.observe(entry);
+// });
