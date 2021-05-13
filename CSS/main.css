@@ -177,6 +177,8 @@ nav ul a:hover,
 .menu-social-media {
   visibility: hidden;
   position: absolute;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-social-media a {
@@ -192,7 +194,6 @@ nav ul a:hover,
 .social-media-visible {
   visibility: unset;
   z-index: 1000;
-  bottom: 3rem;
   right: 3rem;
 }
 

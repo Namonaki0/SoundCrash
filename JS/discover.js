@@ -1,6 +1,6 @@
 //? GLOBAL
 const honorableMentions = document.querySelector("aside");
-const artistNum = honorableMentions.querySelectorAll(".artist-num");
+// const artistNum = honorableMentions.querySelectorAll(".artist-num");
 const main = document.querySelector("main");
 const numSystem = main.querySelectorAll(".num-system");
 const innerWrap = document.querySelector(".inner-wrap");
@@ -10,6 +10,9 @@ const recordTracklist = honorableMentions.querySelector(".record-tracklist");
 const recordMenu = document.querySelector(".record-menu-open");
 const recordAsideChoices = document.querySelector(".side-view");
 const records = document.querySelectorAll(".side-view-img-wrap");
+const artistCover = document.querySelector(".img-wrap img");
+const recordTitle = document.querySelector(".record-title");
+const artistTitle = document.querySelector(".artist-title");
 
 //? ARTIST / RECORD INFO
 const artistInfo = {
@@ -92,14 +95,8 @@ const artistInfo = {
 const { artist, record, albumCovers, recordTracks, releaseDate, recordLabel } =
   artistInfo;
 
-const artistCover = document.querySelector(".img-wrap img");
-const recordTitle = document.querySelector(".record-title");
-const artistTitle = document.querySelector(".artist-title");
-
 //? ON PAGE LOAD
 document.addEventListener("DOMContentLoaded", () => {
-  // const albumCover = document.querySelector(".img-wrap img");
-
   recordTitle.innerHTML = `${record[0]}`;
   artistTitle.innerHTML = `${artist[0]}`;
   //? RECORD STANDARD VIEW

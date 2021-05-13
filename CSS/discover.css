@@ -107,7 +107,7 @@ iframe {
   color: rgb(158, 158, 158);
   text-align: center;
   grid-column: 1 / -1;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: .5rem;
 }
 
@@ -164,11 +164,6 @@ iframe {
       opacity: 0.5;
       transform: translateX(-100%);
     }
-
-    /* 70% {
-      opacity: 0.5;
-      
-    } */
 
     100% {
       opacity: 1;
@@ -274,8 +269,8 @@ iframe {
 }
 
 .fas {
- margin-bottom: .5rem;
- font-size: 1.2rem;
+ margin: .2rem;
+ font-size: 1.3rem;
 }
 
 .record-artist-name {
