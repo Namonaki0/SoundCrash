@@ -16,21 +16,13 @@ body {
     .img-wrapper {
         width: 100%;
         height: 40vh;
-        object-fit: contain;
+        object-fit: cover;
         overflow: hidden;
         img {
             width: 100%;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.295), white);
             opacity: .8;
         }
-    }
-
-    .song-title {
-        font-family: $title-font;
-        background: #0d132173;
-        color: rgba(255, 255, 255, 0.801);
-        padding: .5rem;
-        font-size: 2rem;
     }
 
     .progress-bar {
@@ -54,18 +46,50 @@ body {
         }
     }
 
-    .controls {
-        color: white;
-        padding: 1rem;
-        width: 20%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
+    .outer-control-wrapper {
+        position: relative;
+        z-index: 1;
 
-        .fas {
-            cursor: pointer;
+        &:hover .song-title {
+            transform: translateY(-150%);
+            opacity: 1;
+        }
+
+         .song-title {
+             font-family: $title-font;
+             display: block;
+             background: #062441;
+             color: rgba(255, 255, 255, 0.801);
+             padding: .2rem 0;
+             font-size: 2rem;
+             position: absolute;
+             width: 100%;
+             transition: transform 180ms ease;
+             z-index: -10;
+             pointer-events: none;
+             overflow: hidden;
+             opacity: 0;
+         }
+
+        .controls {
+            position: relative;
+            color: white;
+            padding: 1rem;
+            width: 20%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            z-index: 100;
+
+            .fas {
+                cursor: pointer;
+            }
+
+           
         }
     }
+
+    
 }
 
 
