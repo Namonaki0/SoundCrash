@@ -1,5 +1,5 @@
-const playBtn = document.querySelector(".fa-play");
-const pauseBtn = document.querySelector(".fa-pause");
+const playBtn = document.querySelector(".play-btn");
+const nextBtn = document.querySelector(".next-btn");
 const audio = document.querySelector("audio");
 
 let songs = ["alice_in_chains", "jinjer", "mushroomhead", "love_and_death"];
@@ -11,28 +11,31 @@ function loadSong(song) {
   audio.src = `/Music/${song}.mp3`;
 }
 
-if (pauseBtn) {
-  console.log("PAUSE");
-}
-
 function playSong() {
   audio.play();
-  let playingState = document.querySelector(".fa-play");
+  let playingState = playBtn.querySelector(".fas");
   playingState.classList.remove("fa-play");
   playingState.classList.add("fa-pause");
 }
 
 function pauseSong() {
   audio.pause();
-  let pauseState = document.querySelector(".fa-pause");
+  let pauseState = playBtn.querySelector(".fas");
   pauseState.classList.remove("fa-pause");
   pauseState.classList.add("fa-play");
 }
 
-playBtn.addEventListener("click", () => {
-  playSong();
+playBtn.addEventListener("click", (e) => {
+  console.log(e.target);
+  let playingState = document.querySelector(".fas");
+  if (playingState.classList.contains("fa-play")) {
+    pauseSong();
+  } else {
+    playSong();
+  }
 });
 
-pauseBtn.addEventListener("click", () => {
-  pauseSong();
+nextBtn.addEventListener("click", () => {
+  songIndex++;
+  audio.play();
 });
