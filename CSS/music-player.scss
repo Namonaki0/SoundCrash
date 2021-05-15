@@ -13,7 +13,7 @@ body {
     margin: 0 auto;
     text-align: center;
 
-    .img-wrapper {
+    .artist-img-wrapper {
         width: 100%;
         height: 40vh;
         object-fit: cover;
@@ -25,27 +25,19 @@ body {
         }
     }
 
-    .progress-bar {
-        all: unset;
+    .progress-bar-wrapper {
+        display: flex;
         background: white;
-        width: 80%;
         height: 8px;
-        border-radius: 5px;
-        margin: .5rem 0;
+        width: 100%;
         cursor: pointer;
-        background: #0d132142;
 
-        &::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: whitesmoke;
-            cursor: pointer;
+        .progress-bar {
+            background: #0d375ca4;
+            height: 8px;
         }
     }
-
+    
     .outer-control-wrapper {
         position: relative;
         z-index: 100;
@@ -65,11 +57,16 @@ body {
              pointer-events: none;
              overflow: hidden;
              opacity: 0;
-             transform: translate(-100%, -145%);
+             transform: translate(-100%, -100%);
 
              &.show {
-                transform: translate(0, -145%);
+                transform: translate(0, -100%);
                 opacity: .9;
+             }
+
+            //?  JS DOM EL
+             .artist-name {
+                 color: rgb(211, 211, 211);
              }
          }
 
@@ -103,6 +100,10 @@ body {
 
            
         }
+    }
+
+    .song-menu {
+        background: cyan;
     }
 
     

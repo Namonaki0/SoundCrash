@@ -9,7 +9,7 @@ body {
   text-align: center;
 }
 
-.player-overall-wrapper .img-wrapper {
+.player-overall-wrapper .artist-img-wrapper {
   width: 100%;
   height: 40vh;
   -o-object-fit: cover;
@@ -17,32 +17,26 @@ body {
   overflow: hidden;
 }
 
-.player-overall-wrapper .img-wrapper img {
+.player-overall-wrapper .artist-img-wrapper img {
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.295)), to(white));
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.295), white);
   opacity: .8;
 }
 
-.player-overall-wrapper .progress-bar {
-  all: unset;
+.player-overall-wrapper .progress-bar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background: white;
-  width: 80%;
   height: 8px;
-  border-radius: 5px;
-  margin: .5rem 0;
+  width: 100%;
   cursor: pointer;
-  background: #0d132142;
 }
 
-.player-overall-wrapper .progress-bar::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: whitesmoke;
-  cursor: pointer;
+.player-overall-wrapper .progress-bar-wrapper .progress-bar {
+  background: #0d375ca4;
+  height: 8px;
 }
 
 .player-overall-wrapper .outer-control-wrapper {
@@ -66,14 +60,18 @@ body {
   pointer-events: none;
   overflow: hidden;
   opacity: 0;
-  -webkit-transform: translate(-100%, -145%);
-          transform: translate(-100%, -145%);
+  -webkit-transform: translate(-100%, -100%);
+          transform: translate(-100%, -100%);
 }
 
 .player-overall-wrapper .outer-control-wrapper .song-title.show {
-  -webkit-transform: translate(0, -145%);
-          transform: translate(0, -145%);
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
   opacity: .9;
+}
+
+.player-overall-wrapper .outer-control-wrapper .song-title .artist-name {
+  color: lightgray;
 }
 
 .player-overall-wrapper .outer-control-wrapper .controls {
@@ -107,5 +105,9 @@ body {
 
 .player-overall-wrapper .outer-control-wrapper .controls .fas {
   pointer-events: none;
+}
+
+.player-overall-wrapper .song-menu {
+  background: cyan;
 }
 /*# sourceMappingURL=music-player.css.map */

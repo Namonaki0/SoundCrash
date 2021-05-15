@@ -22,13 +22,16 @@
     <!--? OUTER WRAP -->
     <div class="player-overall-wrapper">
       <!--? IMG WRAPPER -->
-      <div class="img-wrapper">
+      <div class="artist-img-wrapper">
         <img src="/Pics/mp_aic.jpg" alt="artist-pic" />
       </div>
-      <!--? SONG TITLE -->
+      <!--? CONTROL PANNEL WRAPPER -->
       <div class="outer-control-wrapper">
         <!--? PROGRESS BAR -->
-        <input class="progress-bar" type="range" min="0" max="100" value="50" />
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar"></div>
+        </div>
+        <!--? SONG TITLE -->
         <span class="song-title">SONG TITLE</span>
         <!--? CONTROLS -->
         <div class="controls">
@@ -46,6 +49,7 @@
           </button>
         </div>
       </div>
+      <div class="song-menu"></div>
       <audio src="/Music/alice_in_chains.mp3"></audio>
     </div>
     <script src="/JS/music-player.js"></script>
