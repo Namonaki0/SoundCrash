@@ -107,7 +107,36 @@ body {
   pointer-events: none;
 }
 
-.player-overall-wrapper .song-menu {
-  background: cyan;
+.player-overall-wrapper .song-menu-wrapper {
+  background: #0e3d66;
+  overflow: hidden;
+  position: relative;
+  text-align: right;
+}
+
+.player-overall-wrapper .song-menu-wrapper span {
+  color: white;
+  margin-right: .5rem;
+  padding: .2rem 0;
+  display: block;
+  cursor: pointer;
+  -webkit-transition: color 120ms ease-in-out;
+  transition: color 120ms ease-in-out;
+}
+
+.player-overall-wrapper .song-menu-wrapper:hover span {
+  color: orange;
+}
+
+.player-overall-wrapper .song-menu-wrapper .song-menu {
+  background: red;
+  position: absolute;
+  width: 100%;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+.player-overall-wrapper .song-menu-wrapper .show-menu {
+  position: relative;
 }
 /*# sourceMappingURL=music-player.css.map */

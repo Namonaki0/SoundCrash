@@ -102,11 +102,40 @@ body {
         }
     }
 
-    .song-menu {
-        background: cyan;
-    }
+    .song-menu-wrapper {
+        background: #0e3d66;
+        overflow: hidden;
+        position: relative;
+        text-align: right;
 
-    
+        & span {
+            color: white;
+            margin-right: .5rem;
+            padding: .2rem 0;
+            display: block;
+            cursor: pointer;
+            transition: color 120ms ease-in-out;
+        }
+
+        &:hover span {
+            color: orange;
+        }
+
+        .song-menu {
+            background: red;
+            position: absolute;
+            width: 100%;
+            transition: all 150ms ease;
+            // transform: translateY(0);
+        }
+
+        .show-menu {
+            position: relative;
+            // transform: translateY(100%);
+        }
+
+      
+    }
 }
 
 

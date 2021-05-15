@@ -6,7 +6,7 @@ let artistPic = document.querySelector(".artist-img-wrapper img");
 let songTitle = document.querySelector(".song-title");
 const audio = document.querySelector("audio");
 const progressBarWrapper = document.querySelector(".progress-bar-wrapper");
-const songMenu = document.querySelector(".song-menu");
+const songMenuWrapper = document.querySelector(".song-menu-wrapper");
 
 //? DATA
 let songs = ["alice_in_chains", "jinjer", "mushroomhead", "love_and_death"];
@@ -21,12 +21,19 @@ let songNames = [
 let songIndex = 0;
 
 //? EVENT LISTENERS
+playBtn.addEventListener("click", playPause);
 progressBarWrapper.addEventListener("click", songSkip);
 audio.addEventListener("timeupdate", songProgress);
 nextBtn.addEventListener("click", nextSong);
 prevBtn.addEventListener("click", prevSong);
 //? WHEN TRACK FINISHES - SKIP TO NEXT SONG
 audio.addEventListener("ended", nextSong);
+songMenuWrapper.addEventListener("click", songMenuDisplay);
+
+function songMenuDisplay() {
+  const songMenu = document.querySelector(".song-menu");
+  songMenu.classList.toggle("show-menu");
+}
 
 //? PROGRESS BAR - SKIP PROGRESS ON CLICK
 function songSkip(e) {
@@ -80,7 +87,7 @@ function pauseSong() {
 }
 
 //? PLAY BUTTON TOGGLE - PLAY & PAUSE ICONS
-playBtn.addEventListener("click", () => {
+function playPause() {
   let playingState = document.querySelector(".play-btn .fas");
   playingState.classList.toggle("fa-pause");
   if (playingState.classList.contains("fa-pause")) {
@@ -88,7 +95,7 @@ playBtn.addEventListener("click", () => {
   } else {
     pauseSong();
   }
-});
+}
 
 //? SKIP TO FOLLOWING TRACK
 function nextSong() {
