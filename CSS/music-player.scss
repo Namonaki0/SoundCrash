@@ -126,15 +126,20 @@ body {
             position: absolute;
             width: 100%;
             transition: all 150ms ease;
-            // transform: translateY(0);
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
         }
 
         .show-menu {
             position: relative;
-            // transform: translateY(100%);
+            transition: all 150ms ease-in-out;
+            transform: translateY(0%);
+            opacity: 1;
+            pointer-events: unset;
         }
 
-      
+        
     }
 }
 

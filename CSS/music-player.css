@@ -134,9 +134,19 @@ body {
   width: 100%;
   -webkit-transition: all 150ms ease;
   transition: all 150ms ease;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .player-overall-wrapper .song-menu-wrapper .show-menu {
   position: relative;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+  pointer-events: unset;
 }
 /*# sourceMappingURL=music-player.css.map */
