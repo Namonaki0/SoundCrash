@@ -30,8 +30,12 @@ prevBtn.addEventListener("click", prevSong);
 audio.addEventListener("ended", nextSong);
 songMenuWrapper.addEventListener("click", songMenuDisplay);
 
+const songMenu = document.querySelector(".song-menu");
+for (i = 0; i < songNames.length; i++) {
+  songMenu.innerHTML += `<div><i class="far fa-play-circle"></i>${songNames[i]} - <span>${artists[i]}</span></div>`;
+}
+
 function songMenuDisplay() {
-  const songMenu = document.querySelector(".song-menu");
   songMenu.classList.toggle("show-menu");
 }
 

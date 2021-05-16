@@ -110,7 +110,6 @@ body {
 .player-overall-wrapper .song-menu-wrapper {
   background: #0e3d66;
   overflow: hidden;
-  position: relative;
   text-align: right;
 }
 
@@ -122,31 +121,82 @@ body {
   cursor: pointer;
   -webkit-transition: color 120ms ease-in-out;
   transition: color 120ms ease-in-out;
+  z-index: 10;
 }
 
-.player-overall-wrapper .song-menu-wrapper:hover span {
+.player-overall-wrapper .song-menu-wrapper span:hover {
   color: orange;
 }
 
 .player-overall-wrapper .song-menu-wrapper .song-menu {
-  background: red;
-  position: absolute;
+  background: #273046;
+  color: white;
+  font-family: "Montserrat", sans-serif;
   width: 100%;
+  height: 0;
   -webkit-transition: all 150ms ease;
   transition: all 150ms ease;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+.player-overall-wrapper .song-menu-wrapper .song-menu span {
+  display: unset;
+  color: #c9c9c9;
+  margin-left: .3rem;
+}
+
+.player-overall-wrapper .song-menu-wrapper .song-menu span:hover {
+  color: #c9c9c9;
+}
+
+.player-overall-wrapper .song-menu-wrapper .song-menu div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: .5rem;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.068);
+  cursor: pointer;
+  -webkit-transition: background 120ms ease;
+  transition: background 120ms ease;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player-overall-wrapper .song-menu-wrapper .song-menu div:last-child {
+  border-bottom: none;
+}
+
+.player-overall-wrapper .song-menu-wrapper .song-menu div:hover {
+  background: #2c3650;
+}
+
+.player-overall-wrapper .song-menu-wrapper .song-menu div:hover i {
+  color: orange;
+}
+
+.player-overall-wrapper .song-menu-wrapper .song-menu i {
+  margin-right: .5rem;
+  font-size: 1.2rem;
+  -webkit-transition: color 120ms ease;
+  transition: color 120ms ease;
 }
 
 .player-overall-wrapper .song-menu-wrapper .show-menu {
-  position: relative;
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
   opacity: 1;
   pointer-events: unset;
+  height: auto;
 }
 /*# sourceMappingURL=music-player.css.map */

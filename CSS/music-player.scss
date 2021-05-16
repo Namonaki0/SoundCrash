@@ -97,15 +97,12 @@ body {
             .fas {
                 pointer-events: none;
             }
-
-           
         }
     }
 
     .song-menu-wrapper {
         background: #0e3d66;
         overflow: hidden;
-        position: relative;
         text-align: right;
 
         & span {
@@ -115,31 +112,73 @@ body {
             display: block;
             cursor: pointer;
             transition: color 120ms ease-in-out;
-        }
+            z-index: 10;
 
-        &:hover span {
-            color: orange;
+            &:hover {
+                color: orange;
+            }
         }
 
         .song-menu {
-            background: red;
-            position: absolute;
+            background: #273046;
+            color: white;
+            font-family: $text-font;
             width: 100%;
+            height: 0;
             transition: all 150ms ease;
             transform: translateY(-100%);
             opacity: 0;
             pointer-events: none;
+            flex-direction: column;
+            text-align: left;
+
+            span {
+                display: unset;
+                color: rgb(201, 201, 201);
+                margin-left: .3rem;
+
+                &:hover {
+                    color: rgb(201, 201, 201);
+                }
+            }
+
+            div {
+                display: flex;
+                padding: .5rem;
+                border-bottom: 1px solid rgba(192, 192, 192, 0.068);
+                cursor: pointer;
+                transition: background 120ms ease;
+                align-items: center;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    background: #2c3650;
+                }
+
+                &:hover i {
+                    color: orange;
+                }
+            }
+
+            i {
+                margin-right: .5rem;
+                font-size: 1.2rem;
+                transition: color 120ms ease;
+            }
+            
         }
 
         .show-menu {
-            position: relative;
             transition: all 150ms ease-in-out;
             transform: translateY(0%);
             opacity: 1;
             pointer-events: unset;
+            height: auto;
         }
 
-        
     }
 }
 
