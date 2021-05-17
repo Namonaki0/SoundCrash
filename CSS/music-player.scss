@@ -104,15 +104,16 @@ body {
         background: #0e3d66;
         overflow: hidden;
         text-align: right;
+        cursor: pointer;
 
         & span {
             color: white;
             margin-right: .5rem;
             padding: .2rem 0;
             display: block;
-            cursor: pointer;
             transition: color 120ms ease-in-out;
             z-index: 10;
+            // pointer-events: none;
 
             &:hover {
                 color: orange;
@@ -128,7 +129,7 @@ body {
             transition: all 150ms ease;
             transform: translateY(-100%);
             opacity: 0;
-            pointer-events: none;
+            // pointer-events: none;
             flex-direction: column;
             text-align: left;
 
@@ -149,6 +150,7 @@ body {
                 cursor: pointer;
                 transition: background 120ms ease;
                 align-items: center;
+                z-index: 1000;
 
                 &:last-child {
                     border-bottom: none;
@@ -160,6 +162,10 @@ body {
 
                 &:hover i {
                     color: orange;
+                }
+
+                & * {
+                    pointer-events: none;
                 }
             }
 
@@ -175,7 +181,7 @@ body {
             transition: all 150ms ease-in-out;
             transform: translateY(0%);
             opacity: 1;
-            pointer-events: unset;
+            // pointer-events: none;
             height: auto;
         }
 

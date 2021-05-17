@@ -111,6 +111,7 @@ body {
   background: #0e3d66;
   overflow: hidden;
   text-align: right;
+  cursor: pointer;
 }
 
 .player-overall-wrapper .song-menu-wrapper span {
@@ -118,7 +119,6 @@ body {
   margin-right: .5rem;
   padding: .2rem 0;
   display: block;
-  cursor: pointer;
   -webkit-transition: color 120ms ease-in-out;
   transition: color 120ms ease-in-out;
   z-index: 10;
@@ -139,7 +139,6 @@ body {
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   opacity: 0;
-  pointer-events: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -169,6 +168,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 1000;
 }
 
 .player-overall-wrapper .song-menu-wrapper .song-menu div:last-child {
@@ -181,6 +181,10 @@ body {
 
 .player-overall-wrapper .song-menu-wrapper .song-menu div:hover i {
   color: orange;
+}
+
+.player-overall-wrapper .song-menu-wrapper .song-menu div * {
+  pointer-events: none;
 }
 
 .player-overall-wrapper .song-menu-wrapper .song-menu i {
@@ -196,7 +200,6 @@ body {
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
   opacity: 1;
-  pointer-events: unset;
   height: auto;
 }
 /*# sourceMappingURL=music-player.css.map */

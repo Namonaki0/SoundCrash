@@ -6,7 +6,7 @@ let artistPic = document.querySelector(".artist-img-wrapper img");
 let songTitle = document.querySelector(".song-title");
 const audio = document.querySelector("audio");
 const progressBarWrapper = document.querySelector(".progress-bar-wrapper");
-const songMenuWrapper = document.querySelector(".song-menu-wrapper");
+const songMenuWrapper = document.querySelector(".song-menu-wrapper span");
 
 //? DATA
 let songs = ["alice_in_chains", "jinjer", "mushroomhead", "love_and_death"];
@@ -32,8 +32,20 @@ songMenuWrapper.addEventListener("click", songMenuDisplay);
 
 const songMenu = document.querySelector(".song-menu");
 for (i = 0; i < songNames.length; i++) {
-  songMenu.innerHTML += `<div><i class="far fa-play-circle"></i>${songNames[i]} - <span>${artists[i]}</span></div>`;
+  songMenu.innerHTML += `
+    <div>
+      <i class="far fa-play-circle"></i>${songNames[i]} - <span>${artists[i]}</span>
+    </div>
+  `;
 }
+
+const songDiv = songMenu.querySelectorAll("div");
+
+songDiv.forEach((song) => {
+  song.addEventListener("click", (e) => {
+    console.dir(song);
+  });
+});
 
 function songMenuDisplay() {
   songMenu.classList.toggle("show-menu");
