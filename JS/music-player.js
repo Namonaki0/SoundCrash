@@ -9,7 +9,12 @@ const progressBarWrapper = document.querySelector(".progress-bar-wrapper");
 const songMenuWrapper = document.querySelector(".song-menu-wrapper span");
 
 //? DATA
-let songs = ["alice_in_chains", "jinjer", "mushroomhead", "love_and_death"];
+let songs = [
+  ["alice_in_chains", 0],
+  ["jinjer", 1],
+  ["mushroomhead", 2],
+  ["love_and_death", 3],
+];
 let artistPics = ["mp_aic", "mp_jinjer", "mp_mh", "mp_ld"];
 let artists = ["alice in chains", "jinjer", "mushroomhead", "love and death"];
 let songNames = [
@@ -30,22 +35,30 @@ prevBtn.addEventListener("click", prevSong);
 audio.addEventListener("ended", nextSong);
 songMenuWrapper.addEventListener("click", songMenuDisplay);
 
+//? SONG SELECTION FROM MENU
 const songMenu = document.querySelector(".song-menu");
 for (i = 0; i < songNames.length; i++) {
   songMenu.innerHTML += `
-    <div>
+    <div id="${i}">
       <i class="far fa-play-circle"></i>${songNames[i]} - <span>${artists[i]}</span>
     </div>
   `;
-}
 
-const songDiv = songMenu.querySelectorAll("div");
-
-songDiv.forEach((song) => {
-  song.addEventListener("click", (e) => {
-    console.dir(song);
+  //? MATCHES CLICK WITH SONG ID
+  const songDiv = songMenu.querySelectorAll("div");
+  songDiv.forEach((song) => {
+    song.addEventListener("click", (e) => {
+      songIndex = e.target.id;
+      loadSong(
+        songs[songIndex][0],
+        artistPics[songIndex],
+        artists[songIndex],
+        songNames[songIndex]
+      );
+      playSong();
+    });
   });
-});
+}
 
 function songMenuDisplay() {
   songMenu.classList.toggle("show-menu");
@@ -72,11 +85,10 @@ function loadSong(song, pics, artistName, songName) {
   audio.src = `/Music/${song}.mp3`;
   artistPic.src = `/Pics/${pics}.jpg`;
   songTitle.innerHTML = `${songName} - <span class="artist-name">${artistName}</span>`;
-  console.log(songName.innerHTML);
 }
 
 loadSong(
-  songs[songIndex],
+  songs[songIndex][0],
   artistPics[songIndex],
   artists[songIndex],
   songNames[songIndex]
@@ -120,7 +132,7 @@ function nextSong() {
     songIndex = 0;
   }
   loadSong(
-    songs[songIndex],
+    songs[songIndex][0],
     artistPics[songIndex],
     artists[songIndex],
     songNames[songIndex]
@@ -135,7 +147,7 @@ function prevSong() {
     songIndex = songs.length - 1;
   }
   loadSong(
-    songs[songIndex],
+    songs[songIndex][0],
     artistPics[songIndex],
     artists[songIndex],
     songNames[songIndex]
