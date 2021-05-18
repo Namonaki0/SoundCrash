@@ -8,6 +8,12 @@ const audio = document.querySelector("audio");
 const progressBarWrapper = document.querySelector(".progress-bar-wrapper");
 const songMenuWrapper = document.querySelector(".song-menu-wrapper span");
 const stretchIcon = document.querySelector(".fa-arrows-alt-v");
+const displayToggle = document.querySelector(".display-toggle");
+const pageWrap = document.querySelector(".page-wrap");
+
+displayToggle.addEventListener("click", () => {
+  console.dir(pageWrap);
+});
 
 //? DATA
 let songs = ["alice_in_chains", "jinjer", "mushroomhead", "love_and_death"];
@@ -61,6 +67,13 @@ for (i = 0; i < songNames.length; i++) {
 function songMenuDisplay() {
   songMenu.classList.toggle("show-menu");
 }
+
+window.addEventListener("scroll", () => {
+  const imgWrapper = document.querySelector(".artist-img-wrapper");
+  if (this.scrollY > 0) {
+    imgWrapper.classList.add("img-display-toggle");
+  }
+});
 
 //? TOGGLES ARTIST PICTURE
 function imageToggle() {

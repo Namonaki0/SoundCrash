@@ -19,42 +19,47 @@
     <title>Music Player</title>
   </head>
   <body>
-    <!--? OUTER WRAP -->
-    <div class="player-overall-wrapper">
-      <!--? IMG WRAPPER -->
-      <div class="artist-img-wrapper">
-        <img src="/Pics/mp_aic.jpg" alt="artist-pic" />
+    <div class="page-wrap">
+      <div class="display-toggle">
+        <i class="fas fa-caret-left"></i>
       </div>
-      <!--? CONTROL PANNEL WRAPPER -->
-      <div class="outer-control-wrapper">
-        <!--? PROGRESS BAR -->
-        <div class="progress-bar-wrapper">
-          <div class="progress-bar"></div>
+      <!--? OUTER WRAP -->
+      <div class="player-overall-wrapper">
+        <!--? IMG WRAPPER -->
+        <div class="artist-img-wrapper">
+          <img src="/Pics/mp_aic.jpg" alt="artist-pic" />
         </div>
-        <i class="fas fa-arrows-alt-v"></i>
-        <!--? SONG TITLE -->
-        <span class="song-title">SONG TITLE</span>
-        <!--? CONTROLS -->
-        <div class="controls">
-          <!--? prev button -->
-          <button class="prev-btn">
-            <i class="fas fa-backward"></i>
-          </button>
-          <!--? play button -->
-          <button class="play-btn">
-            <i class="fas fa-play"></i>
-          </button>
-          <!--? forward button -->
-          <button class="next-btn">
-            <i class="fas fa-forward"></i>
-          </button>
+        <!--? CONTROL PANNEL WRAPPER -->
+        <div class="outer-control-wrapper">
+          <!--? PROGRESS BAR -->
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar"></div>
+          </div>
+          <i class="fas fa-arrows-alt-v"></i>
+          <!--? SONG TITLE -->
+          <span class="song-title">SONG TITLE</span>
+          <!--? CONTROLS -->
+          <div class="controls">
+            <!--? prev button -->
+            <button class="prev-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <!--? play button -->
+            <button class="play-btn">
+              <i class="fas fa-play"></i>
+            </button>
+            <!--? forward button -->
+            <button class="next-btn">
+              <i class="fas fa-forward"></i>
+            </button>
+          </div>
         </div>
+        <div class="song-menu-wrapper">
+          <span><i class="fas fa-bars"></i></span>
+          <div class="song-menu"></div>
+        </div>
+        <audio src="/Music/alice_in_chains.mp3"></audio>
       </div>
-      <div class="song-menu-wrapper">
-        <span><i class="fas fa-bars"></i></span>
-        <div class="song-menu"></div>
-      </div>
-      <audio src="/Music/alice_in_chains.mp3"></audio>
     </div>
     <script src="/JS/music-player.js"></script>
   </body>
