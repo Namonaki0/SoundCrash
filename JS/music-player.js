@@ -9,10 +9,16 @@ const progressBarWrapper = document.querySelector(".progress-bar-wrapper");
 const songMenuWrapper = document.querySelector(".song-menu-wrapper span");
 const stretchIcon = document.querySelector(".fa-arrows-alt-v");
 const displayToggle = document.querySelector(".display-toggle");
+const playerOverallWrapper = document.querySelector(".player-overall-wrapper");
 const pageWrap = document.querySelector(".page-wrap");
 
 displayToggle.addEventListener("click", () => {
-  console.dir(pageWrap);
+  displayToggle.style.minHeight = "100%";
+  displayToggle.style.transform = "scale(1)";
+  pageWrap.style.transform = "translateX(0)";
+  playerOverallWrapper.style.display = "unset";
+  // playerOverallWrapper.style.transition = "all 2s ease";
+  pageWrap.style.transition = "all 150ms ease";
 });
 
 //? DATA
