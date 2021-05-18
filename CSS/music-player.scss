@@ -18,10 +18,20 @@ body {
         height: 40vh;
         object-fit: cover;
         overflow: hidden;
+        // transform: translateY(0%);
+        transition: height 150ms ease;
         img {
             width: 100%;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.295), white);
             opacity: .8;
+        }
+        &.img-display-toggle {
+            visibility: hidden;
+            height: 8vh;
+
+            // &.img-display-toggle .song-title {
+            //     opacity: 1;
+            // }
         }
     }
 
@@ -41,6 +51,15 @@ body {
     .outer-control-wrapper {
         position: relative;
         z-index: 100;
+
+        .fa-arrows-alt-v {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
 
          .song-title {
              font-family: $title-font;

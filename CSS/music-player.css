@@ -15,6 +15,8 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
+  -webkit-transition: height 150ms ease;
+  transition: height 150ms ease;
 }
 
 .player-overall-wrapper .artist-img-wrapper img {
@@ -22,6 +24,11 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.295)), to(white));
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.295), white);
   opacity: .8;
+}
+
+.player-overall-wrapper .artist-img-wrapper.img-display-toggle {
+  visibility: hidden;
+  height: 8vh;
 }
 
 .player-overall-wrapper .progress-bar-wrapper {
@@ -42,6 +49,15 @@ body {
 .player-overall-wrapper .outer-control-wrapper {
   position: relative;
   z-index: 100;
+}
+
+.player-overall-wrapper .outer-control-wrapper .fa-arrows-alt-v {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 .player-overall-wrapper .outer-control-wrapper .song-title {

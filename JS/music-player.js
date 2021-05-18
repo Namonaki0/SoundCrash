@@ -7,14 +7,10 @@ let songTitle = document.querySelector(".song-title");
 const audio = document.querySelector("audio");
 const progressBarWrapper = document.querySelector(".progress-bar-wrapper");
 const songMenuWrapper = document.querySelector(".song-menu-wrapper span");
+const stretchIcon = document.querySelector(".fa-arrows-alt-v");
 
 //? DATA
-let songs = [
-  ["alice_in_chains", 0],
-  ["jinjer", 1],
-  ["mushroomhead", 2],
-  ["love_and_death", 3],
-];
+let songs = ["alice_in_chains", "jinjer", "mushroomhead", "love_and_death"];
 let artistPics = ["mp_aic", "mp_jinjer", "mp_mh", "mp_ld"];
 let artists = ["alice in chains", "jinjer", "mushroomhead", "love and death"];
 let songNames = [
@@ -34,6 +30,7 @@ prevBtn.addEventListener("click", prevSong);
 //? WHEN TRACK FINISHES - SKIP TO NEXT SONG
 audio.addEventListener("ended", nextSong);
 songMenuWrapper.addEventListener("click", songMenuDisplay);
+stretchIcon.addEventListener("click", imageToggle);
 
 //? SONG SELECTION FROM MENU
 const songMenu = document.querySelector(".song-menu");
@@ -50,7 +47,7 @@ for (i = 0; i < songNames.length; i++) {
     song.addEventListener("click", (e) => {
       songIndex = e.target.id;
       loadSong(
-        songs[songIndex][0],
+        songs[songIndex],
         artistPics[songIndex],
         artists[songIndex],
         songNames[songIndex]
@@ -60,8 +57,15 @@ for (i = 0; i < songNames.length; i++) {
   });
 }
 
+//? SONGS MENU
 function songMenuDisplay() {
   songMenu.classList.toggle("show-menu");
+}
+
+//? TOGGLES ARTIST PICTURE
+function imageToggle() {
+  const imgWrapper = document.querySelector(".artist-img-wrapper");
+  imgWrapper.classList.toggle("img-display-toggle");
 }
 
 //? PROGRESS BAR - SKIP PROGRESS ON CLICK
@@ -88,7 +92,7 @@ function loadSong(song, pics, artistName, songName) {
 }
 
 loadSong(
-  songs[songIndex][0],
+  songs[songIndex],
   artistPics[songIndex],
   artists[songIndex],
   songNames[songIndex]
@@ -132,7 +136,7 @@ function nextSong() {
     songIndex = 0;
   }
   loadSong(
-    songs[songIndex][0],
+    songs[songIndex],
     artistPics[songIndex],
     artists[songIndex],
     songNames[songIndex]
@@ -147,7 +151,7 @@ function prevSong() {
     songIndex = songs.length - 1;
   }
   loadSong(
-    songs[songIndex][0],
+    songs[songIndex],
     artistPics[songIndex],
     artists[songIndex],
     songNames[songIndex]
