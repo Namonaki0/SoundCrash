@@ -17,10 +17,16 @@ body {
           transform: translateX(95%);
 }
 
+.page-wrap.show-player {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 150ms ease;
+  transition: -webkit-transform 150ms ease;
+  transition: transform 150ms ease;
+  transition: transform 150ms ease, -webkit-transform 150ms ease;
+}
+
 .display-toggle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -38,6 +44,12 @@ body {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   color: white;
+}
+
+.display-toggle.toggle-after-effect {
+  min-height: 100%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .player-overall-wrapper {

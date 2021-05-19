@@ -12,15 +12,6 @@ const displayToggle = document.querySelector(".display-toggle");
 const playerOverallWrapper = document.querySelector(".player-overall-wrapper");
 const pageWrap = document.querySelector(".page-wrap");
 
-displayToggle.addEventListener("click", () => {
-  displayToggle.style.minHeight = "100%";
-  displayToggle.style.transform = "scale(1)";
-  pageWrap.style.transform = "translateX(0)";
-  playerOverallWrapper.style.display = "unset";
-  // playerOverallWrapper.style.transition = "all 2s ease";
-  pageWrap.style.transition = "all 150ms ease";
-});
-
 //? DATA
 let songs = ["alice_in_chains", "jinjer", "mushroomhead", "love_and_death"];
 let artistPics = ["mp_aic", "mp_jinjer", "mp_mh", "mp_ld"];
@@ -43,6 +34,19 @@ prevBtn.addEventListener("click", prevSong);
 audio.addEventListener("ended", nextSong);
 songMenuWrapper.addEventListener("click", songMenuDisplay);
 stretchIcon.addEventListener("click", imageToggle);
+
+//? PLAYER DISPLAY TOGGLE
+displayToggle.addEventListener("click", () => {
+  pageWrap.classList.toggle("show-player");
+  displayToggle.classList.toggle("toggle-after-effect");
+
+  // const pageStyle = pageWrap.style;
+  // displayToggle.style.minHeight = "100%";
+  // displayToggle.style.transform = "scale(1)";
+  pageWrap.style.transition = "all 150ms ease";
+  // pageWrap.style.transform = "translate(50%)";
+  playerOverallWrapper.style.display = "unset";
+});
 
 //? SONG SELECTION FROM MENU
 const songMenu = document.querySelector(".song-menu");
