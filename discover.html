@@ -8,6 +8,7 @@
     <!--? CSS -->
     <link rel="stylesheet" href="CSS/main.css" />
     <link rel="stylesheet" href="CSS/discover.css" />
+    <link rel="stylesheet" href="CSS/music-player.css" />
 
     <!--? FONTS -->
     <link
@@ -142,6 +143,54 @@
       </div>
     </main>
 
+    <div class="player-btn">
+      <i class="far fa-play-circle"></i>
+      <i class="far fa-times-circle"></i>
+    </div>
+
+    <div class="page-wrap">
+      <!-- <div class="display-toggle">
+        <i class="fas fa-caret-left"></i>
+      </div> -->
+      <!--? OUTER WRAP -->
+      <div class="player-overall-wrapper">
+        <!--? IMG WRAPPER -->
+        <div class="artist-img-wrapper">
+          <img src="/Pics/mp_aic.jpg" alt="artist-pic" />
+        </div>
+        <!--? CONTROL PANNEL WRAPPER -->
+        <div class="outer-control-wrapper">
+          <!--? PROGRESS BAR -->
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar"></div>
+          </div>
+          <i class="fas fa-arrows-alt-v"></i>
+          <!--? SONG TITLE -->
+          <span class="song-title">SONG TITLE</span>
+          <!--? CONTROLS -->
+          <div class="controls">
+            <!--? prev button -->
+            <button class="prev-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <!--? play button -->
+            <button class="play-btn">
+              <i class="fas fa-play"></i>
+            </button>
+            <!--? forward button -->
+            <button class="next-btn">
+              <i class="fas fa-forward"></i>
+            </button>
+          </div>
+        </div>
+        <div class="song-menu-wrapper">
+          <span><i class="fas fa-bars"></i></span>
+          <div class="song-menu"></div>
+        </div>
+        <audio src="/Music/alice_in_chains.mp3"></audio>
+      </div>
+    </div>
+
     <!--? HONORABLE MENTIONS -->
     <aside class="honorable-mentions" id="honorable-mentions">
       <!--? SIDE COLUMN -->
@@ -236,5 +285,6 @@
 
     <script src="./JS/app.js"></script>
     <script src="./JS/discover.js"></script>
+    <script src="./JS/music-player.js"></script>
   </body>
 </html>

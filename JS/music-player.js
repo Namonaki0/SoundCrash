@@ -11,6 +11,8 @@ const stretchIcon = document.querySelector(".fa-arrows-alt-v");
 const displayToggle = document.querySelector(".display-toggle");
 const playerOverallWrapper = document.querySelector(".player-overall-wrapper");
 const pageWrap = document.querySelector(".page-wrap");
+const playerBtn = document.querySelector(".fa-play-circle");
+const closePlayerBtn = document.querySelector(".fa-times-circle");
 
 //? DATA
 let songs = ["alice_in_chains", "jinjer", "mushroomhead", "love_and_death"];
@@ -36,16 +38,26 @@ songMenuWrapper.addEventListener("click", songMenuDisplay);
 stretchIcon.addEventListener("click", imageToggle);
 
 //? PLAYER DISPLAY TOGGLE
-displayToggle.addEventListener("click", () => {
-  pageWrap.classList.toggle("show-player");
-  displayToggle.classList.toggle("toggle-after-effect");
-
-  // const pageStyle = pageWrap.style;
-  // displayToggle.style.minHeight = "100%";
-  // displayToggle.style.transform = "scale(1)";
-  pageWrap.style.transition = "all 150ms ease";
-  // pageWrap.style.transform = "translate(50%)";
+playerBtn.addEventListener("click", () => {
   playerOverallWrapper.style.display = "unset";
+  pageWrap.classList.add("show-player");
+  pageWrap.style.transition = "all 150ms ease";
+  if (pageWrap.classList.contains("show-player")) {
+    playerBtn.style.display = "none";
+    closePlayerBtn.style.display = "unset";
+    closePlayerBtn.style.fontSize = "2rem";
+  } else {
+    playerBtn.style.display = "";
+    closePlayerBtn.style.display = "none";
+  }
+});
+
+closePlayerBtn.addEventListener("click", () => {
+  pageWrap.classList.remove("show-player");
+  playerBtn.style.display = "";
+  closePlayerBtn.style.display = "none";
+  playerOverallWrapper.style.display = "";
+  playerOverallWrapper.style.transition = "all 150ms ease";
 });
 
 //? SONG SELECTION FROM MENU
@@ -78,12 +90,12 @@ function songMenuDisplay() {
   songMenu.classList.toggle("show-menu");
 }
 
-window.addEventListener("scroll", () => {
-  const imgWrapper = document.querySelector(".artist-img-wrapper");
-  if (this.scrollY > 0) {
-    imgWrapper.classList.add("img-display-toggle");
-  }
-});
+// window.addEventListener("scroll", () => {
+//   const imgWrapper = document.querySelector(".artist-img-wrapper");
+//   if (this.scrollY > 0) {
+//     imgWrapper.classList.add("img-display-toggle");
+//   }
+// });
 
 //? TOGGLES ARTIST PICTURE
 function imageToggle() {

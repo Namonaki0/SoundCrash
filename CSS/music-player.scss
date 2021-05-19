@@ -15,7 +15,7 @@ body {
 
 .page-wrap {
     display: flex;
-    transform: translateX(95%);
+    transform: translateX(100%);
 
     &.show-player {
         transform: translateX(0);
@@ -23,8 +23,34 @@ body {
     }
 }
 
+.player-btn {
+
+text-align: right;
+
+    .fa-play-circle,
+    .fa-times-circle
+     {
+        font-size: 5rem;
+        text-align: right;
+        padding: 1rem;
+        color: white;
+        cursor: pointer;
+        transition: all 150ms ease;
+
+        &:hover {
+            color: gold;
+        }
+    }
+
+    .fa-times-circle {
+        display: none;
+    }
+
+}
+
+
 .display-toggle {
-    // display: flex;
+    display: flex;
     align-items: center;
     background: #0c385f;
     padding: 1rem .5rem;
@@ -33,7 +59,7 @@ body {
     color: rgba(255, 255, 255, 0.788);
     transition: all 150ms ease;
     z-index: 10000;
-    // min-height: 20%;
+    min-height: 20%;
 
      &:hover {
        transform: scale(1.1);
