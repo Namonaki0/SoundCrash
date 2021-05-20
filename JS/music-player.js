@@ -39,18 +39,23 @@ stretchIcon.addEventListener("click", imageToggle);
 
 //? PLAYER DISPLAY TOGGLE
 playerBtn.addEventListener("click", () => {
-  pageWrap.style.display = "flex";
   pageWrap.classList.add("show-player");
+  pageWrap.style.display = "flex";
   pageWrap.style.transition = "all 150ms ease";
-  playerOverallWrapper.classList.add("show-player");
+  // playerOverallWrapper.classList.remove("remove-player");
+  // playerOverallWrapper.classList.add("show-player");
   playerBtnDisplay();
 });
 
 closePlayerBtn.addEventListener("click", () => {
-  playerOverallWrapper.classList.remove("show-player");
-  playerBtn.style.display = "none";
   pageWrap.classList.remove("show-player");
   pageWrap.style.transition = "all 150ms ease";
+  // playerOverallWrapper.classList.remove("show-player");
+  // playerOverallWrapper.classList.add("remove-player");
+  // pageWrap.addEventListener("transitionend", () => {
+  //   pageWrap.style.display = "none";
+  // });
+
   playerBtnDisplay();
 });
 

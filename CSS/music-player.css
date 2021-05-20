@@ -10,19 +10,17 @@ body {
 }
 
 .page-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  visibility: hidden;
+  position: absolute;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
 }
 
 .page-wrap.show-player {
+  position: relative;
+  visibility: unset;
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .player-btn {
@@ -52,15 +50,10 @@ body {
 .player-overall-wrapper {
   background: #114e84;
   text-align: center;
-  display: none;
   -webkit-transition: -webkit-transform 150ms ease;
   transition: -webkit-transform 150ms ease;
   transition: transform 150ms ease;
   transition: transform 150ms ease, -webkit-transform 150ms ease;
-}
-
-.player-overall-wrapper.show-player {
-  display: unset;
 }
 
 .player-overall-wrapper .artist-img-wrapper {

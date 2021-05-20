@@ -14,18 +14,15 @@ body {
 }
 
 .page-wrap {
-    display: flex;
+    visibility: hidden;
+    position: absolute;
     transform: translateX(100%);
 
     &.show-player {
+        position: relative;
+        visibility: unset;
         transform: translateX(0);
-        display: flex;
     }
-
-    // &.remove-player {
-    //     transform: translateX(100%);
-    // }
-
 
 }
 
@@ -81,12 +78,7 @@ text-align: right;
 .player-overall-wrapper {
     background: $highlight-blue;
     text-align: center;
-    display: none;
     transition: transform 150ms ease;
-
-      &.show-player {
-          display: unset;
-      }
 
     .artist-img-wrapper {
         width: 100%;
