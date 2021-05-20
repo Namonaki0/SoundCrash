@@ -39,9 +39,22 @@ stretchIcon.addEventListener("click", imageToggle);
 
 //? PLAYER DISPLAY TOGGLE
 playerBtn.addEventListener("click", () => {
-  playerOverallWrapper.style.display = "unset";
+  pageWrap.style.display = "flex";
   pageWrap.classList.add("show-player");
   pageWrap.style.transition = "all 150ms ease";
+  playerOverallWrapper.classList.add("show-player");
+  playerBtnDisplay();
+});
+
+closePlayerBtn.addEventListener("click", () => {
+  playerOverallWrapper.classList.remove("show-player");
+  playerBtn.style.display = "none";
+  pageWrap.classList.remove("show-player");
+  pageWrap.style.transition = "all 150ms ease";
+  playerBtnDisplay();
+});
+
+function playerBtnDisplay() {
   if (pageWrap.classList.contains("show-player")) {
     playerBtn.style.display = "none";
     closePlayerBtn.style.display = "unset";
@@ -50,15 +63,7 @@ playerBtn.addEventListener("click", () => {
     playerBtn.style.display = "";
     closePlayerBtn.style.display = "none";
   }
-});
-
-closePlayerBtn.addEventListener("click", () => {
-  pageWrap.classList.remove("show-player");
-  playerBtn.style.display = "";
-  closePlayerBtn.style.display = "none";
-  playerOverallWrapper.style.display = "";
-  playerOverallWrapper.style.transition = "all 150ms ease";
-});
+}
 
 //? SONG SELECTION FROM MENU
 const songMenu = document.querySelector(".song-menu");
@@ -89,13 +94,6 @@ for (i = 0; i < songNames.length; i++) {
 function songMenuDisplay() {
   songMenu.classList.toggle("show-menu");
 }
-
-// window.addEventListener("scroll", () => {
-//   const imgWrapper = document.querySelector(".artist-img-wrapper");
-//   if (this.scrollY > 0) {
-//     imgWrapper.classList.add("img-display-toggle");
-//   }
-// });
 
 //? TOGGLES ARTIST PICTURE
 function imageToggle() {

@@ -20,10 +20,9 @@ body {
 .page-wrap.show-player {
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  -webkit-transition: -webkit-transform 150ms ease;
-  transition: -webkit-transform 150ms ease;
-  transition: transform 150ms ease;
-  transition: transform 150ms ease, -webkit-transform 150ms ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .player-btn {
@@ -50,42 +49,18 @@ body {
   display: none;
 }
 
-.display-toggle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #0c385f;
-  padding: 1rem .5rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.788);
-  -webkit-transition: all 150ms ease;
-  transition: all 150ms ease;
-  z-index: 10000;
-  min-height: 20%;
-}
-
-.display-toggle:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  color: white;
-}
-
-.display-toggle.toggle-after-effect {
-  min-height: 100%;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
 .player-overall-wrapper {
   background: #114e84;
   text-align: center;
-  position: -webkit-sticky;
-  position: sticky;
   display: none;
+  -webkit-transition: -webkit-transform 150ms ease;
+  transition: -webkit-transform 150ms ease;
+  transition: transform 150ms ease;
+  transition: transform 150ms ease, -webkit-transform 150ms ease;
+}
+
+.player-overall-wrapper.show-player {
+  display: unset;
 }
 
 .player-overall-wrapper .artist-img-wrapper {
