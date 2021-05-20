@@ -17,6 +17,7 @@ body {
     visibility: hidden;
     position: absolute;
     transform: translateX(100%);
+    margin-bottom: 1rem;
 
     &.show-player {
         position: relative;
@@ -27,22 +28,53 @@ body {
 }
 
 .player-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 1rem 0;
+    text-align: right;
+    background: rgba(255, 255, 255, 0.062);
+    border-top: 1px solid rgba(192, 192, 192, 0.089);
+    border-bottom: 1px solid rgba(192, 192, 192, 0.089);
+    cursor: pointer;
 
-text-align: right;
+    span {
+        font-size: 3rem;
+        color: white;
+        visibility: hidden;
+        transition: all 120ms ease;
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    &:hover span {
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+        color: gold;
+
+    }
+
+    &:hover .fa-play-circle {
+        transform: rotate(180deg);
+        color: gold;
+    }
 
     .fa-play-circle,
     .fa-times-circle
      {
         font-size: 5rem;
         text-align: right;
-        padding: 1rem;
+        padding: .8rem 1rem;
         color: white;
         cursor: pointer;
-        transition: all 150ms ease;
+        transition: all 150ms linear;
 
-        &:hover {
+        &:hover{
             color: gold;
+            transform: rotate(180deg);
         }
+
     }
 
     .fa-times-circle {

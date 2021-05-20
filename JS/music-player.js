@@ -11,7 +11,7 @@ const stretchIcon = document.querySelector(".fa-arrows-alt-v");
 const displayToggle = document.querySelector(".display-toggle");
 const playerOverallWrapper = document.querySelector(".player-overall-wrapper");
 const pageWrap = document.querySelector(".page-wrap");
-const playerBtn = document.querySelector(".fa-play-circle");
+const playerBtn = document.querySelector(".player-btn");
 const closePlayerBtn = document.querySelector(".fa-times-circle");
 
 //? DATA
@@ -42,19 +42,13 @@ playerBtn.addEventListener("click", () => {
   pageWrap.classList.add("show-player");
   pageWrap.style.display = "flex";
   pageWrap.style.transition = "all 150ms ease";
-  // playerOverallWrapper.classList.remove("remove-player");
-  // playerOverallWrapper.classList.add("show-player");
+
   playerBtnDisplay();
 });
 
 closePlayerBtn.addEventListener("click", () => {
   pageWrap.classList.remove("show-player");
   pageWrap.style.transition = "all 150ms ease";
-  // playerOverallWrapper.classList.remove("show-player");
-  // playerOverallWrapper.classList.add("remove-player");
-  // pageWrap.addEventListener("transitionend", () => {
-  //   pageWrap.style.display = "none";
-  // });
 
   playerBtnDisplay();
 });
@@ -64,6 +58,7 @@ function playerBtnDisplay() {
     playerBtn.style.display = "none";
     closePlayerBtn.style.display = "unset";
     closePlayerBtn.style.fontSize = "2rem";
+    closePlayerBtn.style.transition = "all 150ms ease";
   } else {
     playerBtn.style.display = "";
     closePlayerBtn.style.display = "none";

@@ -14,6 +14,7 @@ body {
   position: absolute;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
+  margin-bottom: 1rem;
 }
 
 .page-wrap.show-player {
@@ -24,23 +25,64 @@ body {
 }
 
 .player-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 1rem 0;
   text-align: right;
+  background: rgba(255, 255, 255, 0.062);
+  border-top: 1px solid rgba(192, 192, 192, 0.089);
+  border-bottom: 1px solid rgba(192, 192, 192, 0.089);
+  cursor: pointer;
+}
+
+.player-btn span {
+  font-size: 3rem;
+  color: white;
+  visibility: hidden;
+  -webkit-transition: all 120ms ease;
+  transition: all 120ms ease;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+}
+
+.player-btn:hover span {
+  visibility: visible;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  color: gold;
+}
+
+.player-btn:hover .fa-play-circle {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  color: gold;
 }
 
 .player-btn .fa-play-circle,
 .player-btn .fa-times-circle {
   font-size: 5rem;
   text-align: right;
-  padding: 1rem;
+  padding: .8rem 1rem;
   color: white;
   cursor: pointer;
-  -webkit-transition: all 150ms ease;
-  transition: all 150ms ease;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
 }
 
 .player-btn .fa-play-circle:hover,
 .player-btn .fa-times-circle:hover {
   color: gold;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .player-btn .fa-times-circle {
