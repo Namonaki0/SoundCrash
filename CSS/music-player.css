@@ -24,8 +24,7 @@ body {
           transform: translateX(0);
 }
 
-.player-btn {
-  position: relative;
+.player-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,16 +34,17 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin: 1rem 0;
+  margin: 1rem 0 1rem;
   text-align: right;
-  background: rgba(255, 255, 255, 0.062);
+  background: rgba(255, 255, 255, 0.034);
   border-top: 1px solid rgba(192, 192, 192, 0.089);
   border-bottom: 1px solid rgba(192, 192, 192, 0.089);
   cursor: pointer;
-  z-index: 10000;
+  -webkit-transition: all 120ms ease;
+  transition: all 120ms ease;
 }
 
-.player-btn span {
+.player-area span {
   font-size: 3rem;
   color: white;
   visibility: hidden;
@@ -55,23 +55,27 @@ body {
   opacity: 0;
 }
 
-.player-btn:hover span {
+.player-area:hover {
+  background: #114e849c;
+}
+
+.player-area:hover span {
   visibility: visible;
   -webkit-transform: translateX(0);
           transform: translateX(0);
   opacity: 1;
-  color: gold;
+  color: rgba(255, 255, 255, 0.836);
 }
 
-.player-btn:hover .fa-play-circle,
-.player-btn:hover .fa-times-circle {
+.player-area:hover .fa-play-circle,
+.player-area:hover .fa-times-circle {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  color: gold;
+  color: rgba(255, 255, 255, 0.836);
 }
 
-.player-btn .fa-play-circle,
-.player-btn .fa-times-circle {
+.player-area .fa-play-circle,
+.player-area .fa-times-circle {
   font-size: 5rem;
   text-align: right;
   padding: .8rem 1rem;
@@ -81,16 +85,23 @@ body {
   transition: all 150ms linear;
 }
 
-.player-btn .fa-times-circle {
+.player-area .fa-play-circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.player-area .fa-times-circle {
   display: none;
   -webkit-transition: all 150ms linear;
   transition: all 150ms linear;
 }
 
-.player-btn .fa-times-circle.show {
+.player-area .fa-times-circle.show {
   display: unset;
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
 }
 
 .player-overall-wrapper {

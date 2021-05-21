@@ -143,8 +143,8 @@ records.forEach((each_record) => {
       ".record-tracklist-styling"
     );
 
-    albumCover.addEventListener("load", () => {
-      imgWrap.style.animation = "recordDisplay 1s ease";
+    window.addEventListener("click", (e) => {
+      console.log(e.target);
     });
 
     //? EMPTY TRACKLIST FOR NEXT CHOICE

@@ -25,6 +25,7 @@ iframe {
   display: flex;
   align-items: center;
   color: var(--dustyWhite);
+  padding: 1rem 0;
 }
 
 .video-desc-wrap {
@@ -66,6 +67,9 @@ iframe {
   font-size: 4rem;
   font-weight: 100;
   text-transform: uppercase;
+  border-top: .5px solid rgba(192, 192, 192, 0.384);
+  width: max-content;
+  margin: 4rem auto 0;
 }
 
 .inner-wrap {
@@ -158,19 +162,6 @@ iframe {
   display: flex;
   /* opacity: 1; */
 }
-
-  @keyframes recordMenuSlider {
-    0% {
-      opacity: 0.5;
-      transform: translateX(-100%);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-  }
 
 .side-view h3 {
   display: none;

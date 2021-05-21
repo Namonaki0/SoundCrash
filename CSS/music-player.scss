@@ -27,18 +27,17 @@ body {
 
 }
 
-.player-btn {
-    position: relative;
+.player-area {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin: 1rem 0;
+    margin: 1rem 0 1rem;
     text-align: right;
-    background: rgba(255, 255, 255, 0.062);
+    background: rgba(255, 255, 255, 0.034);
     border-top: 1px solid rgba(192, 192, 192, 0.089);
     border-bottom: 1px solid rgba(192, 192, 192, 0.089);
     cursor: pointer;
-    z-index: 10000;
+    transition: all 120ms ease;
 
     span {
         font-size: 3rem;
@@ -49,19 +48,23 @@ body {
         opacity: 0;
     }
 
+    &:hover {
+        background: #114e849c;
+        
+    }
+
     &:hover span {
         visibility: visible;
         transform: translateX(0);
         opacity: 1;
-        color: gold;
-
+        color: rgba(255, 255, 255, 0.836);
     }
 
     &:hover .fa-play-circle,
     &:hover .fa-times-circle
      {
         transform: rotate(180deg);
-        color: gold;
+        color: rgba(255, 255, 255, 0.836);
     }
 
     .fa-play-circle,
@@ -75,6 +78,10 @@ body {
         transition: all 150ms linear;
     }
 
+    .fa-play-circle {
+        display: flex;
+    }
+
     .fa-times-circle {
         display: none;
         transition: all 150ms linear;
@@ -82,7 +89,8 @@ body {
         &.show {
             display: unset;
             font-size: 2rem;
-            margin-bottom: 2rem;
+            margin: 0;
+            padding: 0.5rem 1rem;
         }
     }
 }
