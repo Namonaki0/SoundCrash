@@ -11,7 +11,8 @@ const stretchIcon = document.querySelector(".fa-arrows-alt-v");
 const displayToggle = document.querySelector(".display-toggle");
 const playerOverallWrapper = document.querySelector(".player-overall-wrapper");
 const pageWrap = document.querySelector(".page-wrap");
-const playerBtn = document.querySelector(".player-btn");
+const playerArea = document.querySelector(".player-btn");
+const openPlayerBtn = document.querySelector(".fa-play-circle");
 const closePlayerBtn = document.querySelector(".fa-times-circle");
 
 //? DATA
@@ -36,34 +37,53 @@ prevBtn.addEventListener("click", prevSong);
 audio.addEventListener("ended", nextSong);
 songMenuWrapper.addEventListener("click", songMenuDisplay);
 stretchIcon.addEventListener("click", imageToggle);
+playerArea.addEventListener("click", playerDisplay);
 
-//? PLAYER DISPLAY TOGGLE
-playerBtn.addEventListener("click", () => {
-  pageWrap.classList.add("show-player");
-  pageWrap.style.display = "flex";
-  pageWrap.style.transition = "all 150ms ease";
-
-  playerBtnDisplay();
-});
-
-closePlayerBtn.addEventListener("click", () => {
-  pageWrap.classList.remove("show-player");
-  pageWrap.style.transition = "all 150ms ease";
-
-  playerBtnDisplay();
-});
-
-function playerBtnDisplay() {
+function playerDisplay() {
   if (pageWrap.classList.contains("show-player")) {
-    playerBtn.style.display = "none";
-    closePlayerBtn.style.display = "unset";
-    closePlayerBtn.style.fontSize = "2rem";
+    pageWrap.classList.remove("show-player");
+    pageWrap.style.transition = "all 150ms ease";
+    openPlayerBtn.style.display = "none";
+    closePlayerBtn.classList.add("show");
     closePlayerBtn.style.transition = "all 150ms ease";
   } else {
-    playerBtn.style.display = "";
+    pageWrap.classList.add("show-player");
+    pageWrap.style.display = "flex";
+    pageWrap.style.transition = "all 150ms ease";
+    openPlayerBtn.style.display = "";
+    closePlayerBtn.classList.remove("show");
     closePlayerBtn.style.display = "none";
   }
 }
+
+//? PLAYER DISPLAY TOGGLE
+// playerBtn.addEventListener("click", () => {
+//   pageWrap.classList.add("show-player");
+//   pageWrap.style.display = "flex";
+//   pageWrap.style.transition = "all 150ms ease";
+
+//   playerBtnDisplay();
+// });
+
+// closePlayerBtn.addEventListener("click", () => {
+//   pageWrap.classList.remove("show-player");
+//   pageWrap.style.transition = "all 150ms ease";
+
+//   playerBtnDisplay();
+// });
+
+// function playerBtnDisplay() {
+//   if (pageWrap.classList.contains("show-player")) {
+//     console.log("YEAH");
+//     openPlayerBtn.style.display = "none";
+//     playerBtn.style.fontSize = "1rem";
+//     closePlayerBtn.classList.add("show");
+//     closePlayerBtn.style.transition = "all 150ms ease";
+//   } else {
+//     openPlayerBtn.style.display = "";
+//     closePlayerBtn.style.display = "none";
+//   }
+// }
 
 //? SONG SELECTION FROM MENU
 const songMenu = document.querySelector(".song-menu");

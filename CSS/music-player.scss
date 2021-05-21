@@ -5,7 +5,6 @@ $title-font: "Teko", sans-serif;
 
 body {
     background: $background;
-    overflow-x: hidden;
 }
 
 * {
@@ -14,6 +13,7 @@ body {
 }
 
 .page-wrap {
+    position: relative;
     visibility: hidden;
     position: absolute;
     transform: translateX(100%);
@@ -28,6 +28,7 @@ body {
 }
 
 .player-btn {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -37,6 +38,7 @@ body {
     border-top: 1px solid rgba(192, 192, 192, 0.089);
     border-bottom: 1px solid rgba(192, 192, 192, 0.089);
     cursor: pointer;
+    z-index: 10000;
 
     span {
         font-size: 3rem;
@@ -55,7 +57,9 @@ body {
 
     }
 
-    &:hover .fa-play-circle {
+    &:hover .fa-play-circle,
+    &:hover .fa-times-circle
+     {
         transform: rotate(180deg);
         color: gold;
     }
@@ -69,43 +73,19 @@ body {
         color: white;
         cursor: pointer;
         transition: all 150ms linear;
-
-        &:hover{
-            color: gold;
-            transform: rotate(180deg);
-        }
-
     }
 
     .fa-times-circle {
         display: none;
+        transition: all 150ms linear;
+
+        &.show {
+            display: unset;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
     }
-
 }
-
-
-// .display-toggle {
-//     display: flex;
-//     align-items: center;
-//     background: #0c385f;
-//     padding: 1rem .5rem;
-//     font-size: 1.5rem;
-//     cursor: pointer;
-//     color: rgba(255, 255, 255, 0.788);
-//     transition: all 150ms ease;
-//     z-index: 10000;
-//     min-height: 20%;
-
-//      &:hover {
-//        transform: scale(1.1);
-//        color: white;
-//      }
-
-//      &.toggle-after-effect {
-//          min-height: 100%;
-//          transform: scale(1);
-//      }
-// }
 
 .player-overall-wrapper {
     background: $highlight-blue;
