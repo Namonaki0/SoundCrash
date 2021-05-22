@@ -143,10 +143,6 @@ records.forEach((each_record) => {
       ".record-tracklist-styling"
     );
 
-    window.addEventListener("click", (e) => {
-      console.log(e.target);
-    });
-
     //? EMPTY TRACKLIST FOR NEXT CHOICE
     if (e.target != dataSet) {
       recordTracklistInfo.innerHTML = "";

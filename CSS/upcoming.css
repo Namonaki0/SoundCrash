@@ -1,143 +1,23 @@
 body {
-  background: var(--mediumBlue);
-}
-
-/* .merch-content-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.merch-main-content {
-  background: url("../Pics/hoodie.jpg") no-repeat;
-  background-blend-mode: multiply;
-  background-color: var(--mediumBlue);
-  background-position: left;
-  background-size: cover;
-  min-height: 100vh;
-}
-
-.merch-main-content h1 {
-  text-transform: uppercase;
-  line-height: 4.2rem;
-  font-weight: 700;
-  font-size: 6rem;
-  width: 30%;
-  padding: 1rem;
-}
-
-.merch-main-content h1,
-.merch-secondary-content h2,
-.merch-tertiary-content h2 {
-  font-family: "Teko", sans-serif;
+  background: none;
   color: white;
 }
 
-.merch-secondary-content h2 {
-  color: var(--mediumBlue);
-  font-size: 5rem;
-  text-align: right;
-  line-height: 3.5rem;
-  text-transform: uppercase;
-  margin-left: auto;
-  margin-top: 1.5rem;
-}
-
-.question {
-  color: var(--gold);
-}
-
-.merch-slider {
-  border: 2px solid white;
-  padding: 0.5em 1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1.5em;
+/* header {
+  position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      
+} */
+/* body {
   color: white;
-  position: absolute;
-  right: 1rem;
-  bottom: 0.5rem;
-  -webkit-transition: all 200ms ease-in;
-  transition: all 150ms ease-in;
-}
-
-.merch-slider:hover {
-  background: white;
-  color: black;
-}
-
-.merch-secondary-content {
-  background: var(--white);
-  clip-path: polygon(100% 0, 100% 50%, 93% 100%, 0% 100%, 0 52%, 7% 0);
-  min-height: 100vh;
-  padding: 1rem;
-}
-
-.merch-secondary-content h2 {
-  margin-bottom: 2.5rem;
-}
-
-.product-history {
-  width: 80%;
-  margin: auto;
-  line-height: 1.5rem;
-}
-
-.product-history::before,
-.product-history::after {
-  content: "";
-  height: 3px;
-  background: var(--gold);
-  display: block;
-  width: 30%;
-  margin-bottom: 1.2rem;
-}
-
-.product-history::after {
-  margin-top: 1.2rem;
-  margin-left: auto;
-}
-
-.merch-tertiary-content {
-  min-height: 100vh;
-  background: url("../Pics/hoodie2.jpg");
-  background-blend-mode: multiply;
-  background-color: var(--mediumBlue);
-  background-size: cover;
-  background-position: right;
-  color: white;
-  position: relative;
-  width: 100%;
-  text-align: center;
-}
-
-.merch-tertiary-content h2 {
-  font-size: 3rem;
-  font-weight: 400;
-  margin-top: 1rem;
-  display: inline-block;
-  text-align: center;
-}
-
-.merch-tertiary-content h2::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: var(--mediumBlue);
-  width: 50%;
-  margin-top: -0.6rem;
-  margin-left: auto;
-}
-
-.discount {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
 } */
 
-body {
-  color: white;
+nav {
+  background: black;
+  /* position: sticky; */
+  border: none;
 }
 
 .container-wrapper,
@@ -145,13 +25,15 @@ body {
   height: 100vh;
   width: 100%;
   position: relative;
-  background: grey;
+  background: rgba(128, 128, 128, 0);
+  /* z-index: 100; */
 }
 
 .container-wrapper {
   overflow: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  
 }
 
 .division {
@@ -174,12 +56,13 @@ body {
   background: linear-gradient(82deg, #222222 30%, #ff0000 70%),
     url("https://specials-images.forbesimg.com/imageserve/817875305a124c6095b169a2372465a4/960x0.jpg?fit=scale");
   background-size: cover;
+  background-position: top right;
   background-attachment: fixed;
 }
 
 .division:nth-of-type(2) {
   background: #00ffff60
-    url("https://kys-cdn.s3.ap-southeast-1.amazonaws.com/kysadmn/wp-content/uploads/2017/03/10104056/13692835_1157222877652071_2761578980738042355_o-1024x859.jpg");
+    url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
   background-position: top;
   background-size: cover;
   background-attachment: fixed;
@@ -187,8 +70,9 @@ body {
 
 .division:nth-of-type(3) {
   background: linear-gradient(82deg, #222222 30%, #ff7b00 70%),
-    url("https://images.pexels.com/photos/5723250/pexels-photo-5723250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
   background-size: cover;
+  background-position: top;
   background-attachment: fixed;
 }
 
