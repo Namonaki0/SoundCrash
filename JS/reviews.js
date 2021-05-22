@@ -47,5 +47,3 @@ function reviewsPanel() {
   reviewerTitle[2].innerHTML = `${annabelle.title}`;
   reviewersReview[2].innerHTML = `${annabelle.review}`;
 }
-
-// reviewsPanel();
