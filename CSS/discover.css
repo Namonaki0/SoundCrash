@@ -1,3 +1,5 @@
+/*? MAIN SECTION */
+
 main {
   display: flex;
   flex-direction: column;
@@ -52,6 +54,13 @@ iframe {
   transition: all 250ms ease-in-out;
 }
 
+
+/*? HONORABLE MENTIONS SECTION */
+
+aside {
+  background: grey;
+}
+
 .honorable-mentions {
   font-family: var(--teko);
   position: relative;
@@ -81,6 +90,25 @@ iframe {
   padding-bottom: 2rem;
 }
 
+@media (min-width: 700px) {
+  .honorable-mentions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .record-menu {
+    padding: 0;
+  }
+
+  .honorable-mentions::before {
+    display: none;
+  }
+
+  .inner-wrap {
+    flex-grow: 2;
+  }
+}
+
 .record-title {
   margin: 0;
   padding: 1rem 0 0;
@@ -107,7 +135,7 @@ iframe {
 .artist-title {
   font-size: 2rem;
   font-weight: 100;
-   text-transform: uppercase;
+  text-transform: uppercase;
   color: rgb(158, 158, 158);
   text-align: center;
   grid-column: 1 / -1;
@@ -149,6 +177,12 @@ iframe {
 
 .record-menu-open:hover {
   background: #2c2c36;
+}
+
+@media (min-width: 700px){
+ .record-menu-open {
+   display: none;
+ }
 }
 
 .side-view {
@@ -212,7 +246,6 @@ iframe {
     opacity: 1;
   }
 }
-
 
 /*? INJECTED MARKUP */
 
@@ -449,7 +482,7 @@ iframe {
   }
 
   .artist-info-wrap {
-    border: 1px solid cyan;
-    padding: 1rem;
+    /* border: 1px solid cyan; */
+    /* padding: 1rem; */
   }
 }

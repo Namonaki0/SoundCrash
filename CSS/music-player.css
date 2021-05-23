@@ -10,13 +10,12 @@ body {
 }
 
 .page-wrap {
-  display: none;
   position: relative;
   visibility: hidden;
   position: absolute;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .page-wrap.show-player {
@@ -105,6 +104,20 @@ body {
   font-size: 2rem;
   margin: 0;
   padding: 0.5rem 1rem;
+}
+
+@media (min-width: 700px) {
+  .player-area {
+    margin-bottom: 3rem;
+  }
+  .player-area .fa-play-circle,
+  .player-area .fa-times-circle {
+    font-size: 5rem;
+    margin-left: 1.2rem;
+  }
+  .player-area span {
+    font-size: 4rem;
+  }
 }
 
 .player-overall-wrapper {

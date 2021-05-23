@@ -14,12 +14,12 @@ body {
 }
 
 .page-wrap {
-    display: none;
+    // display: none;
     position: relative;
     visibility: hidden;
     position: absolute;
     transform: translateX(100%);
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 
     &.show-player {
         position: relative;
@@ -96,6 +96,22 @@ body {
             padding: 0.5rem 1rem;
         }
     }
+
+            @media (min-width: 700px) {
+                & {
+                    margin-bottom: 3rem;
+
+                    .fa-play-circle,
+                    .fa-times-circle {
+                        font-size: 5rem;
+                        margin-left: 1.2rem;
+                    }
+
+                    span {
+                        font-size: 4rem;
+                    }
+                }
+            }
 }
 
 .player-overall-wrapper {

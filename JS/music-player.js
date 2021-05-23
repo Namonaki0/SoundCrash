@@ -56,7 +56,7 @@ function playerDisplay() {
     openPlayerBtn.style.display = "";
     closePlayerBtn.classList.remove("show");
     playerAreaSpan.style.display = "";
-    playerArea.style.marginBottom = "1rem";
+    playerArea.style.marginBottom = "3rem";
   }
 }
 
