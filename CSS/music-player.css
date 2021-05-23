@@ -10,6 +10,7 @@ body {
 }
 
 .page-wrap {
+  display: none;
   position: relative;
   visibility: hidden;
   position: absolute;
@@ -32,9 +33,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 1rem 0 1rem;
   text-align: right;
   background: rgba(255, 255, 255, 0.034);
@@ -46,7 +47,7 @@ body {
 }
 
 .player-area span {
-  font-size: 3rem;
+  font-size: 2rem;
   color: white;
   visibility: hidden;
   -webkit-transition: all 120ms ease;
@@ -77,9 +78,9 @@ body {
 
 .player-area .fa-play-circle,
 .player-area .fa-times-circle {
-  font-size: 5rem;
+  font-size: 4rem;
   text-align: right;
-  padding: .8rem 1rem;
+  padding: .8rem 0;
   color: white;
   cursor: pointer;
   -webkit-transition: all 150ms linear;
@@ -90,6 +91,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-left: .8rem;
 }
 
 .player-area .fa-times-circle {

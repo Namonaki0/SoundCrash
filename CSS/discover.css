@@ -64,7 +64,7 @@ iframe {
   display: block;
   color: var(--mediumBlue);
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 100;
   text-transform: uppercase;
   border-top: .5px solid rgba(192, 192, 192, 0.384);

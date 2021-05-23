@@ -14,6 +14,7 @@ body {
 }
 
 .page-wrap {
+    display: none;
     position: relative;
     visibility: hidden;
     position: absolute;
@@ -31,7 +32,7 @@ body {
 .player-area {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     margin: 1rem 0 1rem;
     text-align: right;
     background: rgba(255, 255, 255, 0.034);
@@ -41,7 +42,7 @@ body {
     transition: all 120ms ease;
 
     span {
-        font-size: 3rem;
+        font-size: 2rem;
         color: white;
         visibility: hidden;
         transition: all 120ms ease;
@@ -71,9 +72,9 @@ body {
     .fa-play-circle,
     .fa-times-circle
      {
-        font-size: 5rem;
+        font-size: 4rem;
         text-align: right;
-        padding: .8rem 1rem;
+        padding: .8rem 0;
         color: white;
         cursor: pointer;
         transition: all 150ms linear;
@@ -81,6 +82,7 @@ body {
 
     .fa-play-circle {
         display: flex;
+        margin-left: .8rem;
     }
 
     .fa-times-circle {
