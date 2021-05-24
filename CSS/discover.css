@@ -8,7 +8,8 @@ main {
   position: relative;
 }
 
-main h1 {
+main h1,
+aside h1 {
   visibility: hidden;
   position: absolute;
 }
@@ -59,7 +60,7 @@ iframe {
 .honorable-mentions {
   font-family: var(--teko);
   position: relative;
-  clip-path: inset(0 0);
+  /* clip-path: inset(0 0); */
   min-height: 100vh;
 }
 
@@ -384,7 +385,8 @@ iframe {
     padding-top: 5rem;
   }
 
-  main h1 {
+  main h1,
+  aside h1 {
     font-family: var(--teko);
     font-weight: 100;
     font-size: 12rem;
@@ -402,6 +404,11 @@ iframe {
     left: -10%;
     top: -0.5rem;
     height: 100%;
+  }
+
+  aside h1 {
+    font-size: 8rem;
+    left: -5%;
   }
 
   .video-wrapper {
@@ -432,7 +439,7 @@ iframe {
     display: grid;
     grid-gap: 1rem;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 120px repeat(4, 1fr);
   }
 
   .side-view {
@@ -446,7 +453,7 @@ iframe {
   }
 
   .record-menu {
-    grid-column: 3;
+    grid-column: 5 / span 2;
   }
 
   .record-menu-open {
@@ -458,12 +465,11 @@ iframe {
   }
 
   .side-view-img-wrap img {
-    /* width: 100%; */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 
   .inner-wrap {
-    grid-column: 1 / 3;
+    grid-column: 2 / 5;
     grid-row: 1;
     border: 1px solid rgba(221, 221, 221, 0.11);
   }
