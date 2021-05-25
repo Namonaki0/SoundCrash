@@ -15,7 +15,6 @@ body {
   position: absolute;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  margin-bottom: 3rem;
   opacity: 0;
 }
 
@@ -23,8 +22,8 @@ body {
   position: absolute;
   z-index: 10000;
   visibility: unset;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
   opacity: 1;
 }
 

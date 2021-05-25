@@ -51,14 +51,23 @@ function playerDisplay() {
     closePlayerBtn.classList.add("show");
     playerAreaSpan.style.display = "none";
     playerArea.style.marginBottom = "0";
+    if (window.innerWidth > 950) {
+      pageWrap.style.transform = "translate(-50%)";
+    } else {
+      pageWrap.style.transform = "translate(0%)";
+    }
   } else {
     pageWrap.classList.remove("show-player");
     openPlayerBtn.style.display = "";
     closePlayerBtn.classList.remove("show");
     playerAreaSpan.style.display = "";
-    playerArea.style.marginBottom = "3rem";
+    playerArea.style.marginBottom = "2rem";
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log(window.innerWidth);
+});
 
 //? SONG SELECTION FROM MENU
 const songMenu = document.querySelector(".song-menu");

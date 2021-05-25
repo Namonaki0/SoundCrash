@@ -18,14 +18,14 @@ body {
     visibility: hidden;
     position: absolute;
     transform: translateX(100%);
-    margin-bottom: 3rem;
+    // margin-bottom: 3rem;
     opacity: 0;
 
     &.show-player {
         position: absolute;
         z-index: 10000;
         visibility: unset;
-        transform: translateX(0);
+        transform: translateX(0%);
         opacity: 1;
     }
 

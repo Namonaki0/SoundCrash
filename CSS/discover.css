@@ -170,11 +170,11 @@ iframe {
   background: #2c2c36;
 }
 
-@media (min-width: 700px) {
+/* @media (min-width: 700px) {
   .record-menu-open {
     display: none;
   }
-}
+} */
 
 .side-view {
   display: none;
