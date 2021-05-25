@@ -54,7 +54,7 @@ function playerDisplay() {
     if (window.innerWidth > 950) {
       pageWrap.style.transform = "translate(-50%)";
     } else {
-      pageWrap.style.transform = "translate(0%)";
+      pageWrap.style.transform = "translate(100%)";
     }
   } else {
     pageWrap.classList.remove("show-player");
@@ -64,10 +64,6 @@ function playerDisplay() {
     playerArea.style.marginBottom = "2rem";
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  console.log(window.innerWidth);
-});
 
 //? SONG SELECTION FROM MENU
 const songMenu = document.querySelector(".song-menu");

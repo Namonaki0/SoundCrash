@@ -14,14 +14,13 @@ body {
 }
 
 .page-wrap {
-    position: relative;
+    display: none;
     visibility: hidden;
-    position: absolute;
     transform: translateX(100%);
-    // margin-bottom: 3rem;
     opacity: 0;
 
     &.show-player {
+        display: "";
         position: absolute;
         z-index: 10000;
         visibility: unset;
@@ -39,17 +38,6 @@ body {
 }
 
 .player-area-wrapper {
-
-    // &::after {
-    //     content: "MUSIC STATION";
-    //     display: block;
-    //     font-size: 5rem;
-    //     color: white;
-    //     height: 100px;
-    //     overflow-y: hidden;
-    //     font-weight: 100;
-    // }
-
 
      @media (min-width: 950px) {
          & {

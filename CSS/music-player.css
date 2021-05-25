@@ -10,15 +10,15 @@ body {
 }
 
 .page-wrap {
-  position: relative;
+  display: none;
   visibility: hidden;
-  position: absolute;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   opacity: 0;
 }
 
 .page-wrap.show-player {
+  display: "";
   position: absolute;
   z-index: 10000;
   visibility: unset;
