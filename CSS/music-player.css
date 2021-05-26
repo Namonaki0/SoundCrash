@@ -11,6 +11,7 @@ body {
 
 .page-wrap {
   display: none;
+  position: absolute;
   visibility: hidden;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -18,8 +19,7 @@ body {
 }
 
 .page-wrap.show-player {
-  display: "";
-  position: absolute;
+  display: unset;
   z-index: 10000;
   visibility: unset;
   -webkit-transform: translateX(0%);

@@ -54,7 +54,7 @@ function playerDisplay() {
     if (window.innerWidth > 950) {
       pageWrap.style.transform = "translate(-50%)";
     } else {
-      pageWrap.style.transform = "translate(100%)";
+      pageWrap.style.transform = "translate(0)";
     }
   } else {
     pageWrap.classList.remove("show-player");
