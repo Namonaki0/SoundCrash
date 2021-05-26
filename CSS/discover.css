@@ -29,6 +29,8 @@ iframe {
   align-items: center;
   color: var(--dustyWhite);
   padding: .5rem 0 1rem;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.041);
+  
 }
 
 .video-info-btn-wrapper {
