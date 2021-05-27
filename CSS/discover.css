@@ -434,10 +434,11 @@ iframe {
 
   .video-wrapper {
     width: 85%;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     margin-right: 2rem;
     display: flex;
     align-items: center;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.041);
   }
 
   iframe {
@@ -448,13 +449,26 @@ iframe {
 
   .num-system {
     position: absolute;
-    top: -9rem;
+    top: -8rem;
   }
 
   .video-info {
     height: 100%;
     width: 50%;
+    border-bottom: none;
   }
+
+  .video-desc-wrap h2 {
+    margin-top: 1.8rem;
+  }
+
+
+  .video-info-btn-wrapper a {
+    display: block;
+    width: max-content;
+    margin-top: .5rem;
+  }
+
 
   .honorable-mentions {
     display: grid;
@@ -494,4 +508,6 @@ iframe {
     grid-row: 1;
     border: 1px solid rgba(221, 221, 221, 0.11);
   }
+
+
 }

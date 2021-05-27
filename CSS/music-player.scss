@@ -4,357 +4,374 @@ $text-font: "Montserrat", sans-serif;
 $title-font: "Teko", sans-serif;
 
 body {
-    background: $background;
-    overflow-x: hidden;
+  background: $background;
+  overflow-x: hidden;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .page-wrap {
-    display: none;
-    position: absolute;
-    visibility: hidden;
-    transform: translateX(100%);
-    opacity: 0;
+  display: none;
+  position: absolute;
+  visibility: hidden;
+  transform: translateX(100%);
+  opacity: 0;
 
-    &.show-player {
-        display: unset;
-        z-index: 10000;
-        visibility: unset;
-        transform: translateX(0%);
-        opacity: 1;
+  &.show-player {
+    display: unset;
+    z-index: 10000;
+    visibility: unset;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  @media (min-width: 950px) {
+    & {
+      width: 50%;
+      right: 0;
     }
-
-      @media (min-width: 950px) {
-          & {
-            width: 50%;
-            right: 0;
-          }
-      }
-
+  }
 }
 
 .player-area-wrapper {
+  position: relative;
 
-     @media (min-width: 950px) {
-         & {
-             font-family: $title-font;
-             display: flex;
-             align-items: center;
-             flex-direction: row-reverse;
-             justify-content: space-around;
-             background: linear-gradient(to right, #114e8434, #0a2a4627);
-         }
-     }
+  & h3 {
+    color: white;
+    font-family: $title-font;
+    font-weight: 100;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.089);
+    transition: all 200ms ease-in-out;
+    display: block;
+    width: 100%;
+
+    &:hover {
+        color: white;
+        background: rgba(255, 255, 255, 0.089);
+    }
+  }
+
+    &:hover h3 {
+        background: white;
+        color: $highlight-blue;
+    }
+
+
+  @media (min-width: 950px) {
+    & {
+      font-family: $title-font;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+      background: linear-gradient(to right, #114e8434, #0a2a4627);
+    }
+
+    & h3 {
+      background: $highlight-blue;
+      margin-top: .2rem;
+    }
+  }
 }
 
 .player-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 1rem;
-    text-align: right;
-    background: rgba(255, 255, 255, 0.034);
-    border-top: 1px solid rgba(192, 192, 192, 0.089);
-    border-bottom: 1px solid rgba(192, 192, 192, 0.089);
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 1rem;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.034);
+  cursor: pointer;
+  transition: all 120ms ease;
+
+  span {
+    font-size: 2rem;
+    color: white;
     transition: all 120ms ease;
+  }
 
-    span {
-        font-size: 2rem;
-        color: white;
-        visibility: hidden;
-        transition: all 120ms ease;
-        transform: translateX(100%);
-        opacity: 0;
+  &:hover {
+    background: #114e849c;
+  }
+
+  &:hover span {
+    color: rgba(255, 255, 255, 0.836);
+  }
+
+  .fa-play-circle,
+  .fa-times-circle {
+    font-size: 4rem;
+    text-align: right;
+    padding: 0.8rem 0;
+    color: white;
+    cursor: pointer;
+    transition: all 150ms linear;
+  }
+
+  .fa-play-circle {
+    display: flex;
+    margin-left: 0.8rem;
+  }
+
+   &:hover .fa-play-circle,
+   &:hover .fa-times-circle {
+       transform: rotate(180deg);
+       color: rgba(255, 255, 255, 0.836);
+       transition: all 220ms ease;
+   }
+
+  .fa-times-circle {
+    display: none;
+    transition: all 150ms linear;
+
+    &.show {
+      display: unset;
+      font-size: 2rem;
+      margin: 0;
+      padding: 0.5rem 1rem;
     }
 
-    &:hover {
-        background: #114e849c;
-        
-    }
+  }
 
-    &:hover span {
+  @media (min-width: 700px) {
+
+    & {
+      margin-bottom: 3rem;
+
+      .fa-play-circle,
+      .fa-times-circle {
+        font-size: 5rem;
+        margin-left: 1.2rem;
+      }
+
+      span {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  @media (min-width: 950px) {
+    & {
+      margin: 2rem 0;
+      width: 100%;
+      border: none;
+      background: none;
+      justify-content: center;
+
+      .fa-play-circle,
+      .fa-times-circle {
+        font-size: 4rem;
+      }
+
+      span {
+        font-size: 3rem;
+        transform: translateX(-100%);
+      }
+
+      &:hover span {
         visibility: visible;
         transform: translateX(0);
         opacity: 1;
         color: rgba(255, 255, 255, 0.836);
+      }
     }
-
-    &:hover .fa-play-circle,
-    &:hover .fa-times-circle
-     {
-        transform: rotate(180deg);
-        color: rgba(255, 255, 255, 0.836);
-    }
-
-    .fa-play-circle,
-    .fa-times-circle
-     {
-        font-size: 4rem;
-        text-align: right;
-        padding: .8rem 0;
-        color: white;
-        cursor: pointer;
-        transition: all 150ms linear;
-    }
-
-    .fa-play-circle {
-        display: flex;
-        margin-left: .8rem;
-    }
-
-    .fa-times-circle {
-        display: none;
-        transition: all 150ms linear;
-
-        &.show {
-            display: unset;
-            font-size: 2rem;
-            margin: 0;
-            padding: 0.5rem 1rem;
-        }
-    }
-
-            @media (min-width: 700px) {
-                & {
-                    margin-bottom: 3rem;
-
-                    .fa-play-circle,
-                    .fa-times-circle {
-                        font-size: 5rem;
-                        margin-left: 1.2rem;
-                    }
-
-                    span {
-                        font-size: 4rem;
-                    }
-                }
-            }
-
-            @media (min-width: 950px) {
-                & {
-                    margin: 2rem 0;
-                    width: 100%;
-                    border: none;
-                    background: none;
-                    justify-content: center;
-
-                    .fa-play-circle,
-                    .fa-times-circle {
-                        font-size: 4rem;
-                    }
-
-                    span {
-                        font-size: 3rem;
-                        transform: translateX(-100%);
-                    }
-
-                     &:hover span {
-                         visibility: visible;
-                         transform: translateX(0);
-                         opacity: 1;
-                         color: rgba(255, 255, 255, 0.836);
-                     }
-                }
-            }
+  }
 }
 
 .player-overall-wrapper {
-    background: $highlight-blue;
-    text-align: center;
-    transition: transform 150ms ease;
+  background: $highlight-blue;
+  text-align: center;
+  transition: transform 150ms ease;
 
-    .artist-img-wrapper {
-        width: 100%;
-        height: 40vh;
-        object-fit: cover;
-        overflow: hidden;
-        transition: height 150ms ease;
-        img {
-            width: 100%;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.295), white);
-            opacity: .8;
-        }
-        &.img-display-toggle {
-            visibility: hidden;
-            height: 8vh;
-        }
+  .artist-img-wrapper {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    overflow: hidden;
+    transition: height 150ms ease;
+    img {
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.295), white);
+      opacity: 0.8;
+    }
+    &.img-display-toggle {
+      visibility: hidden;
+      height: 8vh;
+    }
+  }
+
+  .progress-bar-wrapper {
+    display: flex;
+    background: white;
+    height: 8px;
+    width: 100%;
+    cursor: pointer;
+
+    .progress-bar {
+      background: #0d375ca4;
+      height: 8px;
+    }
+  }
+
+  .outer-control-wrapper {
+    position: relative;
+    z-index: 100;
+
+    .fa-arrows-alt-v {
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      color: white;
+      cursor: pointer;
+      font-size: 1.2rem;
     }
 
-    .progress-bar-wrapper {
+    .song-title {
+      font-family: $title-font;
+      display: block;
+      background: #062441;
+      color: rgba(255, 255, 255, 0.801);
+      color: white;
+      padding: 0.2rem 0;
+      font-size: 2rem;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+      transition: all 180ms ease;
+      pointer-events: none;
+      overflow: hidden;
+      opacity: 0;
+      transform: translate(-100%, -100%);
+
+      &.show {
+        transform: translate(0, -100%);
+        opacity: 0.9;
+      }
+
+      //?  JS DOM EL
+      .artist-name {
+        color: rgb(211, 211, 211);
+      }
+    }
+
+    .controls {
+      position: relative;
+      color: white;
+      padding: 1rem;
+      width: 30%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      z-index: 200;
+
+      button {
+        all: unset;
+        padding: 0.5rem 0.8rem;
+        background: #103f6b;
+        color: white;
+        cursor: pointer;
+        transition: all 100ms ease-in-out;
+
+        &:hover {
+          background: white;
+          color: $highlight-blue;
+        }
+      }
+
+      .fas {
+        pointer-events: none;
+      }
+    }
+  }
+
+  .song-menu-wrapper {
+    background: #0e3d66;
+    overflow: hidden;
+    text-align: right;
+    cursor: pointer;
+
+    & span {
+      color: white;
+      margin-right: 0.5rem;
+      padding: 0.2rem 0;
+      display: block;
+      transition: color 120ms ease-in-out;
+      z-index: 10;
+
+      &:hover {
+        color: orange;
+      }
+    }
+
+    .song-menu {
+      background: #273046;
+      color: white;
+      font-family: $text-font;
+      width: 100%;
+      height: 0;
+      transition: all 150ms ease;
+      transform: translateY(-100%);
+      opacity: 0;
+      flex-direction: column;
+      text-align: left;
+
+      span {
+        display: unset;
+        color: rgb(201, 201, 201);
+        margin-left: 0.3rem;
+
+        &:hover {
+          color: rgb(201, 201, 201);
+        }
+      }
+
+      div {
         display: flex;
-        background: white;
-        height: 8px;
-        width: 100%;
+        padding: 0.5rem;
+        border-bottom: 1px solid rgba(192, 192, 192, 0.068);
         cursor: pointer;
+        transition: background 120ms ease;
+        align-items: center;
+        z-index: 1000;
 
-        .progress-bar {
-            background: #0d375ca4;
-            height: 8px;
-        }
-    }
-    
-    .outer-control-wrapper {
-        position: relative;
-        z-index: 100;
-
-        .fa-arrows-alt-v {
-            position: absolute;
-            top: 20px;
-            right: 10px;
-            color: white;
-            cursor: pointer;
-            font-size: 1.2rem;
+        &:last-child {
+          border-bottom: none;
         }
 
-         .song-title {
-             font-family: $title-font;
-             display: block;
-             background: #062441;
-             color: rgba(255, 255, 255, 0.801);
-             color: white;
-             padding: .2rem 0;
-             font-size: 2rem;
-             position: absolute;
-             width: 100%;
-             z-index: -1;
-             transition: all 180ms ease;
-             pointer-events: none;
-             overflow: hidden;
-             opacity: 0;
-             transform: translate(-100%, -100%);
-
-             &.show {
-                transform: translate(0, -100%);
-                opacity: .9;
-             }
-
-            //?  JS DOM EL
-             .artist-name {
-                 color: rgb(211, 211, 211);
-             }
-         }
-
-        .controls {
-            position: relative;
-            color: white;
-            padding: 1rem;
-            width: 30%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-around;
-            z-index: 200;
-
-            button {
-                all: unset;
-                padding: .5rem .8rem;
-                background: #103F6B;
-                color: white;
-                cursor: pointer;
-                transition: all 100ms ease-in-out;
-
-                &:hover {
-                    background: white;
-                    color: $highlight-blue;
-                }
-            }
-
-            .fas {
-                pointer-events: none;
-            }
+        &:hover {
+          background: #2c3650;
         }
+
+        &:hover i {
+          color: orange;
+        }
+
+        & * {
+          pointer-events: none;
+        }
+      }
+
+      i {
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+        transition: color 120ms ease;
+      }
     }
 
-    .song-menu-wrapper {
-        background: #0e3d66;
-        overflow: hidden;
-        text-align: right;
-        cursor: pointer;
-
-        & span {
-            color: white;
-            margin-right: .5rem;
-            padding: .2rem 0;
-            display: block;
-            transition: color 120ms ease-in-out;
-            z-index: 10;
-
-            &:hover {
-                color: orange;
-            }
-        }
-
-        .song-menu {
-            background: #273046;
-            color: white;
-            font-family: $text-font;
-            width: 100%;
-            height: 0;
-            transition: all 150ms ease;
-            transform: translateY(-100%);
-            opacity: 0;
-            flex-direction: column;
-            text-align: left;
-
-            span {
-                display: unset;
-                color: rgb(201, 201, 201);
-                margin-left: .3rem;
-
-                &:hover {
-                    color: rgb(201, 201, 201);
-                }
-            }
-
-            div {
-                display: flex;
-                padding: .5rem;
-                border-bottom: 1px solid rgba(192, 192, 192, 0.068);
-                cursor: pointer;
-                transition: background 120ms ease;
-                align-items: center;
-                z-index: 1000;
-
-                &:last-child {
-                    border-bottom: none;
-                }
-
-                &:hover {
-                    background: #2c3650;
-                }
-
-                &:hover i {
-                    color: orange;
-                }
-
-                & * {
-                    pointer-events: none;
-                }
-            }
-
-            i {
-                margin-right: .5rem;
-                font-size: 1.2rem;
-                transition: color 120ms ease;
-            }
-            
-        }
-
-        .show-menu {
-            transition: all 150ms ease-in-out;
-            transform: translateY(0%);
-            opacity: 1;
-            height: auto;
-        }
-
+    .show-menu {
+      transition: all 150ms ease-in-out;
+      transform: translateY(0%);
+      opacity: 1;
+      height: auto;
     }
+  }
 }
-
-
-
-
-

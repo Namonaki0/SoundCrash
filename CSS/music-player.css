@@ -34,6 +34,37 @@ body {
   }
 }
 
+.player-area-wrapper {
+  position: relative;
+}
+
+.player-area-wrapper h3 {
+  color: white;
+  font-family: "Teko", sans-serif;
+  font-weight: 100;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.089);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  display: block;
+  width: 100%;
+}
+
+.player-area-wrapper h3:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.089);
+}
+
+.player-area-wrapper:hover h3 {
+  background: white;
+  color: #114e84;
+}
+
 @media (min-width: 950px) {
   .player-area-wrapper {
     font-family: "Teko", sans-serif;
@@ -43,14 +74,18 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     background: -webkit-gradient(linear, left top, right top, from(#114e8434), to(#0a2a4627));
     background: linear-gradient(to right, #114e8434, #0a2a4627);
+  }
+  .player-area-wrapper h3 {
+    background: #114e84;
+    margin-top: .2rem;
   }
 }
 
@@ -64,11 +99,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 1rem 0 1rem;
+  margin: 0 0 1rem;
   text-align: right;
   background: rgba(255, 255, 255, 0.034);
-  border-top: 1px solid rgba(192, 192, 192, 0.089);
-  border-bottom: 1px solid rgba(192, 192, 192, 0.089);
   cursor: pointer;
   -webkit-transition: all 120ms ease;
   transition: all 120ms ease;
@@ -77,12 +110,8 @@ body {
 .player-area span {
   font-size: 2rem;
   color: white;
-  visibility: hidden;
   -webkit-transition: all 120ms ease;
   transition: all 120ms ease;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  opacity: 0;
 }
 
 .player-area:hover {
@@ -90,17 +119,6 @@ body {
 }
 
 .player-area:hover span {
-  visibility: visible;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  opacity: 1;
-  color: rgba(255, 255, 255, 0.836);
-}
-
-.player-area:hover .fa-play-circle,
-.player-area:hover .fa-times-circle {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
   color: rgba(255, 255, 255, 0.836);
 }
 
@@ -108,7 +126,7 @@ body {
 .player-area .fa-times-circle {
   font-size: 4rem;
   text-align: right;
-  padding: .8rem 0;
+  padding: 0.8rem 0;
   color: white;
   cursor: pointer;
   -webkit-transition: all 150ms linear;
@@ -119,7 +137,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: .8rem;
+  margin-left: 0.8rem;
+}
+
+.player-area:hover .fa-play-circle,
+.player-area:hover .fa-times-circle {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  color: rgba(255, 255, 255, 0.836);
+  -webkit-transition: all 220ms ease;
+  transition: all 220ms ease;
 }
 
 .player-area .fa-times-circle {
@@ -200,7 +227,7 @@ body {
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.295)), to(white));
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.295), white);
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .player-overall-wrapper .artist-img-wrapper.img-display-toggle {
@@ -243,7 +270,7 @@ body {
   background: #062441;
   color: rgba(255, 255, 255, 0.801);
   color: white;
-  padding: .2rem 0;
+  padding: 0.2rem 0;
   font-size: 2rem;
   position: absolute;
   width: 100%;
@@ -260,7 +287,7 @@ body {
 .player-overall-wrapper .outer-control-wrapper .song-title.show {
   -webkit-transform: translate(0, -100%);
           transform: translate(0, -100%);
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .player-overall-wrapper .outer-control-wrapper .song-title .artist-name {
@@ -283,8 +310,8 @@ body {
 
 .player-overall-wrapper .outer-control-wrapper .controls button {
   all: unset;
-  padding: .5rem .8rem;
-  background: #103F6B;
+  padding: 0.5rem 0.8rem;
+  background: #103f6b;
   color: white;
   cursor: pointer;
   -webkit-transition: all 100ms ease-in-out;
@@ -309,8 +336,8 @@ body {
 
 .player-overall-wrapper .song-menu-wrapper span {
   color: white;
-  margin-right: .5rem;
-  padding: .2rem 0;
+  margin-right: 0.5rem;
+  padding: 0.2rem 0;
   display: block;
   -webkit-transition: color 120ms ease-in-out;
   transition: color 120ms ease-in-out;
@@ -342,7 +369,7 @@ body {
 .player-overall-wrapper .song-menu-wrapper .song-menu span {
   display: unset;
   color: #c9c9c9;
-  margin-left: .3rem;
+  margin-left: 0.3rem;
 }
 
 .player-overall-wrapper .song-menu-wrapper .song-menu span:hover {
@@ -353,7 +380,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: .5rem;
+  padding: 0.5rem;
   border-bottom: 1px solid rgba(192, 192, 192, 0.068);
   cursor: pointer;
   -webkit-transition: background 120ms ease;
@@ -381,7 +408,7 @@ body {
 }
 
 .player-overall-wrapper .song-menu-wrapper .song-menu i {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   font-size: 1.2rem;
   -webkit-transition: color 120ms ease;
   transition: color 120ms ease;
