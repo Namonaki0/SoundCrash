@@ -99,7 +99,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 0 1rem;
   text-align: right;
   background: rgba(255, 255, 255, 0.034);
   cursor: pointer;
@@ -124,7 +123,7 @@ body {
 
 .player-area .fa-play-circle,
 .player-area .fa-times-circle {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: right;
   padding: 0.8rem 0;
   color: white;
@@ -163,22 +162,15 @@ body {
 }
 
 @media (min-width: 700px) {
-  .player-area {
-    margin-bottom: 3rem;
-  }
   .player-area .fa-play-circle,
   .player-area .fa-times-circle {
-    font-size: 5rem;
+    font-size: 3.5rem;
     margin-left: 1.2rem;
-  }
-  .player-area span {
-    font-size: 4rem;
   }
 }
 
 @media (min-width: 950px) {
   .player-area {
-    margin: 2rem 0;
     width: 100%;
     border: none;
     background: none;
@@ -192,13 +184,9 @@ body {
   }
   .player-area span {
     font-size: 3rem;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
   }
   .player-area:hover span {
     visibility: visible;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
     opacity: 1;
     color: rgba(255, 255, 255, 0.836);
   }
@@ -316,6 +304,7 @@ body {
   cursor: pointer;
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
+  border: 1px solid #204e7538;
 }
 
 .player-overall-wrapper .outer-control-wrapper .controls button:hover {

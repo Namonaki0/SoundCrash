@@ -87,7 +87,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 1rem;
   text-align: right;
   background: rgba(255, 255, 255, 0.034);
   cursor: pointer;
@@ -109,7 +108,7 @@ body {
 
   .fa-play-circle,
   .fa-times-circle {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: right;
     padding: 0.8rem 0;
     color: white;
@@ -145,23 +144,18 @@ body {
   @media (min-width: 700px) {
 
     & {
-      margin-bottom: 3rem;
 
       .fa-play-circle,
       .fa-times-circle {
-        font-size: 5rem;
+        font-size: 3.5rem;
         margin-left: 1.2rem;
       }
 
-      span {
-        font-size: 4rem;
-      }
     }
   }
 
   @media (min-width: 950px) {
     & {
-      margin: 2rem 0;
       width: 100%;
       border: none;
       background: none;
@@ -174,12 +168,10 @@ body {
 
       span {
         font-size: 3rem;
-        transform: translateX(-100%);
       }
 
       &:hover span {
         visibility: visible;
-        transform: translateX(0);
         opacity: 1;
         color: rgba(255, 255, 255, 0.836);
       }
@@ -280,6 +272,7 @@ body {
         color: white;
         cursor: pointer;
         transition: all 100ms ease-in-out;
+        border: 1px solid #204e7538;
 
         &:hover {
           background: white;
