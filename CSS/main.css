@@ -201,6 +201,10 @@ nav ul a:hover,
   nav ul {
     align-items: center;
   }
+
+  .menu-social-media a {
+    font-size: 3rem;
+  }
 }
 
 /*? --- HERO - MAIN SECTION ---- */
