@@ -9,14 +9,14 @@ body {
   font-family: var(--montserrat);
   min-height: 100vh;
   background: #fff;
+  background: linear-gradient(91deg, #2d2d5d 0%, #011332 100%),
+  url("https://images.unsplash.com/photo-1526554850534-7c78330d5f90?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80");
 }
 
 header {
   text-align: center;
-  height: 50vh;
+  height: 40vh;
   border-bottom: 1px solid var(--mediumBlue);
-  background: linear-gradient(91deg, #2d2d5d 0%, #011332 100%), 
-  url("https://images.unsplash.com/photo-1526554850534-7c78330d5f90?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80");
   background-blend-mode: multiply;
 }
 
@@ -36,31 +36,9 @@ header span {
   font-size: 2rem;
 }
 
-@media (min-width: 800px){
-
-  h1,
-  header span {
-    font-size: 8vh;
-  }
-
-  h1 {
-    width: 100%;
-    max-width: 500px;
-    font-size: 8vh;
-    text-align: left;
-  }
-
-  header span {
-    display: block;
-    text-align: right;
-    
-  }
-}
-
 #mc_embed_signup {
   display: flex;
   justify-content: center;
-  background: #fff;
   position: relative;
   height: 50vh;
   padding: 2rem;
@@ -77,9 +55,36 @@ form {
   padding: 2rem;
   background: #192f55;
   border-radius: 2px;
-  border: 1px solid var(--mediumBlue);
+  border-top: .5px solid rgba(255, 255, 255, 0.158);
+  border-bottom: .5px solid rgba(255, 255, 255, 0.062);
   max-width: 700px;
   box-shadow: 0 1px 20px 5px rgba(0,0,0,.5);
+}
+
+@media (min-width: 800px) {
+
+  h1,
+  header span {
+    font-size: 8vh;
+  }
+
+  h1 {
+    width: 100%;
+    max-width: 500px;
+    font-size: 8vh;
+    text-align: left;
+    padding-top: 1rem;
+  }
+
+  header span {
+    display: block;
+    text-align: right;
+
+  }
+
+  #mc_embed_signup {
+    background: #fff;
+  }
 }
 
 #mc_embed_signup_scroll {
@@ -106,7 +111,7 @@ form {
   margin: auto;
   display: block;
   cursor: pointer;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.76);
   padding: 0.5rem 1rem;
   color: #1c1c1c;
   border-radius: 2px;
@@ -120,9 +125,7 @@ form {
 }
 
 .button:hover {
-  color: white;
-  background: #29417e;
-  border: 1px solid white;
+  background: white;
 }
 
 .mc-field-group {
@@ -183,6 +186,11 @@ form label .asterisk {
 
 #mce-error-response {
   background: #891818;
+}
+
+#mce-error-response a {
+  color: white;
+  font-size: .9rem;
 }
 
 #mce-success-response {
