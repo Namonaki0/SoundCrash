@@ -99,6 +99,88 @@ nav {
   color: rgba(255, 255, 255, 0.911);
 }
 
+/*? EVENTS CTA */
+.events-cta {
+  position: absolute;
+  right: 0;
+  display: flex;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.164);
+}
+
+.events-cta p {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid rgba(192, 192, 192, 0.13);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 120ms linear;
+}
+
+.events-cta p:hover,
+.events-cta p:focus {
+  background: white;
+  color: rgba(0, 0, 0, 0.644);
+}
+
+.events-cta p:last-child {
+  border-right: none;
+}
+
+/*? EVENTS CTA  - END*/
+
+/*? RECORD RELEASE  */
+
+#division-records {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+#division-records h2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 1rem;
+  padding: 1rem 1rem 0.5rem 0.2rem;
+  border-bottom: 1px solid white;
+}
+
+.record-release-info-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem 1rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.158);
+}
+
+.record-cover-wrapper {
+  width: 100px;
+  height: 100px;
+  margin-right: auto;
+}
+
+.record-cover-wrapper img {
+  width: 100%;
+}
+
+.record-release-info * {
+  margin: 0;
+}
+
+.record-release-info {
+  margin-right: 1.5rem;
+  align-self: flex-end;
+  padding: 0;
+}
+
+/*? RECORD RELEASE - END */
+
 .division:nth-of-type(1),
 .division:nth-of-type(2),
 .division:nth-of-type(3),
@@ -117,9 +199,8 @@ nav {
 }
 
 .division:nth-of-type(2) {
-  background: #00ffff60
-    url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
-  background-position: top;
+  background: linear-gradient(82deg, #222222 30%, #00a2ff 70%),
+    url("https://images.pexels.com/photos/5723223/pexels-photo-5723223.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -133,8 +214,9 @@ nav {
 }
 
 .division:nth-of-type(4) {
-  background: linear-gradient(82deg, #222222 30%, #00a2ff 70%),
-    url("https://images.pexels.com/photos/5723223/pexels-photo-5723223.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background: #00ffff60
+    url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
+  background-position: top;
   background-size: cover;
   background-attachment: fixed;
 }
