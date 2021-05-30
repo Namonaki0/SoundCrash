@@ -24,7 +24,6 @@ nav {
   overflow: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  
 }
 
 .division {
@@ -35,9 +34,29 @@ nav {
 }
 
 .division h1 {
-  border: 2px solid rgba(255, 255, 255, 0.938);
-  color: rgba(255, 255, 255, 0.938);
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.712);
+  color: rgba(255, 255, 255, 0.712);
   padding: 1rem 1.2rem;
+}
+
+.division .btt {
+  position: absolute;
+  bottom: 5%;
+  right: 10px;
+}
+
+.division .btt .far {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.87);
+  cursor: pointer;
+  transition: color 120ms linear;
+}
+
+.division .btt .far:hover {
+  color: white;
 }
 
 .division-title {
@@ -58,7 +77,6 @@ nav {
   color: rgba(255, 255, 255, 0.822);
   text-decoration: none;
   font-size: 1.5rem;
-  margin-bottom: .5rem;
   width: max-content;
 }
 
