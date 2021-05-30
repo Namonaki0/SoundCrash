@@ -148,6 +148,7 @@ nav {
   margin: 0 1rem;
   padding: 1rem 1rem 0.5rem 0.2rem;
   border-bottom: 1px solid white;
+  z-index: 100;
 }
 
 .record-release-info-wrapper {
@@ -159,10 +160,23 @@ nav {
   border-bottom: 1px solid rgba(192, 192, 192, 0.158);
 }
 
+.record-release-info-wrapper:hover {
+  border-bottom: 1px solid rgba(192, 192, 192, 0.534);
+}
+
 .record-cover-wrapper {
   width: 100px;
   height: 100px;
-  margin-right: auto;
+  opacity: 0.9;
+}
+
+.record-release-info-wrapper,
+.record-cover-wrapper {
+  transition: all 150ms linear;
+}
+
+.record-release-info-wrapper:hover .record-cover-wrapper {
+  opacity: 1;
 }
 
 .record-cover-wrapper img {
@@ -174,9 +188,19 @@ nav {
 }
 
 .record-release-info {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.record-release-info .artist-record-name {
+  align-self: flex-start;
+  padding: 0;
+}
+
+.record-release-info .release-date-wrapper {
   margin-right: 1.5rem;
   align-self: flex-end;
-  padding: 0;
 }
 
 /*? RECORD RELEASE - END */
@@ -206,7 +230,7 @@ nav {
 }
 
 .division:nth-of-type(3) {
-  background: linear-gradient(82deg, #222222 30%, #ff7b00 70%),
+  background: linear-gradient(82deg, #222222 30%, #ff7b00 90%),
     url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
   background-size: cover;
   background-position: top;
