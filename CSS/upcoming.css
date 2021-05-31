@@ -81,6 +81,27 @@ nav {
   width: max-content;
 }
 
+.division-links a:nth-of-type(1) {
+  animation: showMenu 250ms ease-in-out;
+}
+.division-links a:nth-of-type(2) {
+  animation: showMenu 350ms ease-in;
+}
+.division-links a:nth-of-type(3) {
+  animation: showMenu 450ms ease-in-out;
+}
+
+@keyframes showMenu {
+  from {
+    opacity: 0.2;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .division-links a::after {
   content: "";
   width: 100%;
@@ -103,9 +124,9 @@ nav {
 /*? EVENTS CTA */
 .events-cta {
   position: absolute;
-  right: 0;
+  left: 0;
   display: flex;
-  margin-right: 1rem;
+  margin-left: 1rem;
   margin-top: 1rem;
   background: rgba(255, 255, 255, 0.164);
 }
@@ -209,6 +230,15 @@ nav {
 
 .release-date-wrapper {
   width: 100%;
+  font-size: 0.9rem;
+}
+
+.artist-record-name .band-name {
+  color: rgba(255, 255, 255, 0.774);
+}
+
+.artist-record-name .record-name {
+  text-transform: uppercase;
 }
 
 /*? RECORD RELEASE - END */
