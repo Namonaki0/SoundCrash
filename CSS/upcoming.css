@@ -155,14 +155,16 @@ nav {
 
 /*? RECORD RELEASE  */
 
-#division-records {
+#division-records,
+#division-dvds {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
 }
 
-#division-records h2 {
+#division-records h2,
+#division-dvds h2 {
   position: absolute;
   left: 0;
   right: 0;
@@ -173,7 +175,8 @@ nav {
   z-index: 100;
 }
 
-.record-release-info-wrapper {
+.record-release-info-wrapper,
+.dvd-release-info-wrapper {
   display: flex;
   align-items: center;
   margin: 0 auto 1rem;
@@ -182,11 +185,13 @@ nav {
   border-bottom: 1px solid rgba(192, 192, 192, 0.158);
 }
 
-.record-release-info-wrapper:hover {
+.record-release-info-wrapper:hover,
+.dvd-release-info-wrapper:hover {
   border-bottom: 1px solid rgba(192, 192, 192, 0.534);
 }
 
-.record-cover-wrapper {
+.record-cover-wrapper,
+.dvd-cover-wrapper {
   width: 100px;
   height: 100px;
   opacity: 0.9;
@@ -194,23 +199,29 @@ nav {
 }
 
 .record-release-info-wrapper,
-.record-cover-wrapper {
+.record-cover-wrapper,
+.dvd-release-info-wrapper,
+.dvd-cover-wrapper {
   transition: all 150ms linear;
 }
 
-.record-release-info-wrapper:hover .record-cover-wrapper {
+.dvd-release-info-wrapper:hover .dvd-cover-wrapper,
+.dvd-release-info-wrapper:hover .dvd-cover-wrapper {
   opacity: 1;
 }
 
-.record-cover-wrapper img {
+.record-cover-wrapper img,
+.dvd-cover-wrapper img {
   width: 100%;
 }
 
-.record-release-info * {
+.record-release-info *,
+.dvd-release-info * {
   margin: 0;
 }
 
-.record-release-info {
+.record-release-info,
+.dvd-release-info {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -219,12 +230,14 @@ nav {
   height: 100%;
 }
 
-.record-release-info .artist-record-name {
+.record-release-info .artist-record-name,
+.dvd-release-info .artist-dvd-name {
   align-self: flex-start;
   margin-top: 1rem;
 }
 
-.record-release-info .release-date-wrapper {
+.record-release-info .release-date-wrapper,
+.dvd-release-info .release-date-wrapper {
   text-align: right;
 }
 
@@ -233,11 +246,13 @@ nav {
   font-size: 0.9rem;
 }
 
-.artist-record-name .band-name {
+.artist-record-name .band-name,
+.artist-dvd-name .band-name {
   color: rgba(255, 255, 255, 0.774);
 }
 
-.artist-record-name .record-name {
+.artist-record-name .record-name,
+.artist-dvd-name .dvd-name {
   text-transform: uppercase;
 }
 
@@ -276,9 +291,9 @@ nav {
 }
 
 .division:nth-of-type(4) {
-  background: #00ffff60
+  background: linear-gradient(82deg, #222222 30%, #00ffff60 100%),
     url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
-  background-position: top;
+  background-position: left;
   background-size: cover;
   background-attachment: fixed;
 }
