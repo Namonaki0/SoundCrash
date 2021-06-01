@@ -44,28 +44,7 @@ nav {
   padding: 1rem 1.2rem;
   position: absolute;
   opacity: 0.9;
-  line-height: 4rem;
-}
-
-@media (min-width: 750px) {
-  .division-title h1 {
-    display: unset;
-    font-size: 5rem;
-    font-family: var(--teko);
-    font-weight: 100;
-  }
-
-  .division-title:not(span) {
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.158);
-  }
-
-  .division-title h1 > span {
-    display: block;
-    margin-left: auto;
-    background: white;
-    color: black;
-    left: -10px;
-  }
+  line-height: 4.2rem;
 }
 
 .division .btt {
@@ -145,6 +124,57 @@ nav {
 
 .division-links a:hover {
   color: rgba(255, 255, 255, 0.911);
+}
+
+@media (min-width: 750px) {
+  .division-title h1 {
+    display: unset;
+    font-size: 5rem;
+    font-family: var(--teko);
+    font-weight: 100;
+  }
+
+  .division-title:not(span) {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.158);
+  }
+
+  .division-title h1 > span {
+    display: block;
+    margin-left: auto;
+    background: white;
+    color: black;
+  }
+
+  .division-links {
+    right: 30px;
+    top: 50px;
+  }
+
+  .division-links a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .division-title h1 {
+    font-size: 7rem;
+    line-height: 6rem;
+    top: 50px;
+    left: 80px;
+  }
+
+  .division-links {
+    right: 30px;
+    top: 100px;
+  }
+
+  .division-links a {
+    font-size: 2rem;
+  }
+
+  .division-links a::after {
+    height: 2px;
+  }
 }
 
 /*? EVENTS CTA */
