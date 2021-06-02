@@ -364,9 +364,41 @@ nav {
   display: none;
 }
 
+.search-bar {
+  display: flex;
+}
+
+.search-bar input,
+.search-bar button {
+  all: unset;
+  outline: 1px solid rgba(192, 192, 192, 0.349);
+}
+
+
+.search-bar input {
+  outline: 1px solid rgba(192, 192, 192, 0.349);
+  padding: .5rem ;
+  flex-grow: 2;
+}
+.search-bar button {
+  background: rgba(192, 192, 192, 0.281);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
 
 /*? DOM INJECTION */
 
 .event-info {
   margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.062);
+  padding: 1rem;
+}
+
+.event-info span {
+  color: rgba(255, 166, 0, 0.932);
+  margin-right: .2rem;
 }

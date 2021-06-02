@@ -38,16 +38,12 @@ function tourDates(artist_id) {
         console.log(res);
         eventsOutput.innerHTML += `
         <div class="event-info">
-            <div>TOUR: ${res.displayName}</div>
-            <div>LOCATION: ${res.location.city}</div>
-            <div>DATE: ${res.start.date}</div>
-            <div>VENUE: ${res.venue.displayName}</div>
+            <div><span>TOUR: </span> ${res.displayName}</div>
+            <div><span>LOCATION: </span>${res.location.city}</div>
+            <div><span>VENUE: </span>${res.venue.displayName}</div>
+            <div><span>DATE: </span>${res.start.date}</div>
         </div>
         `;
       });
     });
 }
-
-// res.location
-// res.start
-// res.venue.displayName
