@@ -363,3 +363,10 @@ nav {
 ::-webkit-scrollbar {
   display: none;
 }
+
+
+/*? DOM INJECTION */
+
+.event-info {
+  margin: 1rem 0;
+}
