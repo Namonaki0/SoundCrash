@@ -366,20 +366,22 @@ nav {
 
 .search-bar {
   display: flex;
+  margin-top: 3rem;
+  padding: 1rem 0;
 }
 
 .search-bar input,
 .search-bar button {
   all: unset;
-  outline: 1px solid rgba(192, 192, 192, 0.349);
 }
 
-
 .search-bar input {
-  outline: 1px solid rgba(192, 192, 192, 0.349);
+  margin-right: .5rem;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.349);
   padding: .5rem ;
   flex-grow: 2;
 }
+
 .search-bar button {
   background: rgba(192, 192, 192, 0.281);
   text-transform: uppercase;
@@ -387,8 +389,13 @@ nav {
   text-align: center;
   cursor: pointer;
   flex-grow: 1;
+  padding: .5rem 1.5rem;
+  transition: background 12 0ms linear;
 }
 
+.search-bar button:hover {
+  background: rgba(192, 192, 192, 0.39);
+}
 
 /*? DOM INJECTION */
 
@@ -401,4 +408,8 @@ nav {
 .event-info span {
   color: rgba(255, 166, 0, 0.932);
   margin-right: .2rem;
+}
+
+.no-tour {
+  text-align: center;
 }
