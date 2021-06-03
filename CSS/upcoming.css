@@ -31,6 +31,7 @@ nav {
   place-content: center;
   background-color: grey;
   scroll-snap-align: center;
+  overflow-y: hidden;
 }
 
 .division-title {
@@ -329,6 +330,7 @@ nav {
   background-size: cover;
   background-position: top right;
   background-attachment: fixed;
+  
 }
 
 .division:nth-of-type(2) {
@@ -367,7 +369,7 @@ nav {
 .search-bar {
   display: flex;
   margin-top: 3rem;
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
 .search-bar input,
@@ -398,6 +400,11 @@ nav {
 }
 
 /*? DOM INJECTION */
+
+#events-output {
+  overflow-y: auto;
+  padding: 1rem;
+}
 
 .event-info {
   margin: 1rem 0;
