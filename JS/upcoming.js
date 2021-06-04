@@ -10,7 +10,12 @@ let artistSearch = "";
 
 //? EVENT LISTENERS
 searchBtn.addEventListener("click", searchInput);
-pastEvents.addEventListener("click", pastShows);
+inputValue.addEventListener("change", artistName);
+
+function artistName(e) {
+  let artist_name = e.target.value;
+  console.log(artist_name);
+}
 
 //? ARTIST SEARCH INPUT
 function searchInput() {
@@ -27,11 +32,11 @@ function searchArtist(artistInput) {
   )
     .then((data) => data.json())
     .then((data) => {
+      //? ARTIST ID
       let artist_id = data.resultsPage.results.artist[0].id;
       let is_touring = data.resultsPage.results.artist[0].onTourUntil;
 
       tourDates(artist_id, is_touring);
-      // pastShows(artist_id);
     });
 }
 
@@ -67,13 +72,27 @@ function tourDates(artist_id, is_touring) {
     });
 }
 
-function pastShows(artist_id) {
+pastEvents.addEventListener("click", (artist_id) => {
+  eventsOutput.innerHTML = "";
   fetch(
     `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${key}`
   )
     .then((res) => res.json())
     .then((res) => {
-      console.log(res.resultsPage);
+      console.log();
+      const event_result = res.resultsPage.results.event;
+      // console.log(event_result, artist_id);
+
+      event_result.forEach((res) => {
+        eventsOutput.innerHTML += `
+        <div class="event-info">
+            <div><span>TOUR: </span> ${res.displayName}</div>
+            <div><span>LOCATION: </span>${res.location.city}</div>
+            <div><span>VENUE: </span>${res.venue.displayName}</div>
+            <div><span>DATE: </span>${res.start.date}</div>
+        </div>
+        `;
+      });
+      console.log(res.resultsPage.results);
     });
-  // console.log(artist_id);
-}
+});
