@@ -9,25 +9,27 @@ const key = `Noc1VPzpTVuF1lxH`;
 let artistSearch = "";
 
 //? EVENT LISTENERS
+// searchBtn.addEventListener("click", searchInput);
 searchBtn.addEventListener("click", searchInput);
-inputValue.addEventListener("change", artistName);
+pastEvents.addEventListener("click", pastShows);
+upcomingEvents.addEventListener("click", tourDates);
+// inputValue.addEventListener("change", artistName);
 
-function artistName(e) {
-  let artist_name = e.target.value;
-  console.log(artist_name);
-}
+// console.log(inputValue);
 
 //? ARTIST SEARCH INPUT
-function searchInput() {
+async function searchInput() {
+  // let artistInput = e.target.value.toLocaleLowerCase();
   artistInput = inputValue.value.toLocaleLowerCase();
   eventsOutput.innerHTML = "";
 
   searchArtist(artistInput);
+  pastShows(artistInput);
 }
 
 //? RETRIEVE DATA ABOUT ARTIST
-function searchArtist(artistInput) {
-  fetch(
+async function searchArtist(artistInput) {
+  await fetch(
     `https://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=${artistInput}`
   )
     .then((data) => data.json())
@@ -37,17 +39,19 @@ function searchArtist(artistInput) {
       let is_touring = data.resultsPage.results.artist[0].onTourUntil;
 
       tourDates(artist_id, is_touring);
+      pastShows(artist_id);
     });
 }
 
 //? TOURING INFO
-function tourDates(artist_id, is_touring) {
-  fetch(
+async function tourDates(artist_id, is_touring) {
+  await fetch(
     `https://api.songkick.com/api/3.0/artists/${artist_id}/calendar.json?apikey=${key}`
   )
     .then((res) => res.json())
     .then((res) => {
       const event_result = res.resultsPage.results.event;
+      // console.log(res, event_result);
 
       //? ARTIST NOT TOURING MESSAGE
       if (is_touring === null) {
@@ -72,27 +76,25 @@ function tourDates(artist_id, is_touring) {
     });
 }
 
-pastEvents.addEventListener("click", (artist_id) => {
+async function pastShows(artist_id) {
   eventsOutput.innerHTML = "";
-  fetch(
+  await fetch(
     `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${key}`
   )
     .then((res) => res.json())
     .then((res) => {
-      console.log();
       const event_result = res.resultsPage.results.event;
-      // console.log(event_result, artist_id);
 
-      event_result.forEach((res) => {
-        eventsOutput.innerHTML += `
-        <div class="event-info">
-            <div><span>TOUR: </span> ${res.displayName}</div>
-            <div><span>LOCATION: </span>${res.location.city}</div>
-            <div><span>VENUE: </span>${res.venue.displayName}</div>
-            <div><span>DATE: </span>${res.start.date}</div>
-        </div>
-        `;
+      event_result.forEach((event) => {
+        console.log(event);
+        // eventsOutput.innerHTML += `
+        // <div class="event-info">
+        //     <div><span>TOUR: </span> ${event.displayName}</div>
+        //     <div><span>LOCATION: </span>${event.location.city}</div>
+        //     <div><span>VENUE: </span>${event.venue.displayName}</div>
+        //     <div><span>DATE: </span>${event.start.date}</div>
+        // </div>
+        // `;
       });
-      console.log(res.resultsPage.results);
     });
-});
+}
