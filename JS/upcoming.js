@@ -9,22 +9,16 @@ const key = `Noc1VPzpTVuF1lxH`;
 let artistSearch = "";
 
 //? EVENT LISTENERS
-// searchBtn.addEventListener("click", searchInput);
 searchBtn.addEventListener("click", searchInput);
 pastEvents.addEventListener("click", pastShows);
 upcomingEvents.addEventListener("click", tourDates);
-// inputValue.addEventListener("change", artistName);
-
-// console.log(inputValue);
 
 //? ARTIST SEARCH INPUT
 async function searchInput() {
-  // let artistInput = e.target.value.toLocaleLowerCase();
   artistInput = inputValue.value.toLocaleLowerCase();
   eventsOutput.innerHTML = "";
 
   searchArtist(artistInput);
-  pastShows(artistInput);
 }
 
 //? RETRIEVE DATA ABOUT ARTIST
@@ -39,19 +33,17 @@ async function searchArtist(artistInput) {
       let is_touring = data.resultsPage.results.artist[0].onTourUntil;
 
       tourDates(artist_id, is_touring);
-      pastShows(artist_id);
     });
 }
 
 //? TOURING INFO
 async function tourDates(artist_id, is_touring) {
-  await fetch(
+  fetch(
     `https://api.songkick.com/api/3.0/artists/${artist_id}/calendar.json?apikey=${key}`
   )
     .then((res) => res.json())
     .then((res) => {
       const event_result = res.resultsPage.results.event;
-      // console.log(res, event_result);
 
       //? ARTIST NOT TOURING MESSAGE
       if (is_touring === null) {
@@ -74,27 +66,29 @@ async function tourDates(artist_id, is_touring) {
         });
       }
     });
+
+  // pastShows(artist_id);
 }
 
-async function pastShows(artist_id) {
+async function pastShows(id) {
   eventsOutput.innerHTML = "";
-  await fetch(
-    `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${key}`
-  )
-    .then((res) => res.json())
-    .then((res) => {
-      const event_result = res.resultsPage.results.event;
 
+  fetch(
+    `https://api.songkick.com/api/3.0/artists/${id}/gigography.json?apikey=${key}`
+  )
+    .then((data) => data.json())
+    .then((data) => {
+      const event_result = data.resultsPage.results.event;
+      console.log(event_result);
       event_result.forEach((event) => {
-        console.log(event);
-        // eventsOutput.innerHTML += `
-        // <div class="event-info">
-        //     <div><span>TOUR: </span> ${event.displayName}</div>
-        //     <div><span>LOCATION: </span>${event.location.city}</div>
-        //     <div><span>VENUE: </span>${event.venue.displayName}</div>
-        //     <div><span>DATE: </span>${event.start.date}</div>
-        // </div>
-        // `;
+        eventsOutput.innerHTML += `
+        <div class="event-info">
+            <div><span>TOUR: </span> ${event.displayName}</div>
+            <div><span>LOCATION: </span>${event.location.city}</div>
+            <div><span>VENUE: </span>${event.venue.displayName}</div>
+            <div><span>DATE: </span>${event.start.date}</div>
+        </div>
+        `;
       });
     });
 }
