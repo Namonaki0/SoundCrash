@@ -11,14 +11,15 @@ let artistSearch = "";
 //? EVENT LISTENERS
 searchBtn.addEventListener("click", searchInput);
 pastEvents.addEventListener("click", pastShows);
-upcomingEvents.addEventListener("click", tourDates);
+upcomingEvents.addEventListener("click", searchArtist);
 
 //? ARTIST SEARCH INPUT
 async function searchInput() {
-  artistInput = inputValue.value.toLocaleLowerCase();
+  let artistInput = inputValue.value.toLowerCase();
   eventsOutput.innerHTML = "";
 
   searchArtist(artistInput);
+  // pastShows(artistInput);
 }
 
 //? RETRIEVE DATA ABOUT ARTIST
@@ -33,6 +34,7 @@ async function searchArtist(artistInput) {
       let is_touring = data.resultsPage.results.artist[0].onTourUntil;
 
       tourDates(artist_id, is_touring);
+      // pastShows(artistInput);
     });
 }
 
@@ -66,22 +68,34 @@ async function tourDates(artist_id, is_touring) {
         });
       }
     });
-
-  // pastShows(artist_id);
 }
 
-async function pastShows(id) {
-  eventsOutput.innerHTML = "";
-
-  fetch(
-    `https://api.songkick.com/api/3.0/artists/${id}/gigography.json?apikey=${key}`
+async function pastShows() {
+  let artistInputPast = inputValue.value.toLowerCase();
+  await fetch(
+    `https://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=${artistInputPast}`
   )
     .then((data) => data.json())
     .then((data) => {
-      const event_result = data.resultsPage.results.event;
-      console.log(event_result);
-      event_result.forEach((event) => {
-        eventsOutput.innerHTML += `
+      //? ARTIST ID
+      let artist_id = data.resultsPage.results.artist[0].id;
+      // let is_touring = data.resultsPage.results.artist[0].onTourUntil;
+
+      // tourDates(artist_id, is_touring);
+      // pastShows(artist_id);
+
+      console.log(artist_id);
+      eventsOutput.innerHTML = "";
+
+      fetch(
+        `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${key}`
+      )
+        .then((data) => data.json())
+        .then((data) => {
+          const event_result = data.resultsPage.results.event;
+          console.log(event_result);
+          event_result.forEach((event) => {
+            eventsOutput.innerHTML += `
         <div class="event-info">
             <div><span>TOUR: </span> ${event.displayName}</div>
             <div><span>LOCATION: </span>${event.location.city}</div>
@@ -89,6 +103,7 @@ async function pastShows(id) {
             <div><span>DATE: </span>${event.start.date}</div>
         </div>
         `;
-      });
+          });
+        });
     });
 }
