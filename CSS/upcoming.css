@@ -415,10 +415,8 @@ nav {
   margin-top: 1rem;
 }
 
-.sound-kick img {
-  /* min-width: 100%; */
-  
-}
+/* .sound-kick img {
+} */
 
 .output-size {
   width: 20%;
@@ -430,6 +428,7 @@ nav {
 #events-output {
   overflow-y: auto;
   padding: 0 1rem 1rem;
+  scroll-behavior: initial;
 }
 
 .event-info {
