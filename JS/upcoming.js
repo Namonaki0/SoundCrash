@@ -6,6 +6,9 @@ const pastEvents = document.querySelector(".past-events");
 const upcomingEvents = document.querySelector(".upcoming-events");
 const key = `Noc1VPzpTVuF1lxH`;
 
+const soundKickImg = document.querySelector(".sound-kick img");
+const soundKick = document.querySelector(".sound-kick");
+
 let artistSearch = "";
 
 //? EVENT LISTENERS
@@ -15,6 +18,15 @@ upcomingEvents.addEventListener("click", searchInput);
 inputValue.addEventListener("keydown", (e) => {
   if (e.keyCode === 13) {
     searchInput();
+  }
+});
+
+//? SOUNDKICK LOGO SIZE
+inputValue.addEventListener("change", (e) => {
+  const userInput = e.target.value;
+  if (userInput === "") {
+    soundKick.style.marginTop = "1rem";
+    soundKickImg.classList.remove("output-size");
   }
 });
 
@@ -70,6 +82,8 @@ function tourDates(artist_id, is_touring) {
         `;
         });
       }
+      soundKickImg.classList.add("output-size");
+      soundKick.style.marginTop = "0";
     });
 }
 
