@@ -411,7 +411,7 @@ nav {
 
 .sound-kick {
   text-align: left;
-  padding: .2rem 1.2rem;
+  padding: .2rem 1rem;
   margin-top: 1rem;
 }
 
@@ -428,7 +428,6 @@ nav {
 #events-output {
   overflow-y: auto;
   padding: 0 1rem 1rem;
-  scroll-behavior: initial;
 }
 
 .event-info {
@@ -448,4 +447,10 @@ nav {
 
 .no-tour {
   text-align: center;
+}
+
+@media (min-width: 750px) {
+  #events-output {
+    width: 800px;
+  }
 }
