@@ -14,93 +14,25 @@ const artistCover = document.querySelector(".img-wrap img");
 const recordTitle = document.querySelector(".record-title");
 const artistTitle = document.querySelector(".artist-title");
 
-//? ARTIST / RECORD INFO
-const artistInfo = {
-  artist: ["alice in chains", "jinjer", "mushroomhead", "love and death"],
-  albumCovers: [
-    "./Pics/aic.jpg",
-    "./Pics/jinjer.jpg",
-    "./Pics/mushroomhead.jpg",
-    "./Pics/love-and-death.PNG",
-  ],
-  record: [
-    "black gives way to blue",
-    "macro",
-    "a wonderful life",
-    "perfectly preserved",
-  ],
-  recordTracks: {
-    black_gives_way_to_blue: [
-      "All Secrets Known",
-      "Check My Brain",
-      "Last of My Kind",
-      "Your Decision",
-      "A Looking in View",
-      "When the Sun Rose Again",
-      "Acid Bubble",
-      "Lesson Learned",
-      "Take Her Out",
-      "Private Hell",
-      "Black Gives Way to Blue",
-    ],
-    macro: [
-      "On The Top",
-      "Pit Of Consciousness",
-      "Judgement (& Punishment)",
-      "Retrospection",
-      "Pausing Death",
-      "Noah",
-      "Home Back",
-      "The Prophecy",
-      "lainnereP",
-    ],
-    a_wonderful_life: [
-      "A Requiem for Tomorrow",
-      "Madness Within",
-      "Seen It All",
-      "The Heresy",
-      "What a Shame",
-      "Pulse",
-      "Carry On",
-      "The Time Has Come",
-      "11th Hour",
-      "I Am the One",
-      "The Flood",
-      "Where the End Begins",
-      "Confutatis",
-    ],
-    perfectly_preserved: [
-      "Infamy",
-      "Tragedy",
-      "Down",
-      "Let Me Love You",
-      "Death of Us",
-      "Slow Fire",
-      "The Hunter",
-      "Lo Lamento",
-      "Affliction",
-      "White Flag",
-    ],
-  },
-  releaseDate: [
-    "29 September 2009",
-    "25 October 2019",
-    "19 June 2020",
-    "12 February 2021",
-  ],
-  recordLabel: ["Virgin/EMI", "Napalm Records", "Earache Records Ltd"],
-};
-
-//? OBJECT DESTRUCT
-const { artist, record, albumCovers, recordTracks, releaseDate, recordLabel } =
-  artistInfo;
-
 //? ON PAGE LOAD
-document.addEventListener("DOMContentLoaded", () => {
-  recordTitle.innerHTML = `${record[0]}`;
-  artistTitle.innerHTML = `${artist[0]}`;
+document.addEventListener("DOMContentLoaded", async () => {
+  const response = await fetch("data/top-four.json");
+  const top_four = await response.json();
+
+  //? OBJECT DESTRUCT
+  const {
+    artists,
+    records,
+    recordCovers,
+    recordTracks,
+    releaseDate,
+    recordLabel,
+  } = top_four;
+
+  recordTitle.innerHTML = `${records[0]}`;
+  artistTitle.innerHTML = `${artists[0]}`;
   //? RECORD STANDARD VIEW
-  artistCover.src = albumCovers[0];
+  artistCover.src = recordCovers[0];
   artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -149,10 +81,10 @@ records.forEach((each_record) => {
     }
     switch (dataSet) {
       case "one":
-        e.target.src = albumCovers[0];
-        albumCover.src = e.target.src;
-        recordTitle.innerHTML = `${record[0]}`;
-        artistTitle.innerHTML = `${artist[0]}`;
+        e.target.src = recordCovers[0];
+        recordCover.src = e.target.src;
+        recordTitle.innerHTML = `${records[0]}`;
+        artistTitle.innerHTML = `${artists[0]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -169,10 +101,10 @@ records.forEach((each_record) => {
         }
         break;
       case "two":
-        e.target.src = albumCovers[1];
-        albumCover.src = e.target.src;
-        recordTitle.innerHTML = `${record[1]}`;
-        artistTitle.innerHTML = `${artist[1]}`;
+        e.target.src = recordCovers[1];
+        recordCover.src = e.target.src;
+        recordTitle.innerHTML = `${records[1]}`;
+        artistTitle.innerHTML = `${artists[1]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -189,10 +121,10 @@ records.forEach((each_record) => {
         }
         break;
       case "three":
-        e.target.src = albumCovers[2];
-        albumCover.src = e.target.src;
-        recordTitle.innerHTML = `${record[2]}`;
-        artistTitle.innerHTML = `${artist[2]}`;
+        e.target.src = recordCovers[2];
+        recordCover.src = e.target.src;
+        recordTitle.innerHTML = `${records[2]}`;
+        artistTitle.innerHTML = `${artists[2]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">
@@ -209,10 +141,10 @@ records.forEach((each_record) => {
         }
         break;
       case "four":
-        e.target.src = albumCovers[3];
-        albumCover.src = e.target.src;
-        recordTitle.innerHTML = `${record[3]}`;
-        artistTitle.innerHTML = `${artist[3]}`;
+        e.target.src = recordCovers[3];
+        recordCover.src = e.target.src;
+        recordTitle.innerHTML = `${records[3]}`;
+        artistTitle.innerHTML = `${artists[3]}`;
         artistInfoWrap.innerHTML = `
           <div class="artist-info-inner-wrap">
             <div class="extra-info">

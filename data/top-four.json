@@ -1,77 +1,78 @@
-{
-    "artists": [
-        "alice in chains", "jinjer", "mushroomhead", "love and death"
-    ],
-    "records": [
-        "black gives way to blue",
-        "macro",
-        "a wonderful life",
-        "perfectly preserved"
-    ],
-    "recordCovers": [
-        "./Pics/aic.jpg",
-        "./Pics/jinjer.jpg",
-        "./Pics/mushroomhead.jpg",
-        "./Pics/love-and-death.PNG"
-  ],
-    "recordTracks": {
-        "black_gives_way_to_blue": [
-        "All Secrets Known",
-        "Check My Brain",
-        "Last of My Kind",
-        "Your Decision",
-        "A Looking in View",
-        "When the Sun Rose Again",
-        "Acid Bubble",
-        "Lesson Learned",
-        "Take Her Out",
-        "Private Hell",
-        "Black Gives Way to Blue"
+
+    {
+        "artists": [
+            "alice in chains", "jinjer", "mushroomhead", "love and death"
         ],
-        "macro": [
-        "On The Top",
-        "Pit Of Consciousness",
-        "Judgement (& Punishment)",
-        "Retrospection",
-        "Pausing Death",
-        "Noah",
-        "Home Back",
-        "The Prophecy",
-        "lainnereP"
+        "records": [
+            "black gives way to blue",
+            "macro",
+            "a wonderful life",
+            "perfectly preserved"
         ],
-        "a_wonderful_life": [
-        "A Requiem for Tomorrow",
-        "Madness Within",
-        "Seen It All",
-        "The Heresy",
-        "What a Shame",
-        "Pulse",
-        "Carry On",
-        "The Time Has Come",
-        "11th Hour",
-        "I Am the One",
-        "The Flood",
-        "Where the End Begins",
-        "Confutatis"
+        "recordCovers": [
+            "./Pics/aic.jpg",
+            "./Pics/jinjer.jpg",
+            "./Pics/mushroomhead.jpg",
+            "./Pics/love-and-death.PNG"
         ],
-        "perfectly_preserved": [
-        "Infamy",
-        "Tragedy",
-        "Down",
-        "Let Me Love You",
-        "Death of Us",
-        "Slow Fire",
-        "The Hunter",
-        "Lo Lamento",
-        "Affliction",
-        "White Flag"
-        ]
-    },
-   "releaseDate": [
-    "29 September 2009",
-    "25 October 2019",
-    "19 June 2020",
-    "12 February 2021"
-  ],
-  "recordLabel": ["Virgin/EMI", "Napalm Records", "Earache Records Ltd"]
-}
+        "recordTracks": {
+            "black_gives_way_to_blue": [
+                "All Secrets Known",
+                "Check My Brain",
+                "Last of My Kind",
+                "Your Decision",
+                "A Looking in View",
+                "When the Sun Rose Again",
+                "Acid Bubble",
+                "Lesson Learned",
+                "Take Her Out",
+                "Private Hell",
+                "Black Gives Way to Blue"
+            ],
+            "macro": [
+                "On The Top",
+                "Pit Of Consciousness",
+                "Judgement (& Punishment)",
+                "Retrospection",
+                "Pausing Death",
+                "Noah",
+                "Home Back",
+                "The Prophecy",
+                "lainnereP"
+            ],
+            "a_wonderful_life": [
+                "A Requiem for Tomorrow",
+                "Madness Within",
+                "Seen It All",
+                "The Heresy",
+                "What a Shame",
+                "Pulse",
+                "Carry On",
+                "The Time Has Come",
+                "11th Hour",
+                "I Am the One",
+                "The Flood",
+                "Where the End Begins",
+                "Confutatis"
+            ],
+            "perfectly_preserved": [
+                "Infamy",
+                "Tragedy",
+                "Down",
+                "Let Me Love You",
+                "Death of Us",
+                "Slow Fire",
+                "The Hunter",
+                "Lo Lamento",
+                "Affliction",
+                "White Flag"
+            ]
+        },
+        "releaseDate": [
+            "29 September 2009",
+            "25 October 2019",
+            "19 June 2020",
+            "12 February 2021"
+        ],
+        "recordLabel": ["Virgin/EMI", "Napalm Records", "Earache Records Ltd"]
+    }
