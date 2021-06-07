@@ -15,9 +15,14 @@ let artistSearch = "";
 searchBtn.addEventListener("click", searchInput);
 pastEvents.addEventListener("click", pastShows);
 upcomingEvents.addEventListener("click", (e) => {
+  //? PREVENTS DEFAULT TOP PAGE SCROLLING
   e.preventDefault();
+  //? -------------------
+
   searchInput();
 });
+
+//? ENTER KEY SEARCH FUNCTION
 inputValue.addEventListener("keydown", (e) => {
   if (e.keyCode === 13) {
     searchInput();
@@ -43,39 +48,37 @@ async function searchInput() {
 
 //? RETRIEVE DATA ABOUT ARTIST
 async function searchArtist(artistInput) {
-  await fetch(
+  const response = await fetch(
     `https://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=${artistInput}`
-  )
-    .then((data) => data.json())
-    .then((data) => {
-      //? ARTIST ID
-      let artist_id = data.resultsPage.results.artist[0].id;
-      let is_touring = data.resultsPage.results.artist[0].onTourUntil;
+  );
+  const artists = await response.json();
 
-      tourDates(artist_id, is_touring);
-    });
+  //? ARTIST ID
+  let artist_id = artists.resultsPage.results.artist[0].id;
+  let is_touring = artists.resultsPage.results.artist[0].onTourUntil;
+
+  tourDates(artist_id, is_touring);
 }
 
 //? TOURING INFO
 async function tourDates(artist_id, is_touring) {
-  fetch(
+  const response = await fetch(
     `https://api.songkick.com/api/3.0/artists/${artist_id}/calendar.json?apikey=${key}`
-  )
-    .then((res) => res.json())
-    .then((res) => {
-      const event_result = res.resultsPage.results.event;
+  );
+  const events = await response.json();
+  const event_result = events.resultsPage.results.event;
 
-      //? ARTIST NOT TOURING MESSAGE
-      if (is_touring === null) {
-        console.log("artist not touring at present");
-        eventsOutput.innerHTML += `
+  //? ARTIST NOT TOURING MESSAGE
+  if (is_touring === null) {
+    console.log("artist not touring at present");
+    eventsOutput.innerHTML += `
          <div class="event-info">
             <div class="no-tour">artist not touring at present</div>
         </div>
         `;
-      } else {
-        event_result.forEach((res) => {
-          eventsOutput.innerHTML += `
+  } else {
+    event_result.forEach((res) => {
+      eventsOutput.innerHTML += `
         <div class="event-info">
             <div><span>TOUR: </span> ${res.displayName}</div>
             <div><span>LOCATION: </span>${res.location.city}</div>
@@ -83,16 +86,19 @@ async function tourDates(artist_id, is_touring) {
             <div><span>DATE: </span>${res.start.date}</div>
         </div>
         `;
-        });
-      }
-      soundKickImg.classList.add("output-size");
-      soundKick.style.marginTop = "0";
     });
+  }
+  soundKickImg.classList.add("output-size");
+  soundKick.style.marginTop = "0";
 }
 
+//? BAND LIVE SHOW HISTORY
 async function pastShows(e) {
-  let artistInputPast = inputValue.value.toLowerCase();
+  //? PREVENTS DEFAULT TOP PAGE SCROLLING
   e.preventDefault();
+  //? -------------------
+
+  let artistInputPast = inputValue.value.toLowerCase();
   await fetch(
     `https://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=${artistInputPast}`
   )
