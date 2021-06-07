@@ -14,7 +14,10 @@ let artistSearch = "";
 //? EVENT LISTENERS
 searchBtn.addEventListener("click", searchInput);
 pastEvents.addEventListener("click", pastShows);
-upcomingEvents.addEventListener("click", searchInput);
+upcomingEvents.addEventListener("click", (e) => {
+  e.preventDefault();
+  searchInput();
+});
 inputValue.addEventListener("keydown", (e) => {
   if (e.keyCode === 13) {
     searchInput();
@@ -54,7 +57,7 @@ async function searchArtist(artistInput) {
 }
 
 //? TOURING INFO
-function tourDates(artist_id, is_touring) {
+async function tourDates(artist_id, is_touring) {
   fetch(
     `https://api.songkick.com/api/3.0/artists/${artist_id}/calendar.json?apikey=${key}`
   )
@@ -87,8 +90,9 @@ function tourDates(artist_id, is_touring) {
     });
 }
 
-async function pastShows() {
+async function pastShows(e) {
   let artistInputPast = inputValue.value.toLowerCase();
+  e.preventDefault();
   await fetch(
     `https://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=${artistInputPast}`
   )

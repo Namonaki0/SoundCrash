@@ -332,7 +332,6 @@ nav {
   background-size: cover;
   background-position: top right;
   background-attachment: fixed;
-  
 }
 
 .division:nth-of-type(2) {
@@ -380,9 +379,9 @@ nav {
 }
 
 .search-bar input {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   border-bottom: 1px solid rgba(192, 192, 192, 0.349);
-  padding: .5rem ;
+  padding: 0.5rem;
   flex-grow: 2;
   transition: border-bottom 120ms linear;
   font-size: 1.1rem;
@@ -399,7 +398,7 @@ nav {
   text-align: center;
   cursor: pointer;
   flex-grow: 1;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   transition: background 120ms linear;
 }
 
@@ -411,7 +410,7 @@ nav {
 
 .sound-kick {
   text-align: left;
-  padding: .2rem 1rem;
+  padding: 0.2rem 1rem;
   margin-top: 1rem;
 }
 
@@ -420,7 +419,7 @@ nav {
 
 .output-size {
   width: 20%;
-  padding: .2rem .5rem;
+  padding: 0.2rem 0.5rem;
 }
 
 /*? DOM INJECTION */
@@ -431,7 +430,7 @@ nav {
 }
 
 .event-info {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   background: rgba(255, 255, 255, 0.062);
   padding: 1rem;
 }
@@ -442,7 +441,7 @@ nav {
 
 .event-info span {
   color: rgba(255, 166, 0, 0.932);
-  margin-right: .2rem;
+  margin-right: 0.2rem;
 }
 
 .no-tour {
@@ -450,6 +449,22 @@ nav {
 }
 
 @media (min-width: 750px) {
+  #division-events {
+    position: relative;
+  }
+  /* 
+  .sound-kick {
+ 
+  } */
+
+  .output-size {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    width: 15%;
+    padding: 0.2rem 0.5rem;
+  }
+
   #events-output {
     width: 800px;
   }
