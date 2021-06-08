@@ -316,39 +316,35 @@ nav {
 }
 
 @media (min-width: 950px) {
-  /* #division-records,
-  #division-dvds {
-    display: grid;
-    grid-template-columns: 100px repeat(2, 2fr) 100px;
-    grid-template-rows: 100px repeat(2, 2fr) 100px;
-  }
-
-  .record-release-info-wrapper:nth-of-type(1), 
-  .record-release-info-wrapper:nth-of-type(2) {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 2;
-  }
-
-  .record-release-info-wrapper:nth-of-type(3),
-  .record-release-info-wrapper:nth-of-type(4) {
-    grid-column: 3 / span 2;
-    grid-row: 1 / span 2;
-  } */
-
 
   #division-records,
   #division-dvds {
-    display: flex;
-    /* align-content: flex-start; */
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 1rem;
+    align-items: stretch;
+    justify-content: stretch;
+    padding-top: 10rem;
+  }
+
+  #division-records h2,
+  #division-dvds h2 {
+    font-size: 3.5rem;
   }
 
   .record-release-info-wrapper {
-    width: 40%;
-    margin-right: auto;
+    width: 45%;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
     /* padding: 1rem; */
+  }
+
+  .record-cover-wrapper,
+  .dvd-cover-wrapper {
+    width: 150px;
+    height: 150px;
+    /* height: 100px;
+    opacity: 0.9;
+    margin-right: 1rem; */
   }
 }
 
@@ -388,7 +384,7 @@ nav {
 
 .division:nth-of-type(4) {
   background: linear-gradient(82deg, #222222 30%, #00ffff60 100%),
-    url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
+    url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg") no-repeat;
   background-position: top left;
   background-size: cover;
   background-attachment: fixed;
@@ -402,6 +398,13 @@ nav {
 ::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar {
   display: none;
+}
+
+@media (min-width: 950px) {
+
+/* .division:nth-of-type(3) {
+
+} */
 }
 
 .search-bar {
