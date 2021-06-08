@@ -315,6 +315,43 @@ nav {
   text-transform: uppercase;
 }
 
+@media (min-width: 950px) {
+  /* #division-records,
+  #division-dvds {
+    display: grid;
+    grid-template-columns: 100px repeat(2, 2fr) 100px;
+    grid-template-rows: 100px repeat(2, 2fr) 100px;
+  }
+
+  .record-release-info-wrapper:nth-of-type(1), 
+  .record-release-info-wrapper:nth-of-type(2) {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  .record-release-info-wrapper:nth-of-type(3),
+  .record-release-info-wrapper:nth-of-type(4) {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+  } */
+
+
+  #division-records,
+  #division-dvds {
+    display: flex;
+    /* align-content: flex-start; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .record-release-info-wrapper {
+    width: 40%;
+    margin-right: auto;
+    /* padding: 1rem; */
+  }
+}
+
 /*? RECORD RELEASE - END */
 
 .division:nth-of-type(1),
@@ -414,9 +451,6 @@ nav {
   margin-top: 1rem;
 }
 
-/* .sound-kick img {
-} */
-
 .output-size {
   width: 20%;
   padding: 0.2rem 0.5rem;
@@ -452,10 +486,6 @@ nav {
   #division-events {
     position: relative;
   }
-  /* 
-  .sound-kick {
- 
-  } */
 
   .output-size {
     position: absolute;

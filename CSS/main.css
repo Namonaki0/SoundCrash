@@ -502,6 +502,17 @@ nav ul a:hover,
   clip-path: inset(0);
 }
 
+.fa-quote-right {
+  font-size: 4.5rem;
+  color: rgba(226, 226, 226, 0.068);
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  z-index: 1000;
+  bottom: 110px;
+  right: 20px;
+}
+
 .reviews-title {
   margin: auto;
   padding: 0;

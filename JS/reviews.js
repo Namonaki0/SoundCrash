@@ -14,11 +14,11 @@ async function reviewsPanel() {
   reviewerTitle[0].innerHTML = `${reviews[0].title}`;
   reviewersReview[0].innerHTML = `${reviews[0].review}`;
 
-  reviewerName[1].innerHTML = `${reviews[1].name}`;
+  reviewerName[1].innerHTML = `${reviews[1].reviewer}`;
   reviewerTitle[1].innerHTML = `${reviews[1].title}`;
   reviewersReview[1].innerHTML = `${reviews[1].review}`;
 
-  reviewerName[2].innerHTML = `${reviews[2].name}`;
+  reviewerName[2].innerHTML = `${reviews[2].reviewer}`;
   reviewerTitle[2].innerHTML = `${reviews[2].title}`;
   reviewersReview[2].innerHTML = `${reviews[2].review}`;
 }
