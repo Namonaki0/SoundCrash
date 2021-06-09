@@ -1,0 +1,22 @@
+{
+  "name": "soundcrash",
+  "version": "1.0.0",
+  "description": "metal/rock music website",
+  "main": "index.js",
+  "scripts": {
+    "test": "ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Namonaki0/SoundCrash.git"
+  },
+  "author": "Andre Ferreira - Namonaki0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Namonaki0/SoundCrash/issues"
+  },
+  "homepage": "https://github.com/Namonaki0/SoundCrash#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
