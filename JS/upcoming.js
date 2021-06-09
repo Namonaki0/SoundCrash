@@ -4,10 +4,12 @@ const inputValue = document.querySelector("input");
 const searchBtn = searchBar.querySelector("button");
 const pastEvents = document.querySelector(".past-events");
 const upcomingEvents = document.querySelector(".upcoming-events");
-const key = process.env.API_KEY;
 const soundKickImg = document.querySelector(".sound-kick img");
 const soundKick = document.querySelector(".sound-kick");
-require("dotenv").config();
+const key = `Noc1VPzpTVuF1lxH`;
+// require("dotenv").config();
+
+// const key = new ApiClient(process.env.API_KEY);
 
 let artistSearch = "";
 
