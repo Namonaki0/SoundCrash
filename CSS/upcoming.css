@@ -3,7 +3,7 @@
 }
 
 body {
-  /* background: #e46f01; */
+  background: #070a11;;
   color: white;
 }
 
@@ -410,7 +410,7 @@ nav {
 @media (min-width: 950px) {
 
   .division:nth-of-type(3) {
-      background: linear-gradient(82deg, #0D1321 20%, #3d5da8 50%),
+      background: linear-gradient(82deg, #0A0F19 20%, #ff7b00 60%),
       url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
     background-repeat: no-repeat;
     background-size: 40%;
