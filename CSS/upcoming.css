@@ -3,7 +3,7 @@
 }
 
 body {
-  background: none;
+  /* background: #e46f01; */
   color: white;
 }
 
@@ -335,16 +335,24 @@ nav {
     width: 45%;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
+    
     /* padding: 1rem; */
   }
+
+    .record-release-info .band-name,
+    .record-release-info .record-name
+    {
+      font-size: 1.5rem;
+    }
+
+    .release-date-wrapper {
+      font-size: 1.1rem;
+    }
 
   .record-cover-wrapper,
   .dvd-cover-wrapper {
     width: 150px;
     height: 150px;
-    /* height: 100px;
-    opacity: 0.9;
-    margin-right: 1rem; */
   }
 }
 
@@ -353,8 +361,7 @@ nav {
 .division:nth-of-type(1),
 .division:nth-of-type(2),
 .division:nth-of-type(3),
-.division:nth-of-type(4),
-.division:nth-of-type(5) {
+.division:nth-of-type(4) {
   background-position: center;
   background-blend-mode: multiply;
 }
@@ -375,10 +382,10 @@ nav {
 }
 
 .division:nth-of-type(3) {
-  background: linear-gradient(82deg, #222222 30%, #ff7b00 90%),
-    url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
+  background: linear-gradient(82deg, #0D1321 0%, #ff7b00 100%),
+  url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
   background-size: cover;
-  background-position: top;
+  background-position: top right;
   background-attachment: fixed;
 }
 
@@ -401,6 +408,15 @@ nav {
 }
 
 @media (min-width: 950px) {
+
+  .division:nth-of-type(3) {
+      background: linear-gradient(82deg, #0D1321 20%, #3d5da8 50%),
+      url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: top right;
+    
+  }
 
 /* .division:nth-of-type(3) {
 

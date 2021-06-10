@@ -7,9 +7,8 @@ const upcomingEvents = document.querySelector(".upcoming-events");
 const soundKickImg = document.querySelector(".sound-kick img");
 const soundKick = document.querySelector(".sound-kick");
 const key = `Noc1VPzpTVuF1lxH`;
-// require("dotenv").config();
 
-// const key = new ApiClient(process.env.API_KEY);
+// require("dotenv").config();
 
 let artistSearch = "";
 

@@ -2,7 +2,7 @@
   "name": "soundcrash",
   "version": "1.0.0",
   "description": "metal/rock music website",
-  "main": "app.js",
+  "main": "upcoming.js",
   "scripts": {
     "test": "ls"
   },
