@@ -220,7 +220,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 5rem .5rem 1rem;
 }
 
@@ -239,7 +239,7 @@ nav {
 .record-release-info-wrapper,
 .dvd-release-info-wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   margin: 0 auto 1rem;
   padding-bottom: 0.5rem;
   width: 95%;
@@ -284,9 +284,9 @@ nav {
 .record-release-info,
 .dvd-release-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
-  align-items: flex-end;
+  /* align-items: flex-end; */
   flex-grow: 1;
   height: 100%;
 }
@@ -305,6 +305,9 @@ nav {
 .release-date-wrapper {
   width: 100%;
   font-size: 0.9rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
 }
 
 .artist-record-name .band-name,
@@ -321,30 +324,48 @@ nav {
 
   #division-records,
   #division-dvds {
-    flex-wrap: wrap;
+    flex-flow: wrap;
     flex-direction: row;
     align-items: stretch;
-    justify-content: stretch;
-    padding: 10rem;
+    padding: 5rem 0 1rem;
+    height: 100vh;
   }
 
   #division-records h2,
   #division-dvds h2 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 
-  .record-release-info-wrapper {
+  .record-release-info-wrapper,
+  .dvd-release-info-wrapper  
+  {
     width: 45%;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-    
-    /* padding: 1rem; */
+    padding: 1rem;
+  }
+
+  .release-date-wrapper {
+    position: relative;
+  }
+
+  .release-date-wrapper::before {
+    content: "";
+    height: 2px;
+    position: absolute;
+    display: block;
+    width: 50%;
+    background: rgba(192, 192, 192, 0.103);
+  }
+
+  .release-date {
+    margin-top: 5px;
   }
 
     .record-release-info .band-name,
-    .record-release-info .record-name
+    .record-release-info .record-name,
+    .dvd-release-info .band-name,
+    .dvd-release-info .dvd-name
     {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
 
     .release-date-wrapper {
@@ -356,6 +377,15 @@ nav {
     width: 150px;
     height: 150px;
   }
+
+  .division .btt {
+    top: 15px;
+    right: 10px;
+  }
+
+  .division .btt .far{
+    font-size: 2.2rem;
+  }
 }
 
 /*? RECORD RELEASE - END */
@@ -364,7 +394,7 @@ nav {
 .division:nth-of-type(2),
 .division:nth-of-type(3),
 .division:nth-of-type(4) {
-  background-position: center;
+  /* background-position: center; */
   background-blend-mode: multiply;
 }
 
@@ -373,30 +403,32 @@ nav {
     url("https://specials-images.forbesimg.com/imageserve/817875305a124c6095b169a2372465a4/960x0.jpg?fit=scale");
   background-size: cover;
   background-position: top right;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
 }
 
 .division:nth-of-type(2) {
   background: linear-gradient(82deg, #222222 30%, #00a2ff 70%),
     url("https://images.pexels.com/photos/5723223/pexels-photo-5723223.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
 }
 
 .division:nth-of-type(3) {
   background: linear-gradient(82deg, #0D1321 0%, #ff7b00 100%),
   url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
-  background-size: 100%;
-  background-position: contain;
+  background-size: cover;
+  background-position: top;
   height: auto;
+  background-attachment: fixed;
 }
 
 .division:nth-of-type(4) {
   background: linear-gradient(82deg, #222222 0%, #00ffff60 100%),
     url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
-  background-size: 100%;
-  background-position: contain;
+  background-size: cover;
+  background-position: top;
   height: auto;
+  background-attachment: fixed;
 }
 
 .division-title {
@@ -419,7 +451,7 @@ nav {
   }
 
   .division:nth-of-type(4) {
-    background: linear-gradient(82deg, #0A0F19, #00ffff60 80%),
+    background: linear-gradient(82deg, #0A0F19, #003a5c 30%),
       url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
       background-size: 100%;
       background-position: contain;
