@@ -3,8 +3,8 @@
 }
 
 body {
-  /* background: #070a11; */
-  background: linear-gradient(82deg, #0A0F19 20%, #263d68 90%);
+  background: #070a11;
+  /* background: linear-gradient(82deg, #0A0F19 20%, #263d68 90%); */
   color: white;
 }
 
@@ -221,6 +221,7 @@ nav {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
+  padding: 5rem .5rem 1rem;
 }
 
 #division-records h2,
@@ -324,7 +325,7 @@ nav {
     flex-direction: row;
     align-items: stretch;
     justify-content: stretch;
-    padding-top: 10rem;
+    padding: 10rem;
   }
 
   #division-records h2,
@@ -372,31 +373,30 @@ nav {
     url("https://specials-images.forbesimg.com/imageserve/817875305a124c6095b169a2372465a4/960x0.jpg?fit=scale");
   background-size: cover;
   background-position: top right;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 .division:nth-of-type(2) {
   background: linear-gradient(82deg, #222222 30%, #00a2ff 70%),
     url("https://images.pexels.com/photos/5723223/pexels-photo-5723223.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 .division:nth-of-type(3) {
   background: linear-gradient(82deg, #0D1321 0%, #ff7b00 100%),
   url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
-  ;
-  background-size: cover;
-  background-position: top right;
-  background-attachment: fixed;
+  background-size: 100%;
+  background-position: contain;
+  height: auto;
 }
 
 .division:nth-of-type(4) {
-  background: linear-gradient(82deg, #222222 30%, #00ffff60 100%),
-    url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg") no-repeat;
-  background-position: top left;
-  background-size: cover;
-  background-attachment: fixed;
+  background: linear-gradient(82deg, #222222 0%, #00ffff60 100%),
+    url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
+  background-size: 100%;
+  background-position: contain;
+  height: auto;
 }
 
 .division-title {
@@ -412,18 +412,17 @@ nav {
 @media (min-width: 950px) {
 
   .division:nth-of-type(3) {
-    background-image: none;
-      /* background: linear-gradient(#0A0F19, #1d2d4b 90%); */
-      background-size: 60%;
-      background-position: 100%;
-      /* url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg") */
+      background: linear-gradient(82deg, #0A0F19, #24395f 80%),
+      url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
+      background-size: 100%;
+      background-position: contain;
   }
 
   .division:nth-of-type(4) {
-    background: linear-gradient(82deg, #0A0F19 20%, #00ffff60 50%),
+    background: linear-gradient(82deg, #0A0F19, #00ffff60 80%),
       url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
-      background-size: 60%;
-      background-position: 100%;
+      background-size: 100%;
+      background-position: contain;
   }
 
   .division:nth-of-type(3),
