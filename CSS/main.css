@@ -88,7 +88,6 @@ nav ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  align-items: flex;
   justify-content: center;
   z-index: 1000;
   height: 100vh;
@@ -117,6 +116,7 @@ nav ul {
 }
 
 nav ul li {
+  line-height: 4rem;
   font-size: 1.2em;
   font-weight: 700;
   cursor: pointer;
@@ -139,7 +139,6 @@ nav ul a {
   font-size: 6rem;
   font-weight: 400;
   font-family: var(--teko);
-  transition: color 120ms ease-in-out;
   pointer-events: initial;
 }
 
@@ -175,15 +174,14 @@ nav ul a:hover,
 }
 
 .menu-social-media {
-  visibility: hidden;
-  position: absolute;
   display: flex;
-  flex-direction: column;
+  margin-left: 1rem;
+  margin-top: 2rem;
 }
 
 .menu-social-media a {
   color: var(--mediumBlue);
-  margin-left: 0.8rem;
+  margin-left: 1rem;
   font-size: 2.5rem;
 }
 
@@ -200,6 +198,13 @@ nav ul a:hover,
 @media (min-width: 800px) {
   nav ul {
     align-items: center;
+  }
+
+  .menu-social-media {
+    margin-top: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
   }
 
   .menu-social-media a {
