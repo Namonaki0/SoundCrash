@@ -410,6 +410,19 @@ iframe {
   color: #1f5585;
 }
 
+.back-to-top-container {
+  position: relative;
+  padding: 2rem;
+  background: #171720;
+}
+
+.back-to-top {
+  padding: 0;
+  z-index: 2000;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
 @media (min-width: 750px) {
 
   .record-span,
@@ -423,6 +436,18 @@ iframe {
 
   .record-tracklist-styling div {
     font-size: 1rem;
+  }
+
+  .back-to-top-container {
+    padding: 2.5rem;
+    background: #20202c;
+    margin-bottom: .5rem;
+  }
+
+  .back-to-top {
+    margin-right: .5rem;
+    margin-left: 0.5rem;
+    font-size: 2rem;
   }
 }
 
