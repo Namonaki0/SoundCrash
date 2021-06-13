@@ -49,21 +49,21 @@ nav {
   line-height: 4.2rem;
 }
 
-.division .btt {
+.division .back-to-top-navigation {
   position: absolute;
   top: 15px;
   right: 0;
   z-index: 2000;
 }
 
-.division .btt .far {
+.division .back-to-top-navigation .far {
   font-size: 1.8rem;
   color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
   transition: color 120ms linear;
 }
 
-.division .btt .far:hover {
+.division .back-to-top-navigation .far:hover {
   color: white;
 }
 
@@ -221,7 +221,7 @@ nav {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 5rem .5rem 1rem;
+  padding: 5rem 0.5rem 1rem;
 }
 
 #division-records h2,
@@ -321,7 +321,6 @@ nav {
 }
 
 @media (min-width: 950px) {
-
   #division-records,
   #division-dvds {
     flex-flow: wrap;
@@ -337,8 +336,7 @@ nav {
   }
 
   .record-release-info-wrapper,
-  .dvd-release-info-wrapper  
-  {
+  .dvd-release-info-wrapper {
     width: 45%;
     padding: 1rem;
   }
@@ -360,17 +358,16 @@ nav {
     margin-top: 5px;
   }
 
-    .record-release-info .band-name,
-    .record-release-info .record-name,
-    .dvd-release-info .band-name,
-    .dvd-release-info .dvd-name
-    {
-      font-size: 1.3rem;
-    }
+  .record-release-info .band-name,
+  .record-release-info .record-name,
+  .dvd-release-info .band-name,
+  .dvd-release-info .dvd-name {
+    font-size: 1.3rem;
+  }
 
-    .release-date-wrapper {
-      font-size: 1.1rem;
-    }
+  .release-date-wrapper {
+    font-size: 1.1rem;
+  }
 
   .record-cover-wrapper,
   .dvd-cover-wrapper {
@@ -378,12 +375,12 @@ nav {
     height: 150px;
   }
 
-  .division .btt {
+  .division .back-to-top-navigation {
     top: 15px;
     right: 10px;
   }
 
-  .division .btt .far{
+  .division .back-to-top-navigation .far {
     font-size: 2.2rem;
   }
 }
@@ -414,8 +411,8 @@ nav {
 }
 
 .division:nth-of-type(3) {
-  background: linear-gradient(82deg, #0D1321 0%, #ff7b00 100%),
-  url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
+  background: linear-gradient(82deg, #0d1321 0%, #ff7b00 100%),
+    url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
   background-size: cover;
   background-position: top;
   height: auto;
@@ -442,27 +439,24 @@ nav {
 }
 
 @media (min-width: 950px) {
-
   .division:nth-of-type(3) {
-      background: linear-gradient(82deg, #0A0F19, #24395f 80%),
+    background: linear-gradient(82deg, #0a0f19, #24395f 80%),
       url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
-      background-size: 100%;
-      background-position: contain;
+    background-size: 100%;
+    background-position: contain;
   }
 
   .division:nth-of-type(4) {
-    background: linear-gradient(82deg, #0A0F19, #003a5c 30%),
+    background: linear-gradient(82deg, #0a0f19, #003a5c 30%),
       url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
-      background-size: 100%;
-      background-position: contain;
+    background-size: 100%;
+    background-position: contain;
   }
 
   .division:nth-of-type(3),
   .division:nth-of-type(4) {
     background-repeat: no-repeat;
   }
-
-
 }
 
 .search-bar {
