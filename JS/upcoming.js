@@ -6,9 +6,13 @@ const pastEvents = document.querySelector(".past-events");
 const upcomingEvents = document.querySelector(".upcoming-events");
 const soundKickImg = document.querySelector(".sound-kick img");
 const soundKick = document.querySelector(".sound-kick");
+
 const key = `Noc1VPzpTVuF1lxH`;
 
-// require("dotenv").config();
+// require("dotenv/config");
+// var dotenv = require("dotenv").config({
+//   path: path.join(process.env.API_KEY, ".env"),
+// });
 
 let artistSearch = "";
 

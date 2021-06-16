@@ -1,8 +1,9 @@
-//? NODE ---------------------------------------
-
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+
+//? NODE ---------------------------------------
+require("dotenv/config");
 
 app.get("/", (req, res) => {
   res.send("THIS IS THE PAGE");
@@ -13,10 +14,10 @@ app.listen(3000);
 
 //? ---------------------------------------------------
 
-mongoose.connect(
-  "mongodb+srv://sccluster.l8n0h.mongodb.net/SoundCrashDB",
-  { useNewUrlParser: true },
-  () => {
-    console.log("CONNECTED TO DATABASE");
-  }
-);
+//? MONGOOSE ---------------------------------------
+
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
+  const api_key = process.env.API_KEY;
+  console.log("CONNECTED TO DATABASE");
+});
+//? ---------------------------------------------------
