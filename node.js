@@ -21,3 +21,9 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
   console.log("CONNECTED TO DATABASE");
 });
 //? ---------------------------------------------------
+
+// const EnvVar = mongoose.Schema({
+//   API: process.env.API_KEY,
+// });
+
+// module.exports = mongoose.model("node", EnvVar);

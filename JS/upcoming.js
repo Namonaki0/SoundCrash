@@ -9,11 +9,6 @@ const soundKick = document.querySelector(".sound-kick");
 
 const key = `Noc1VPzpTVuF1lxH`;
 
-// require("dotenv/config");
-// var dotenv = require("dotenv").config({
-//   path: path.join(process.env.API_KEY, ".env"),
-// });
-
 let artistSearch = "";
 
 //? EVENT LISTENERS
