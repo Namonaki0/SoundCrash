@@ -534,12 +534,13 @@ nav ul a:hover,
   flex-direction: column;
   margin: 0 auto;
   width: 90%;
-  height: auto;
+  /* height: auto; */
   padding: 1em;
   border: 1px solid rgba(250, 250, 250, 0.2);
   margin-bottom: 1em;
   position: relative;
   clip-path: inset(0);
+  /* transition: all 150ms linear; */
 }
 
 .fa-quote-right,
@@ -629,7 +630,7 @@ nav ul a:hover,
   visibility: hidden;
   position: absolute;
   margin-top: 0;
-  transition: height 2s ease;
+  transition: height 150ms ease;
 }
 
 .reviewer-review,
@@ -711,8 +712,8 @@ nav ul a:hover,
 .show-text {
   visibility: unset;
   position: relative;
-  height: auto;
 }
+
 
 .read-more i {
   font-size: 1rem;

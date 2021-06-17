@@ -26,6 +26,7 @@ function dropDown() {
 
   function expand() {
     const showContent = document.getElementById(this.dataset.target);
+
     if (showContent.classList.contains("show-text")) {
       this.innerHTML = `<button class="read-more">${this.dataset.showtext}<i class="fas fa-chevron-down"></i></button>`;
     } else {
