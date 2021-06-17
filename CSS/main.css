@@ -225,12 +225,16 @@ nav ul a:hover,
   margin-bottom: 1.5rem;
   width: 95%;
   border: 0.5px solid #162852;
+  animation: fade-in .3s linear;
 }
 
 .hero-content-featured {
   display: flex;
   flex-direction: column;
+  
 }
+
+
 
 .hero-content h1 {
   color: var(--white);
@@ -240,6 +244,7 @@ nav ul a:hover,
   font-family: var(--teko);
   font-weight: 400;
   margin-bottom: 2.5rem;
+  animation: fade-in .2s linear;
 }
 
 .hero-content h1::after {
@@ -264,6 +269,7 @@ nav ul a:hover,
   margin: auto;
   font-size: 1rem;
   padding: 1rem 0 2rem;
+  animation: fade-in .6s linear;
 }
 
 .hero-description p {
@@ -273,6 +279,18 @@ nav ul a:hover,
 
 .hero-description span {
   color: var(--gold);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: .5;
+    transform: translateY(5%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 600px) {
@@ -347,6 +365,23 @@ nav ul a:hover,
   position: relative;
   clip-path: inset(-100px 0px 0px 0px);
   z-index: 1;
+  /* animation: fade-effect .6s linear; */
+}
+
+.item-wrapper.effect {
+  animation: fade-effect .6s linear;
+}
+
+@keyframes fade-effect {
+  from {
+    opacity: .5;
+    transform: translateY(8%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .item-wrapper img {

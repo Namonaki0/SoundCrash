@@ -10,6 +10,7 @@ const contents = document.querySelectorAll(".bottom-inner-content");
 document.addEventListener("DOMContentLoaded", dropDown);
 menu.addEventListener("click", menuFunction);
 
+//? MENU EFFECT
 function menuFunction() {
   navLinks.classList.toggle("menu-active");
   menuBarOne.classList.toggle("rotate-one");
@@ -19,6 +20,7 @@ function menuFunction() {
   socialMediaMenu.classList.toggle("social-media-visible");
 }
 
+//? REVIEWS DROP-DOWN - MOBILE VERSION
 function dropDown() {
   const expandMoreSliders = document.querySelectorAll("[expand-more]");
 
