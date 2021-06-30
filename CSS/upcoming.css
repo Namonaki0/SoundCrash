@@ -4,7 +4,6 @@
 
 body {
   background: #070a11;
-  /* background: linear-gradient(82deg, #0A0F19 20%, #263d68 90%); */
   color: white;
 }
 
@@ -415,7 +414,7 @@ nav {
     url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
   background-size: cover;
   background-position: top;
-  height: auto;
+  height: 100vh;
   background-attachment: fixed;
 }
 
@@ -424,7 +423,7 @@ nav {
     url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
   background-size: cover;
   background-position: top;
-  height: auto;
+  height: 100vh;
   background-attachment: fixed;
 }
 

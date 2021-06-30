@@ -27,23 +27,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/*? VIEWPORT SCALE */
-
-.width-container {
-  display: none;
-}
-.display-width {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-color: #e6e6e6;
-  padding: 0.3em;
-  font-size: 0.85em;
-}
-
-/*? //-------------------// */
-
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -62,7 +45,6 @@ html {
 }
 
 /*? ---- NAVIGATION ----*/
-
 nav {
   background: var(--gold);
   display: flex;
@@ -116,7 +98,7 @@ nav ul {
 }
 
 nav ul li {
-  line-height: 4rem;
+  line-height: 5.2rem;
   font-size: 1.2em;
   font-weight: 700;
   cursor: pointer;
