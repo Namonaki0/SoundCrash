@@ -70,7 +70,6 @@ async function tourDates(artist_id, is_touring) {
 
   //? ARTIST NOT TOURING MESSAGE
   if (is_touring === null) {
-    console.log("artist not touring at present");
     eventsOutput.innerHTML += `
          <div class="event-info">
             <div class="no-tour">artist not touring at present</div>
