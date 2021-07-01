@@ -2,6 +2,8 @@
 
 ### Get to know some not-well-known artists and hopefully become a fan.
 
+http://www.soundcrashproject.com/
+
 This is a project about something I'm passionate about - heavy music. 
 The main purpose is to develop my Web Dev and problem-solving skills.
 
