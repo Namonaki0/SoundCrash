@@ -213,10 +213,21 @@ nav ul a:hover,
 .hero-content-featured {
   display: flex;
   flex-direction: column;
-  
+  position: relative;
 }
 
-
+.oval-effect {
+  position: absolute;
+  height: 110%;
+  width: 110%;
+  top: -40%;
+  left: -5%;
+  z-index: -1;
+  background: #114e841a;
+  display: block;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
 
 .hero-content h1 {
   color: var(--white);
