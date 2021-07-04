@@ -1,3 +1,5 @@
+import { apiKey } from "./api.js";
+
 const eventsOutput = document.querySelector("#events-output");
 const searchBar = document.querySelector(".search-bar");
 const inputValue = document.querySelector("input");
@@ -6,8 +8,6 @@ const pastEvents = document.querySelector(".past-events");
 const upcomingEvents = document.querySelector(".upcoming-events");
 const soundKickImg = document.querySelector(".sound-kick img");
 const soundKick = document.querySelector(".sound-kick");
-
-const key = `Noc1VPzpTVuF1lxH`;
 
 let artistSearch = "";
 
@@ -49,7 +49,7 @@ async function searchInput() {
 //? RETRIEVE DATA ABOUT ARTIST
 async function searchArtist(artistInput) {
   const response = await fetch(
-    `https://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=${artistInput}`
+    `https://api.songkick.com/api/3.0/search/artists.json?apikey=${apiKey}&query=${artistInput}`
   );
   const artists = await response.json();
 
@@ -63,7 +63,7 @@ async function searchArtist(artistInput) {
 //? TOURING INFO
 async function tourDates(artist_id, is_touring) {
   const response = await fetch(
-    `https://api.songkick.com/api/3.0/artists/${artist_id}/calendar.json?apikey=${key}`
+    `https://api.songkick.com/api/3.0/artists/${artist_id}/calendar.json?apikey=${apiKey}`
   );
   const events = await response.json();
   const event_result = events.resultsPage.results.event;
@@ -99,7 +99,7 @@ async function pastShows(e) {
 
   let artistInputPast = inputValue.value.toLowerCase();
   await fetch(
-    `https://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=${artistInputPast}`
+    `https://api.songkick.com/api/3.0/search/artists.json?apikey=${apiKey}&query=${artistInputPast}`
   )
     .then((data) => data.json())
     .then((data) => {
@@ -108,7 +108,7 @@ async function pastShows(e) {
       eventsOutput.innerHTML = "";
 
       fetch(
-        `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${key}`
+        `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${apiKey}`
       )
         .then((data) => data.json())
         .then((data) => {
