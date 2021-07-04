@@ -1,0 +1,58 @@
+h1,
+h2,
+p {
+  margin-top: 0;
+  color: whitesmoke;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h2 {
+  padding-bottom: 0.8em;
+  font-size: 0.9em;
+  color: whitesmoke;
+}
+
+.terms-wrapper {
+  background: #0f406b;
+  color: black;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  place-content: center;
+  font-size: 1.1em;
+}
+
+.generator {
+  font-size: 0.8em;
+  font-weight: 700;
+  padding-bottom: 1em;
+}
+
+.return-wrapper {
+  width: 50%;
+  margin: 1rem auto;
+  background: red;
+}
+
+.return-wrapper a {
+  display: block;
+  outline: 1px solid var(--mediumBlue);
+  text-decoration: none;
+  color: var(--new-blue);
+  text-align: center;
+  background: whitesmoke;
+  letter-spacing: 2px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  transition: background 150ms linear;
+}
+
+.return-wrapper a:hover,
+.return-wrapper a:focus {
+  background: var(--gold);
+  color: white;
+}

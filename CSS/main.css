@@ -21,6 +21,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--montserrat);
+  overflow-x: hidden;
 }
 
 html {
@@ -207,7 +208,7 @@ nav ul a:hover,
   margin-bottom: 1.5rem;
   width: 95%;
   border: 0.5px solid #162852;
-  animation: fade-in .3s linear;
+  animation: fade-in 0.3s linear;
 }
 
 .hero-content-featured {
@@ -216,7 +217,8 @@ nav ul a:hover,
   position: relative;
 }
 
-.oval-effect {
+.hero-content-featured::before {
+  content: "";
   position: absolute;
   height: 110%;
   width: 110%;
@@ -237,7 +239,7 @@ nav ul a:hover,
   font-family: var(--teko);
   font-weight: 400;
   margin-bottom: 2.5rem;
-  animation: fade-in .2s linear;
+  animation: fade-in 0.2s linear;
 }
 
 .hero-content h1::after {
@@ -262,7 +264,7 @@ nav ul a:hover,
   margin: auto;
   font-size: 1rem;
   padding: 1rem 0 2rem;
-  animation: fade-in .6s linear;
+  animation: fade-in 0.6s linear;
 }
 
 .hero-description p {
@@ -276,7 +278,7 @@ nav ul a:hover,
 
 @keyframes fade-in {
   from {
-    opacity: .5;
+    opacity: 0.5;
     transform: translateY(5%);
   }
 
@@ -362,12 +364,12 @@ nav ul a:hover,
 }
 
 .item-wrapper.effect {
-  animation: fade-effect .6s linear;
+  animation: fade-effect 0.6s linear;
 }
 
 @keyframes fade-effect {
   from {
-    opacity: .5;
+    opacity: 0.5;
     transform: translateY(8%);
   }
 
@@ -704,7 +706,6 @@ nav ul a:hover,
   visibility: unset;
   position: relative;
 }
-
 
 .read-more i {
   font-size: 1rem;
