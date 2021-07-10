@@ -32,6 +32,7 @@ nav {
   background-color: grey;
   scroll-snap-align: center;
   overflow-y: hidden;
+  /* height: max-content; */
 }
 
 .division-title {
@@ -218,9 +219,10 @@ nav {
 #division-dvds {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: 5rem 0.5rem 1rem;
+  height: 100vh;
 }
 
 #division-records h2,
@@ -238,8 +240,8 @@ nav {
 .record-release-info-wrapper,
 .dvd-release-info-wrapper {
   display: flex;
-  align-items: stretch;
-  margin: 0 auto 1rem;
+  align-items: center;
+  margin: 0 auto 2rem;
   padding-bottom: 0.5rem;
   width: 95%;
   border-bottom: 1px solid rgba(192, 192, 192, 0.158);
@@ -285,7 +287,7 @@ nav {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  /* align-items: flex-end; */
+  align-items: flex-end;
   flex-grow: 1;
   height: 100%;
 }
@@ -413,7 +415,7 @@ nav {
   background: linear-gradient(82deg, #0d1321 0%, #ff7b00 100%),
     url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
   background-size: cover;
-  background-position: top;
+  /* background-position: top; */
   height: 100vh;
   background-attachment: fixed;
 }
@@ -422,7 +424,7 @@ nav {
   background: linear-gradient(82deg, #222222 0%, #00ffff60 100%),
     url("https://guitar.com/wp-content/uploads/2019/03/mark-tremonti-interview-feature@1400x1050.jpg");
   background-size: cover;
-  background-position: top;
+  background-position: top left;
   height: 100vh;
   background-attachment: fixed;
 }
@@ -514,6 +516,8 @@ nav {
 
 #events-output {
   overflow-y: auto;
+  overflow: scroll;
+  /* scrollbar-width: unset; */
   padding: 0 1rem 1rem;
 }
 
