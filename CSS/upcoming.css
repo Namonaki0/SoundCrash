@@ -413,7 +413,6 @@ nav {
 .division:nth-of-type(2),
 .division:nth-of-type(3),
 .division:nth-of-type(4) {
-  /* background-position: center; */
   background-blend-mode: multiply;
 }
 
@@ -436,7 +435,6 @@ nav {
   background: linear-gradient(82deg, #0d1321 0%, #ff7b00 100%),
     url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-209038-Maynard_Cane.jpg");
   background-size: cover;
-  /* background-position: top; */
   height: 100vh;
   background-attachment: fixed;
 }
@@ -538,7 +536,6 @@ nav {
 #events-output {
   overflow-y: auto;
   overflow: scroll;
-  /* scrollbar-width: unset; */
   padding: 0 1rem 1rem;
 }
 
