@@ -320,7 +320,6 @@ nav {
 }
 
 @media (min-width: 650px) {
-
   #division-records,
   #division-dvds {
     flex-flow: wrap;
@@ -328,20 +327,20 @@ nav {
     overflow-y: scroll;
   }
 
-   .record-release-info-wrapper,
-   .dvd-release-info-wrapper {
-     width: 45%;
-     margin: 0 1rem;
-   }
+  .record-release-info-wrapper,
+  .dvd-release-info-wrapper {
+    width: 45%;
+    margin: 0 1rem;
+  }
 
-    .record-release-info .record-name,
-     .dvd-release-info .dvd-name {
-      font-size: .8rem;
-    }
+  .record-release-info .record-name,
+  .dvd-release-info .dvd-name {
+    font-size: 0.8rem;
+  }
 
-      .release-date-wrapper {
-        font-size: .8rem;
-      }
+  .release-date-wrapper {
+    font-size: 0.8rem;
+  }
 }
 
 @media (min-width: 950px) {
@@ -481,8 +480,11 @@ nav {
 
 .search-bar {
   display: flex;
+  flex-direction: column;
+  margin: auto;
   margin-top: 3rem;
   padding: 1rem;
+  width: 90%;
 }
 
 .search-bar input,
@@ -491,12 +493,14 @@ nav {
 }
 
 .search-bar input {
-  margin-right: 0.5rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
   border-bottom: 1px solid rgba(192, 192, 192, 0.349);
   padding: 0.5rem;
   flex-grow: 2;
   transition: border-bottom 120ms linear;
   font-size: 1.1rem;
+  width: 90%;
 }
 
 .search-bar input:focus {
@@ -523,12 +527,21 @@ nav {
 .sound-kick {
   text-align: left;
   padding: 0.2rem 1rem;
+  width: 90%;
+  margin: auto;
   margin-top: 1rem;
 }
 
-.output-size {
-  width: 20%;
+.sound-kick img {
+  width: 100%;
+}
+
+.sound-kick .output-size {
+  width: 25%;
   padding: 0.2rem 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-bottom: 0.5rem;
 }
 
 /*? DOM INJECTION */
@@ -559,11 +572,26 @@ nav {
 }
 
 @media (min-width: 750px) {
+  .search-bar {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.5rem 0;
+  }
+
+  .search-bar input {
+    margin-bottom: 0;
+    margin-right: 0.2rem;
+  }
+
+  .search-bar button {
+    height: max-content;
+  }
+
   #division-events {
     position: relative;
   }
 
-  .output-size {
+  .sound-kick .output-size {
     position: absolute;
     bottom: 5px;
     right: 15px;
