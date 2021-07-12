@@ -39,11 +39,14 @@ inputValue.addEventListener("change", (e) => {
 });
 
 //? ARTIST SEARCH INPUT
+
 async function searchInput() {
   let artistInput = inputValue.value.toLowerCase();
   eventsOutput.innerHTML = "";
 
-  if (artistInput === "") throw "NO ARTIST ENTERED";
+  if (artistInput === "") {
+    throw "NO ARTIST ENTERED";
+  }
 
   searchArtist(artistInput);
 }
@@ -57,7 +60,9 @@ async function searchArtist(artistInput) {
 
   const totalEntries = artists.resultsPage.totalEntries;
 
-  if (totalEntries === 0) throw "ENTER A VALID ARTIST";
+  if (totalEntries === 0) {
+    throw "ENTER A VALID ARTIST";
+  }
 
   //? ARTIST ID
   let artist_id = artists.resultsPage.results.artist[0].id;
@@ -103,7 +108,9 @@ async function pastShows(e) {
   e.preventDefault();
   //? -------------------
 
-  if (inputValue.value === "") throw "NO ARTIST ENTERED";
+  if (inputValue.value === "") {
+    throw "NO ARTIST ENTERED";
+  }
 
   let artistInputPast = inputValue.value.toLowerCase();
   try {
@@ -115,10 +122,6 @@ async function pastShows(e) {
         //? ARTIST ID
         let artist_id = data.resultsPage.results.artist[0].id;
         eventsOutput.innerHTML = "";
-
-        const totalEntries = data.resultsPage.totalEntries;
-
-        if (totalEntries === 0) throw "ENTER A VALID ARTIST";
 
         fetch(
           `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${apiKey}`
@@ -140,6 +143,6 @@ async function pastShows(e) {
           });
       });
   } catch (err) {
-    console.error("error", err);
+    console.error("ENTER A VALID ARTIST");
   }
 }
