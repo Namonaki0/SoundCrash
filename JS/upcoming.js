@@ -43,7 +43,10 @@ async function searchInput() {
   let artistInput = inputValue.value.toLowerCase();
   eventsOutput.innerHTML = "";
 
+  if (artistInput === "") throw "NO ARTIST ENTERED";
+
   searchArtist(artistInput);
+  // pastShows(artistInput);
 }
 
 //? RETRIEVE DATA ABOUT ARTIST
@@ -97,25 +100,28 @@ async function pastShows(e) {
   e.preventDefault();
   //? -------------------
 
+  if (inputValue.value === "") throw "NO ARTIST ENTERED";
+
   let artistInputPast = inputValue.value.toLowerCase();
-  await fetch(
-    `https://api.songkick.com/api/3.0/search/artists.json?apikey=${apiKey}&query=${artistInputPast}`
-  )
-    .then((data) => data.json())
-    .then((data) => {
-      //? ARTIST ID
-      let artist_id = data.resultsPage.results.artist[0].id;
-      eventsOutput.innerHTML = "";
+  try {
+    await fetch(
+      `https://api.songkick.com/api/3.0/search/artists.json?apikey=${apiKey}&query=${artistInputPast}`
+    )
+      .then((data) => data.json())
+      .then((data) => {
+        //? ARTIST ID
+        let artist_id = data.resultsPage.results.artist[0].id;
+        eventsOutput.innerHTML = "";
 
-      fetch(
-        `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${apiKey}`
-      )
-        .then((data) => data.json())
-        .then((data) => {
-          const event_result = data.resultsPage.results.event;
+        fetch(
+          `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${apiKey}`
+        )
+          .then((data) => data.json())
+          .then((data) => {
+            const event_result = data.resultsPage.results.event;
 
-          event_result.forEach((event) => {
-            eventsOutput.innerHTML += `
+            event_result.forEach((event) => {
+              eventsOutput.innerHTML += `
         <div class="event-info">
             <div><span>TOUR: </span> ${event.displayName}</div>
             <div><span>LOCATION: </span>${event.location.city}</div>
@@ -123,7 +129,10 @@ async function pastShows(e) {
             <div><span>DATE: </span>${event.start.date}</div>
         </div>
         `;
+            });
           });
-        });
-    });
+      });
+  } catch (err) {
+    console.error("error", err);
+  }
 }
