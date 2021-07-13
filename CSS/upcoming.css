@@ -525,22 +525,42 @@ nav {
 
 /*? INPUT ERROR HANDLING */
 
-.search-bar .search-error {
+.search-bar .no-artist-error {
   transition: border-bottom 120ms linear;
   border-bottom: 1px solid rgb(255, 0, 0);
   opacity: .8;
 }
 
-.search-bar .error-span {
+.search-bar .no-artist-error-span {
   background: #ff000071;
   display: block;
-  width: 100%;
+  text-align: right;
+  width: 92%;
   position: absolute;
-  bottom: -15px;
-  padding: .5rem 1rem;
+  bottom: 110px;
+  margin: auto;
+  padding: .2rem .5rem;
   opacity: 0;
   transform: translateY(-10px);
   transition: all 100ms linear;
+  pointer-events: none;
+}
+
+@media (min-width: 750px) {
+
+  /*? INPUT ERROR HANDLING */
+  .search-bar .no-artist-error-span {
+    background: #ff000071;
+    display: block;
+    text-align: left;
+    width: 100%;
+    position: absolute;
+    bottom: -15px;
+    padding: .5rem 1rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 100ms linear;
+  }
 }
 
 /*? SOUNDKICK */
