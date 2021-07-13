@@ -485,6 +485,7 @@ nav {
   margin-top: 3rem;
   padding: 1rem;
   width: 90%;
+  position: relative;
 }
 
 .search-bar input,
@@ -520,6 +521,26 @@ nav {
 
 .search-bar button:hover {
   background: rgba(192, 192, 192, 0.596);
+}
+
+/*? INPUT ERROR HANDLING */
+
+.search-bar .search-error {
+  transition: border-bottom 120ms linear;
+  border-bottom: 1px solid rgb(255, 0, 0);
+  opacity: .8;
+}
+
+.search-bar .error-span {
+  background: #ff000071;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: -15px;
+  padding: .5rem 1rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 100ms linear;
 }
 
 /*? SOUNDKICK */

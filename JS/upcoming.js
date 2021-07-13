@@ -8,6 +8,7 @@ const pastEvents = document.querySelector(".past-events");
 const upcomingEvents = document.querySelector(".upcoming-events");
 const soundKickImg = document.querySelector(".sound-kick img");
 const soundKick = document.querySelector(".sound-kick");
+const errorSpan = document.querySelector(".error-span");
 
 let artistSearch = "";
 
@@ -45,7 +46,14 @@ async function searchInput() {
     eventsOutput.innerHTML = "";
 
     if (artistInput === "") {
+      inputValue.classList.add("search-error");
+      errorSpan.style.opacity = 1;
+      errorSpan.style.transform = "translateY(0px)";
       throw "NO ARTIST ENTERED";
+    } else {
+      inputValue.classList.remove("search-error");
+      errorSpan.style.opacity = 0;
+      errorSpan.style.transform = "translateY(-10px)";
     }
 
     searchArtist(artistInput);
