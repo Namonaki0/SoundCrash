@@ -573,6 +573,7 @@ nav {
   width: 90%;
   margin: auto;
   margin-top: 1rem;
+  transition: all 200ms linear;
 }
 
 .sound-kick img {
@@ -585,6 +586,7 @@ nav {
   display: block;
   margin-left: auto;
   margin-bottom: 0.5rem;
+  transition: all 200ms linear;
 }
 
 /*? DOM INJECTION */

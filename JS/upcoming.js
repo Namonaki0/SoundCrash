@@ -80,6 +80,8 @@ async function searchArtist(artistInput) {
       inputValue.classList.add("not-valid-artist-error");
       notValidArtistSpan.style.opacity = 1;
       notValidArtistSpan.style.transform = "translateY(0px)";
+      soundKickImg.classList.remove("output-size");
+      soundKick.style.marginTop = "1rem";
       throw "ENTER A VALID ARTIST";
     } else {
       inputValue.classList.remove("not-valid-artist-error");
@@ -115,6 +117,7 @@ async function tourDates(artist_id, is_touring) {
             <div class="no-tour">artist not touring at present</div>
         </div>
         `;
+
       throw "ARTIST NOT TOURING AT PRESENT";
     } else {
       event_result.forEach((res) => {
@@ -195,6 +198,8 @@ async function pastShows(e) {
                   </div>
                   `;
               });
+              soundKickImg.classList.add("output-size");
+              soundKick.style.marginTop = "0";
             });
         });
     } catch (err) {
