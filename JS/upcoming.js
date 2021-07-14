@@ -8,7 +8,10 @@ const pastEvents = document.querySelector(".past-events");
 const upcomingEvents = document.querySelector(".upcoming-events");
 const soundKickImg = document.querySelector(".sound-kick img");
 const soundKick = document.querySelector(".sound-kick");
-const errorSpan = document.querySelector(".no-artist-error-span");
+const noArtistSpan = document.querySelector(".no-artist-error-span");
+const notValidArtistSpan = document.querySelector(
+  ".not-valid-artist-error-span"
+);
 
 let artistSearch = "";
 
@@ -47,13 +50,14 @@ async function searchInput() {
 
     if (artistInput === "") {
       inputValue.classList.add("no-artist-error");
-      errorSpan.style.opacity = 1;
-      errorSpan.style.transform = "translateY(0px)";
+      notValidArtistSpan.style.opacity = 0;
+      noArtistSpan.style.opacity = 1;
+      noArtistSpan.style.transform = "translateY(0px)";
       throw "NO ARTIST ENTERED";
     } else {
       inputValue.classList.remove("no-artist-error");
-      errorSpan.style.opacity = 0;
-      errorSpan.style.transform = "translateY(-10px)";
+      noArtistSpan.style.opacity = 0;
+      noArtistSpan.style.transform = "translateY(-10px)";
     }
 
     searchArtist(artistInput);
@@ -73,8 +77,17 @@ async function searchArtist(artistInput) {
     const totalEntries = artists.resultsPage.totalEntries;
 
     if (totalEntries === 0) {
+      inputValue.classList.add("not-valid-artist-error");
+      notValidArtistSpan.style.opacity = 1;
+      notValidArtistSpan.style.transform = "translateY(0px)";
       throw "ENTER A VALID ARTIST";
+    } else {
+      inputValue.classList.remove("not-valid-artist-error");
+      notValidArtistSpan.style.opacity = 0;
+      notValidArtistSpan.style.transform = "translateY(-10px)";
     }
+
+    console.log(totalEntries);
 
     //? ARTIST ID
     let artist_id = artists.resultsPage.results.artist[0].id;
@@ -130,13 +143,13 @@ async function pastShows(e) {
   try {
     if (inputValue.value === "") {
       inputValue.classList.add("no-artist-error");
-      errorSpan.style.opacity = 1;
-      errorSpan.style.transform = "translateY(0px)";
+      noArtistSpan.style.opacity = 1;
+      noArtistSpan.style.transform = "translateY(0px)";
       throw "NO ARTIST ENTERED";
     } else {
       inputValue.classList.remove("no-artist-error");
-      errorSpan.style.opacity = 0;
-      errorSpan.style.transform = "translateY(-10px)";
+      noArtistSpan.style.opacity = 0;
+      noArtistSpan.style.transform = "translateY(-10px)";
     }
 
     const eventsPage = document.querySelector("#division-events");
