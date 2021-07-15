@@ -23,21 +23,6 @@ iframe {
 .video-wrapper {
   background: #1e1e29;
   margin-bottom: 1rem;
-  position: relative;
-  /* clip-path: inset(0); */
-}
-
-.video-wrapper::after {
-  content: "";
-  display: block;
-  bottom: 0;
-  height: 50%;
-  width: 50%;
-  right: 0px;
-  /* transform: rotate(45deg); */
-  clip-path: polygon(44% 0, 100% 0, 100% 100%, 44% 100%, 0 48%);
-  position: absolute;
-  background: rgba(192, 192, 192, 0.027);
 }
 
 .video-info {
@@ -99,9 +84,9 @@ iframe {
 .num-system {
   position: absolute;
   right: 0.5rem;
-  top: 60px;
+  bottom: 0;
   opacity: 0.1;
-  font-size: 8rem;
+  font-size: 6rem;
   margin-bottom: 0;
   padding-bottom: 0;
   color: lightgray;
@@ -115,11 +100,6 @@ iframe {
 
   .video-info-btn-wrapper .fab {
     font-size: 1.5rem;
-  }
-
-  .video-wrapper::after {
-    height: 100%;
-    width: 40%;
   }
 }
 
@@ -225,7 +205,6 @@ iframe {
   justify-content: center;
   align-items: center;
   color: grey;
-  /* padding: 0.1rem 0; */
   font-size: 1.8rem;
   cursor: pointer;
   border-top: 1px solid rgba(128, 128, 128, 0.158);
