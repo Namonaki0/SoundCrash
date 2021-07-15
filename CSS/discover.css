@@ -16,11 +16,28 @@ aside h1 {
 
 iframe {
   width: 100%;
+  z-index: 10;
+  position: relative;
 }
 
 .video-wrapper {
   background: #1e1e29;
   margin-bottom: 1rem;
+  position: relative;
+  /* clip-path: inset(0); */
+}
+
+.video-wrapper::after {
+  content: "";
+  display: block;
+  bottom: 0;
+  height: 50%;
+  width: 50%;
+  right: 0px;
+  /* transform: rotate(45deg); */
+  clip-path: polygon(44% 0, 100% 0, 100% 100%, 44% 100%, 0 48%);
+  position: absolute;
+  background: rgba(192, 192, 192, 0.027);
 }
 
 .video-info {
@@ -50,13 +67,13 @@ iframe {
 
 .video-info-btn-wrapper a {
   all: unset;
-  padding: 0.5rem .5rem .5rem 0;
+  padding: 0.5rem 0.5rem 0.5rem 0;
   text-transform: uppercase;
   color: rgb(167, 167, 167);
 }
 
 .video-info-btn-wrapper .fab {
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   font-size: 1.3rem;
 }
 
@@ -91,8 +108,7 @@ iframe {
   transition: all 250ms ease-in-out;
 }
 
-
-@media (min-width: 1000px) { 
+@media (min-width: 1000px) {
   .video-info-btn-wrapper a {
     padding-top: 0;
   }
@@ -101,6 +117,10 @@ iframe {
     font-size: 1.5rem;
   }
 
+  .video-wrapper::after {
+    height: 100%;
+    width: 40%;
+  }
 }
 
 /*? HONORABLE MENTIONS SECTION */
@@ -374,7 +394,7 @@ iframe {
 
 .fas {
   margin: 0.2rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
 
@@ -444,10 +464,9 @@ iframe {
 }
 
 @media (min-width: 750px) {
-
   .record-span,
   .release-span {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .release-info .fas {
@@ -461,11 +480,11 @@ iframe {
   .back-to-top-container {
     padding: 2.5rem;
     background: #20202c;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   .back-to-top {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     margin-left: 0.5rem;
     font-size: 2rem;
   }
@@ -572,13 +591,11 @@ iframe {
     margin-top: 1.8rem;
   }
 
-
   .video-info-btn-wrapper a {
     display: block;
     width: max-content;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
-
 
   .honorable-mentions {
     display: grid;
@@ -617,9 +634,8 @@ iframe {
     grid-row: 1;
   }
 
-  .inner-wrap, 
+  .inner-wrap,
   .side-view {
     border: 1px solid rgba(221, 221, 221, 0.055);
   }
-
 }
