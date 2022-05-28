@@ -484,7 +484,7 @@ nav {
   margin: auto;
   margin-top: 3rem;
   padding: 1rem;
-  width: 90%;
+  width: 500px;
   position: relative;
 }
 
@@ -565,30 +565,6 @@ nav {
   }
 }
 
-/*? SOUNDKICK */
-
-.sound-kick {
-  text-align: left;
-  padding: 0.2rem 1rem;
-  width: 90%;
-  margin: auto;
-  margin-top: 1rem;
-  transition: all 200ms linear;
-}
-
-.sound-kick img {
-  width: 100%;
-}
-
-.sound-kick .output-size {
-  width: 25%;
-  padding: 0.2rem 0.5rem;
-  display: block;
-  margin-left: auto;
-  margin-bottom: 0.5rem;
-  transition: all 200ms linear;
-}
-
 /*? DOM INJECTION */
 
 #events-output {
@@ -601,6 +577,31 @@ nav {
   margin: 0.5rem 0;
   background: rgba(255, 255, 255, 0.062);
   padding: 1rem;
+  position: relative;
+ line-height: 22px;
+}
+
+.event-info div {
+     width: 32ch;
+}
+
+.tickets-cta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.34);
+  border-left: 5px solid rgba(192, 192, 192, 0);
+  padding: 1.2rem;
+  display: grid;
+  place-content: center;
+  text-decoration: none;
+  transition: all 150ms linear;
+}
+
+.tickets-cta:hover {
+  background: rgba(0, 0, 0, 0.715);
+  border-left: 5px solid orange;
 }
 
 .event-info:first-child {
@@ -621,6 +622,8 @@ nav {
     flex-direction: row;
     align-items: center;
     padding: 1.5rem 0;
+    width: 800px;
+    max-width: 90%;
   }
 
   .search-bar input {
@@ -645,6 +648,10 @@ nav {
   }
 
   #events-output {
-    width: 800px;
+    width: 100%;
   }
+
+  .event-info div {
+     width: unset;
+}
 }

@@ -4,41 +4,18 @@ const eventsOutput = document.querySelector("#events-output");
 const searchBar = document.querySelector(".search-bar");
 const inputValue = document.querySelector("input");
 const searchBtn = searchBar.querySelector("button");
-const pastEvents = document.querySelector(".past-events");
-const upcomingEvents = document.querySelector(".upcoming-events");
-const soundKickImg = document.querySelector(".sound-kick img");
-const soundKick = document.querySelector(".sound-kick");
 const noArtistSpan = document.querySelector(".no-artist-error-span");
 const notValidArtistSpan = document.querySelector(
   ".not-valid-artist-error-span"
 );
 
-let artistSearch = "";
-
 //? EVENT LISTENERS
 searchBtn.addEventListener("click", searchInput);
-pastEvents.addEventListener("click", pastShows);
-upcomingEvents.addEventListener("click", (e) => {
-  //? PREVENTS DEFAULT TOP PAGE SCROLLING
-  e.preventDefault();
-  //? -------------------
-
-  searchInput();
-});
 
 //? ENTER KEY SEARCH FUNCTION
 inputValue.addEventListener("keydown", (e) => {
   if (e.keyCode === 13) {
     searchInput();
-  }
-});
-
-//? SOUNDKICK LOGO SIZE
-inputValue.addEventListener("change", (e) => {
-  const userInput = e.target.value;
-  if (userInput === "") {
-    soundKick.style.marginTop = "1rem";
-    soundKickImg.classList.remove("output-size");
   }
 });
 
@@ -70,18 +47,14 @@ async function searchInput() {
 async function searchArtist(artistInput) {
   try {
     const response = await fetch(
-      `https://api.songkick.com/api/3.0/search/artists.json?apikey=${apiKey}&query=${artistInput}`
+      `https://rest.bandsintown.com/artists/${artistInput}/?app_id=${apiKey}`
     );
-    const artists = await response.json();
+    const artist = await response.json();
 
-    const totalEntries = artists.resultsPage.totalEntries;
-
-    if (totalEntries === 0) {
+    if (!artist) {
       inputValue.classList.add("not-valid-artist-error");
       notValidArtistSpan.style.opacity = 1;
       notValidArtistSpan.style.transform = "translateY(0px)";
-      soundKickImg.classList.remove("output-size");
-      soundKick.style.marginTop = "1rem";
       throw "ENTER A VALID ARTIST";
     } else {
       inputValue.classList.remove("not-valid-artist-error");
@@ -89,29 +62,22 @@ async function searchArtist(artistInput) {
       notValidArtistSpan.style.transform = "translateY(-10px)";
     }
 
-    console.log(totalEntries);
-
-    //? ARTIST ID
-    let artist_id = artists.resultsPage.results.artist[0].id;
-    let is_touring = artists.resultsPage.results.artist[0].onTourUntil;
-
-    tourDates(artist_id, is_touring);
+    tourDates(artistInput, apiKey);
   } catch (err) {
     console.log(err);
   }
 }
 
 //? TOURING INFO
-async function tourDates(artist_id, is_touring) {
+async function tourDates(artistInput, apiKey) {
   try {
     const response = await fetch(
-      `https://api.songkick.com/api/3.0/artists/${artist_id}/calendar.json?apikey=${apiKey}`
+      `https://rest.bandsintown.com/artists/${artistInput}/events/?app_id=${apiKey}`
     );
     const events = await response.json();
-    const event_result = events.resultsPage.results.event;
 
     //? ARTIST NOT TOURING MESSAGE
-    if (is_touring === null) {
+    if (events.length === 0) {
       eventsOutput.innerHTML += `
          <div class="event-info">
             <div class="no-tour">artist not touring at present</div>
@@ -120,90 +86,19 @@ async function tourDates(artist_id, is_touring) {
 
       throw "ARTIST NOT TOURING AT PRESENT";
     } else {
-      event_result.forEach((res) => {
+      events.forEach((res) => {
         eventsOutput.innerHTML += `
         <div class="event-info">
-            <div><span>TOUR: </span> ${res.displayName}</div>
-            <div><span>LOCATION: </span>${res.location.city}</div>
-            <div><span>VENUE: </span>${res.venue.displayName}</div>
-            <div><span>DATE: </span>${res.start.date}</div>
+            <div><span>TOUR: </span>${res.venue.name}</div>
+            <div><span>CITY: </span>${res.venue.city}</div>
+            <div><span>COUNTRY: </span>${res.venue.country}</div>
+            <div><span>DATE: </span>${res.starts_at.slice(0, 10)}</div>
+            <a class="tickets-cta" href=${
+              res.url
+            } target="_blank"><span>TICKETS</span></a>
         </div>
         `;
       });
-    }
-    soundKickImg.classList.add("output-size");
-    soundKick.style.marginTop = "0";
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-//? BAND LIVE SHOW HISTORY
-async function pastShows(e) {
-  //? PREVENTS DEFAULT TOP PAGE SCROLLING
-  e.preventDefault();
-  //? -------------------
-  try {
-    if (inputValue.value === "") {
-      inputValue.classList.add("no-artist-error");
-      noArtistSpan.style.opacity = 1;
-      noArtistSpan.style.transform = "translateY(0px)";
-      throw "NO ARTIST ENTERED";
-    } else {
-      inputValue.classList.remove("no-artist-error");
-      noArtistSpan.style.opacity = 0;
-      noArtistSpan.style.transform = "translateY(-10px)";
-    }
-
-    const eventsPage = document.querySelector("#division-events");
-
-    window.addEventListener("click", (e) => {
-      if (e.target === eventsPage && inputValue.value === "") {
-        eventsOutput.innerHTML = "";
-      }
-    });
-
-    pastEvents.addEventListener("click", () => {
-      if (inputValue.value === "") {
-        eventsOutput.innerHTML = "";
-      }
-    });
-
-    let artistInputPast = inputValue.value.toLowerCase();
-
-    try {
-      await fetch(
-        `https://api.songkick.com/api/3.0/search/artists.json?apikey=${apiKey}&query=${artistInputPast}`
-      )
-        .then((data) => data.json())
-        .then((data) => {
-          //? ARTIST ID
-          let artist_id = data.resultsPage.results.artist[0].id;
-          eventsOutput.innerHTML = "";
-
-          fetch(
-            `https://api.songkick.com/api/3.0/artists/${artist_id}/gigography.json?apikey=${apiKey}`
-          )
-            .then((data) => data.json())
-            .then((data) => {
-              const event_result = data.resultsPage.results.event;
-
-              event_result.forEach((event) => {
-                eventsOutput.innerHTML += `
-                  <div class="event-info">
-                      <div><span>TOUR: </span> ${event.displayName}</div>
-                      <div><span>LOCATION: </span>${event.location.city}</div>
-                      <div><span>VENUE: </span>${event.venue.displayName}</div>
-                      <div><span>DATE: </span>${event.start.date}</div>
-                  </div>
-                  `;
-              });
-              soundKickImg.classList.add("output-size");
-              soundKick.style.marginTop = "0";
-            });
-        });
-    } catch (err) {
-      console.log("ENTER A VALID ARTIST");
     }
   } catch (err) {
     console.log(err);
