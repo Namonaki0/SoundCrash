@@ -9,8 +9,8 @@ The main purpose is to develop my Web Dev and problem-solving skills.
 
 
 ### FEATURES
-* Integrated music player - created from scratch (all basic controls available).
-* Artist touring schedule search - Songkick API (past and future dates).
+* Integrated music player - created from scratch.
+* Artist touring schedule search - Bandsintown events API.
 * Mailchimp - subscription service.
 * RWD - adaptive design.
 
@@ -20,7 +20,7 @@ Lighthouse audited - SEO, Accessibility, Best practices and Performance.
 
 
 ### EXTERNAL
- - Songkick
+ - Bandsintown
  - Youtube
  - Mailchimp
  - Pexels
