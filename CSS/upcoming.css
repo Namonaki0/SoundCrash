@@ -20,18 +20,11 @@ nav {
   background: rgba(128, 128, 128, 0);
 }
 
-.container-wrapper {
-  overflow: auto;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-
 .division {
   display: grid;
   place-content: center;
   background-color: grey;
   scroll-snap-align: center;
-  overflow-y: hidden;
 }
 
 .division-title {
@@ -85,6 +78,14 @@ nav {
   text-decoration: none;
   font-size: 1.5rem;
   width: max-content;
+  font-weight: 500;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  border-right: 2px solid rgba(255, 255, 255, 0.76);
+  transition: all 150ms linear;
+}
+.division-links a:hover {
+  border-right: 10px solid rgba(255, 255, 255, 0.868);
 }
 
 .division-links a:nth-of-type(1) {
@@ -100,22 +101,12 @@ nav {
 @keyframes showMenu {
   from {
     opacity: 0.2;
-    transform: translateY(20px);
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
-}
-
-.division-links a::after {
-  content: "";
-  width: 100%;
-  display: block;
-  background: rgba(255, 255, 255, 0.76);
-  height: 1px;
-  margin: 5px auto;
-  transition: all 120ms linear;
 }
 
 .division-links a:hover::after {
@@ -454,7 +445,7 @@ nav {
 
 ::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar {
-  display: none;
+  width: 5px;
 }
 
 @media (min-width: 950px) {
@@ -569,8 +560,8 @@ nav {
 
 #events-output {
   overflow-y: auto;
-  overflow: scroll;
-  padding: 0 1rem 1rem;
+  padding: 0 1rem 0rem;
+  margin-bottom: 1.5rem;
 }
 
 .event-info {
@@ -578,7 +569,7 @@ nav {
   background: rgba(255, 255, 255, 0.062);
   padding: 1rem;
   position: relative;
- line-height: 22px;
+  line-height: 22px;
 }
 
 .event-info div {
