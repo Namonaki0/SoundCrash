@@ -537,7 +537,12 @@ iframe {
 
   aside h1 {
     font-size: 8rem;
-    left: -5%;
+  }
+
+  @media (min-width: 1440px) {
+    main h1 {
+          left: -5%;
+    }
   }
 
   .video-wrapper {

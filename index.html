@@ -44,16 +44,27 @@
 
     <header>
       <nav class="navigation" id="navigation">
-        <a aria-label="logo" href="index" class="logo">SoundCrash®</a>
+        <div class="logo-wrapper">
+
+          <a aria-label="logo" href="index" class="logo">
+            <p class="logo-writing">SOUNDCRASH</p>
+            <div class="inner-logo-wrapper">
+              <span>PROJECT</span>
+              <span>.COM</span>
+  
+            </div>
+          
+          </a>
+        </div>
         <ul class="nav-links">
           <li>
-            <a aria-label="homepage" class="current" href="index">home</a>
+            <a aria-label="homepage" class="current" href="index.html">home</a>
           </li>
           <li>
-            <a aria-label="discover page" href="discover">discover</a>
+            <a aria-label="discover page" href="discover.html">discover</a>
           </li>
           <li>
-            <a aria-label="upcoming page" href="upcoming">upcoming</a>
+            <a aria-label="upcoming page" href="upcoming.html">upcoming</a>
           </li>
 
           <div class="menu-social-media">
@@ -87,33 +98,123 @@
     <section class="hero-content" id="hero-content">
       <div class="hero-content-featured">
 
-        <h1 class="underline">Featured Artist</h1>
+        <h1 class="featured-artist-title">Featured Artist</h1>
 
-        <iframe
-          title="violent new breed - bury me video"
-          class="featured-video"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/FpW6BkdN1pc"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+          <div class="featured-video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ucyhb3WQRhE" class="featured-video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="hero-description">
+              <p class="artist"><span>Artist: </span>Sevendust</p>
+              <p class="song"><span>Song: </span>Holy Water</p>
+              <p class="album"><span>Album: </span>Truth killer</p>
+            </div>
+          </div>
       </div>
-
-      <div class="hero-description">
-        <p class="artist"><span>Artist: </span>Violent New Breed</p>
-        <p class="song"><span>Song: </span>Bury Me</p>
-        <p class="album"><span>Album: </span>Bad Reputation</p>
-      </div>
+      <div class="svg-hexagon" id="svg-icon"></div>
     </section>
+  
+  
+  <!--? SECONDARY SECTION -->
+  
+  <div class="releases-section">
+      
+      <div >
+        <h2 class="latest-releases">latest releases</h2>
 
-    <!--? SECONDARY SECTION -->
-
-    <div class="releases-section">
-      <h2 class="latest-releases">latest releases</h2>
+        <span class="latest-releases-date">2023</span>
+      </div>
       <div class="overall-wrapper">
-        <div class="item-wrapper" id="one">
+        <div class="slider-wrapper">
+          <div class="item-wrapper" id="one">
+            <div class="sub-wrapper one">
+              <div class="img-wrapper">
+                <img class="sevendust-record" 
+                  src="Pics/sevendust.png"
+                  loading="lazy"
+                  alt="sevendust album cover"
+                />
+              </div>
+              <h3>Blood & Stone</h3>
+              <h4>Sevendust</h4>
+              <p>
+                The thirteenth studio album by American rock band Sevendust.
+                Released on October 23, 2020, with two singles "The Day I Tried to
+                Live" and "Dying to Live".
+              </p>
+  
+              <a
+                aria-label="shop for sevendust's new record"
+                target="_blank" 
+                rel="noreferrer" 
+                href="https://sevendust.com/collections/all/products/presale-sevendust-blood-stone-cd"
+                class="cta"
+                >get record</a
+              >
+            </div>
+          </div>
+
+        </div>
+        <div class="slider-wrapper">
+          <div class="item-wrapper" id="two">
+            <div class="sub-wrapper two">
+              <div class="img-wrapper">
+                <img
+                  src="Pics/northlane.png"
+                  loading="lazy"
+                  alt="northlane album cover"
+                />
+              </div>
+              <h3>Alien</h3>
+              <h4>Northlane</h4>
+              <p>
+                The fifth studio album by Australian metalcore band Northlane.
+                Released on August 2nd 2019 through UNFD, and self-produced by the
+                band themselves.
+              </p>
+              <a
+                aria-label="shop for northlane's new record"
+                target="_blank" 
+                rel="noreferrer" 
+                href="https://open.spotify.com/album/29q56s9HFBRPKUmSfkeFZx"
+                class="cta"
+                >get record</a
+              >
+            </div>
+          </div>
+
+        </div>
+        <div class="slider-wrapper">
+
+          <div class="item-wrapper" id="three">
+            <div class="sub-wrapper three" id="three">
+              <div class="img-wrapper">
+                <img
+                  src="Pics/greydaze.jpg"
+                  loading="lazy"
+                  alt="grey daze album cover"
+                />
+              </div>
+              <h3>Amends</h3>
+              <h4>Grey Daze</h4>
+              <p>
+                Composed of Chester Bennington's vocals from the 1990s over newly
+                recorded instrumentals. Singles include 'What's in the Eye' and
+                'Sickness'.
+              </p>
+              <a
+                aria-label="shop for grey daze's new record"
+                target="_blank" 
+                rel="noreferrer" 
+                href="https://uklomavistarecordings.ochre.store/amends"
+                class="cta"
+                >get record</a
+              >
+            </div>
+          </div>
+
+        </div>
+        <div class="slider-wrapper">
+
+          <div class="item-wrapper" id="one">
           <div class="sub-wrapper one">
             <div class="img-wrapper">
               <img class="sevendust-record" 
@@ -140,59 +241,9 @@
             >
           </div>
         </div>
-
-        <div class="item-wrapper" id="two">
-          <div class="sub-wrapper two">
-            <div class="img-wrapper">
-              <img
-                src="Pics/northlane.png"
-                loading="lazy"
-                alt="northlane album cover"
-              />
-            </div>
-            <h3>Alien</h3>
-            <h4>Northlane</h4>
-            <p>
-              The fifth studio album by Australian metalcore band Northlane.
-              Released on August 2nd 2019 through UNFD, and self-produced by the
-              band themselves.
-            </p>
-            <a
-              aria-label="shop for northlane's new record"
-              target="_blank" 
-              rel="noreferrer" 
-              href="https://open.spotify.com/album/29q56s9HFBRPKUmSfkeFZx"
-              class="cta"
-              >get record</a
-            >
-          </div>
         </div>
 
-        <div class="item-wrapper" id="three">
-          <div class="sub-wrapper three" id="three">
-            <div class="img-wrapper">
-              <img
-                src="Pics/greydaze.jpg"
-                loading="lazy"
-                alt="grey daze album cover"
-              />
-            </div>
-            <h3>Amends</h3>
-            <h4>Grey Daze</h4>
-            <p>
-              Composed of Chester Bennington's vocals from the 1990s over newly
-              recorded instrumentals. Singles include 'What's in the Eye' and
-              'Sickness'.
-            </p>
-            <a
-              aria-label="shop for grey daze's new record"
-              target="_blank" 
-              rel="noreferrer" 
-              href="https://uklomavistarecordings.ochre.store/amends"
-              class="cta"
-              >get record</a
-            >
-          </div>
+
         </div>
       </div>
     </div>
@@ -364,10 +415,26 @@
     <!--? FOOTER -->
 
     <footer class="footer">
-      <a aria-label="footer logo" href="index" class="logo">SoundCrash®</a>
+      <!-- <a aria-label="footer logo" href="index" class="logo">SOUNDCRASH</a> -->
+
+
+        <div class="logo-wrapper">
+
+          <a aria-label="logo" href="index" class="logo">
+            <p class="logo-writing">SOUNDCRASH</p>
+            <div class="inner-logo-wrapper">
+              <span>PROJECT</span>
+              <span>.COM</span>
+  
+            </div>
+          
+          </a>
+        </div>
+
+
       <div class="footer-wrap">
         <div class="bottom-links-wrap">
-          <div class="bottom-links">
+          <!-- <div class="bottom-links">
             <a
               aria-label="terms and agreements"
               href="terms-and-agreements"
@@ -381,9 +448,9 @@
               id="subscribe"
               >Subscribe</a
             >
-          </div>
+          </div> -->
 
-          <p>SoundCrash&trade; all rights reserved 2021</p>
+          <!-- <p>SoundCrash&trade; all rights reserved 2023</p> -->
         </div>
       </div>
     </footer>
